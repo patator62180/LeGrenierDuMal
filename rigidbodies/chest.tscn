@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cjb2dvv4splt8"]
+
+[ext_resource type="ArrayMesh" uid="uid://bgplhfds6efv5" path="res://meshes/chest_box.res" id="1_uruys"]
+[ext_resource type="ArrayMesh" uid="uid://b6yinb3eptbi7" path="res://meshes/chest_lid.res" id="2_8201r"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1bvp3"]
+size = Vector3(0.729364, 0.330182, 0.516797)
+
+[node name="Chest" type="RigidBody3D"]
+collision_layer = 2
+collision_mask = 7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00810245, 0.154068, -0.00166011)
+shape = SubResource("BoxShape3D_1bvp3")
+
+[node name="ChestBox" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_uruys")
+skeleton = NodePath("../..")
+
+[node name="ChestLid" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.148108, -0.267424)
+mesh = ExtResource("2_8201r")
