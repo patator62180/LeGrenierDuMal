@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://b7gabdogh778y"]
+[gd_scene load_steps=6 format=3 uid="uid://b7gabdogh778y"]
 
 [ext_resource type="ArrayMesh" uid="uid://b8yw2qeafkrbk" path="res://meshes/metal_trash_can_lid.res" id="1_i7bb2"]
+[ext_resource type="PackedScene" uid="uid://clhmyj3qhfdtf" path="res://controllers/impact/impact_watcher.tscn" id="2_4b01u"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_4b01u"]
 height = 0.07341
@@ -8,6 +9,10 @@ radius = 0.272949
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kwbql"]
 size = Vector3(0.103455, 0.053772, 0.0332642)
+
+[sub_resource type="Curve" id="Curve_kwbql"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.07, 1), 0.0, 0.0, 0, 0, Vector2(0.46, 0.595506), 0.0, 0.0, 0, 0, Vector2(0.915, 0.460674), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 5
 
 [node name="MetalTrashCan" type="RigidBody3D"]
 collision_layer = 2
@@ -23,3 +28,6 @@ shape = SubResource("CylinderShape3D_4b01u")
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00088501, 0.0550842, -0.00088501)
 shape = SubResource("BoxShape3D_kwbql")
+
+[node name="ImpactWatcher" parent="." instance=ExtResource("2_4b01u")]
+_curve = SubResource("Curve_kwbql")
