@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dhyi4c704cnr2"
-path="res://.godot/imported/spoon.glb-e1bd94edffc78fd113d23220d967900a.scn"
+path="res://.godot/imported/spoon.glb-77f1ad5f8bdb939a92db99c38c6cf953.scn"
 
 [deps]
 
-source_file="res://spoon.glb"
-dest_files=["res://.godot/imported/spoon.glb-e1bd94edffc78fd113d23220d967900a.scn"]
+source_file="res://models/Spoon/spoon.glb"
+dest_files=["res://.godot/imported/spoon.glb-77f1ad5f8bdb939a92db99c38c6cf953.scn"]
 
 [params]
 
@@ -32,6 +32,17 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"meshes": {
+"spoon_SM_BigSpoon_Utensils_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://meshes/spoon.res"
+}
+}
+}
 gltf/naming_version=1
 gltf/embedded_image_handling=1

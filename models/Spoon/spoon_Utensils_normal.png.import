@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dvw7lf6rano41"
-path.s3tc="res://.godot/imported/spoon_Utensils_normal.png-a8da4ecaee4cf25e4545ca1d650be875.s3tc.ctex"
+path.s3tc="res://.godot/imported/spoon_Utensils_normal.png-58e8eab3790b6eabf49294dfa5205d29.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://spoon_Utensils_normal.png"
-dest_files=["res://.godot/imported/spoon_Utensils_normal.png-a8da4ecaee4cf25e4545ca1d650be875.s3tc.ctex"]
+source_file="res://models/Spoon/spoon_Utensils_normal.png"
+dest_files=["res://.godot/imported/spoon_Utensils_normal.png-58e8eab3790b6eabf49294dfa5205d29.s3tc.ctex"]
 
 [params]
 

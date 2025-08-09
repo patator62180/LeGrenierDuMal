@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0v1emp54afir"
-path.s3tc="res://.godot/imported/spoon_Utensils_metallicRoughness.png-0d806beb44eb5d1909c8aea2c3b44902.s3tc.ctex"
+uid="uid://b016jelojaxxh"
+path.s3tc="res://.godot/imported/spoon_Utensils_baseColor.png-3bb1cad8aa8b2c874709d44197d44c59.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "00f62ccf2d60f7e7e6aed44681ef0ce6"
+"md5": "985be2d1ccbd6915e44181820139e24c"
 }
 
 [deps]
 
-source_file="res://spoon_Utensils_metallicRoughness.png"
-dest_files=["res://.godot/imported/spoon_Utensils_metallicRoughness.png-0d806beb44eb5d1909c8aea2c3b44902.s3tc.ctex"]
+source_file="res://models/Spoon/spoon_Utensils_baseColor.png"
+dest_files=["res://.godot/imported/spoon_Utensils_baseColor.png-3bb1cad8aa8b2c874709d44197d44c59.s3tc.ctex"]
 
 [params]
 
@@ -27,8 +27,8 @@ compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=8
-roughness/src_normal="res://spoon_Utensils_normal.png"
+roughness/mode=0
+roughness/src_normal=""
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false
