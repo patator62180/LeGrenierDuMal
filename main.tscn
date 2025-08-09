@@ -1,10 +1,12 @@
-[gd_scene load_steps=15 format=3 uid="uid://srcm6edfpyg2"]
+[gd_scene load_steps=18 format=3 uid="uid://srcm6edfpyg2"]
 
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://b3njdfw5ehyqs" path="res://controllers/picker/picker.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://cjb2dvv4splt8" path="res://rigidbodies/chest.tscn" id="3_7mycd"]
 [ext_resource type="PackedScene" uid="uid://8118vdtuu1vh" path="res://models/Attic/scene.gltf" id="3_272bh"]
 [ext_resource type="PackedScene" uid="uid://baajbhbgcqegp" path="res://rigidbodies/cone.tscn" id="4_272bh"]
+[ext_resource type="PackedScene" uid="uid://dt0ucid6bd5ea" path="res://rigidbodies/plasticContainers/plasticContainer_01.tscn" id="4_kek77"]
+[ext_resource type="PackedScene" uid="uid://db1trtjmgrrj3" path="res://rigidbodies/plasticContainers/plasticContainer_04.tscn" id="5_4c57u"]
 [ext_resource type="PackedScene" uid="uid://dxtvfb6q2m0j0" path="res://rigidbodies/crate.tscn" id="5_5vw27"]
 [ext_resource type="PackedScene" uid="uid://bwi5tqqr8oweq" path="res://rigidbodies/barrel.tscn" id="6_kek77"]
 
@@ -20,8 +22,11 @@ size = Vector3(4.635, 0.22, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_0xm2m"]
 size = Vector3(4.635, 0.22, 1)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_272bh"]
+size = Vector3(3.79065, 0.0694885, 11.2885)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_5vw27"]
-size = Vector3(12.0681, 0.288086, 11.108)
+size = Vector3(5.96802, 0.081665, 10.6841)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kek77"]
 size = Vector3(2.3194, 0.134521, 10.6138)
@@ -103,7 +108,11 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1.70796, -0.405891, 5.0367)
 transform = Transform3D(0.837719, 0, -0.546102, 0, 1, 0, 0.546102, 0, 0.837719, 0.112878, 8.97982, 25.4698)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_Scene/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.21642, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.923526, 0.0902863, -0.259127)
+shape = SubResource("BoxShape3D_272bh")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Sketchfab_Scene/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.83685, 0.117325, -0.224134)
 shape = SubResource("BoxShape3D_5vw27")
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="Sketchfab_Scene"]
@@ -126,6 +135,12 @@ transform = Transform3D(-0.393626, -0.837719, 0.378531, -0.69315, -1.00583e-07, 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_Scene/StaticBody3D4"]
 transform = Transform3D(0.999999, -2.98023e-08, 0, 1.57952e-06, 1, -2.98023e-08, -7.7486e-07, 2.98023e-08, 1, -0.540037, -0.643607, 0.0555792)
 shape = SubResource("BoxShape3D_4c57u")
+
+[node name="PlasticeContainer01" parent="Sketchfab_Scene" instance=ExtResource("4_kek77")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.719716, 9.23754, 25.0335)
+
+[node name="PlasticeContainer04" parent="Sketchfab_Scene" instance=ExtResource("5_4c57u")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.90325, 9.19802, 23.65)
 
 [node name="Props" type="Node3D" parent="."]
 
