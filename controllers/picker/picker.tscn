@@ -2,29 +2,42 @@
 
 [ext_resource type="Script" uid="uid://dd0srqqbvijy0" path="res://controllers/picker/picker.gd" id="1_a6xgo"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_a6xgo"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_721um"]
+margin = 0.0
+size = Vector3(0.01, 0.01, 0.01)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_a6xgo"]
 margin = 0.0
 size = Vector3(7.085, 6.57, 0.1)
 
-[node name="Picker" type="CharacterBody3D"]
+[node name="Picker" type="Node3D"]
+script = ExtResource("1_a6xgo")
+
+[node name="Joint" type="Generic6DOFJoint3D" parent="."]
+linear_limit_x/damping = 0.01
+linear_limit_y/damping = 0.01
+linear_limit_z/damping = 0.01
+angular_limit_x/upper_angle = 0.523599
+angular_limit_x/lower_angle = -0.523599
+angular_limit_y/upper_angle = 0.523599
+angular_limit_y/lower_angle = -0.523599
+angular_limit_z/upper_angle = 0.523599
+angular_limit_z/lower_angle = -0.523599
+
+[node name="Hand" type="CharacterBody3D" parent="."]
 collision_layer = 0
 collision_mask = 0
 motion_mode = 1
-script = ExtResource("1_a6xgo")
+wall_min_slide_angle = 0.0
+platform_on_leave = 2
+platform_floor_layers = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("CapsuleShape3D_a6xgo")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hand"]
+shape = SubResource("BoxShape3D_721um")
 debug_color = Color(0.698039, 0.0431373, 0.14902, 0.839216)
 
-[node name="PinJoint3D" type="PinJoint3D" parent="."]
-params/bias = 0.01
-params/damping = 0.01
+[node name="DragWall" type="Area3D" parent="Hand"]
 
-[node name="DragWall" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="DragWall"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hand/DragWall"]
 shape = SubResource("BoxShape3D_a6xgo")
 debug_color = Color(0.795357, 0.281517, 0.795301, 0.42)
