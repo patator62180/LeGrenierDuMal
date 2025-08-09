@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://clhmyj3qhfdtf"]
+
+[ext_resource type="Script" uid="uid://dy0bcha0il5xk" path="res://controllers/impact/impact_watcher.gd" id="1_t4g6v"]
+
+[node name="ImpactWatcher" type="Node3D"]
+script = ExtResource("1_t4g6v")
