@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://1jbqmnqwdcl6"]
+
+[ext_resource type="PackedScene" uid="uid://dpncfr1fiaoiq" path="res://models/Ceiling Fan/ceiling_fan_1k.gltf" id="1_4jehv"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_yo3jg"]
+height = 0.626518
+radius = 0.15332
+
+[node name="CeilingFan" type="RigidBody3D"]
+collision_layer = 2
+collision_mask = 7
+
+[node name="ceiling_fan_1k" parent="." instance=ExtResource("1_4jehv")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.307522, 0)
+shape = SubResource("CylinderShape3D_yo3jg")
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -0.46833, 0)
+depth = 0.07
+polygon = PackedVector2Array(-0.0850306, -0.163708, -0.0904044, -0.462674, -0.00576954, -0.741969, 0.123299, -0.868921, 0.184659, -0.82872, 0.104256, -0.612901, 0.0746031, -0.16915)
+
+[node name="CollisionPolygon3D2" type="CollisionPolygon3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0, -0.46833, 0)
+depth = 0.07
+polygon = PackedVector2Array(-0.0850306, -0.163708, -0.0904044, -0.462674, -0.00576954, -0.741969, 0.123299, -0.868921, 0.184659, -0.82872, 0.104256, -0.612901, 0.0746031, -0.16915)
+
+[node name="CollisionPolygon3D3" type="CollisionPolygon3D" parent="."]
+transform = Transform3D(-1, -8.74228e-08, 3.82137e-15, 0, -4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, 0, -0.46833, 0)
+depth = 0.07
+polygon = PackedVector2Array(-0.0850306, -0.163708, -0.0904044, -0.462674, -0.00576954, -0.741969, 0.123299, -0.868921, 0.184659, -0.82872, 0.104256, -0.612901, 0.0746031, -0.16915)
+
+[node name="CollisionPolygon3D4" type="CollisionPolygon3D" parent="."]
+transform = Transform3D(1.31134e-07, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, 1.31134e-07, -5.73206e-15, 0, -0.46833, 0)
+depth = 0.07
+polygon = PackedVector2Array(-0.0850306, -0.163708, -0.0904044, -0.462674, -0.00576954, -0.741969, 0.123299, -0.868921, 0.184659, -0.82872, 0.104256, -0.612901, 0.0746031, -0.16915)

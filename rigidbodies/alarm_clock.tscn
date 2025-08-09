@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmdqxmr6cg45c"]
+
+[ext_resource type="PackedScene" uid="uid://vw63grb58jrm" path="res://models/Alarm Clock/alarm_clock_01_1k.gltf" id="1_l8hlv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2vij7"]
+size = Vector3(0.202244, 0.232788, 0.104965)
+
+[node name="AlarmClock" type="RigidBody3D"]
+collision_layer = 2
+collision_mask = 7
+
+[node name="alarm_clock_01_1k" parent="." instance=ExtResource("1_l8hlv")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000635147, 0.114319, 0.0113754)
+shape = SubResource("BoxShape3D_2vij7")
