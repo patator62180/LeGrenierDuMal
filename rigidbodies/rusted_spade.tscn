@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://blu06mtvvbyax"]
+
+[ext_resource type="ArrayMesh" uid="uid://doy6nqiuj46o5" path="res://meshes/rusted_spade.res" id="1_e15if"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_krpau"]
+height = 0.834595
+radius = 0.0161133
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_edrbh"]
+height = 0.144165
+radius = 0.0180664
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fdhmq"]
+size = Vector3(0.185181, 0.257813, 0.0321503)
+
+[node name="RustedSpade" type="RigidBody3D"]
+collision_layer = 2
+collision_mask = 7
+
+[node name="RustedSpade" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_e15if")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.162903, 0)
+shape = SubResource("CylinderShape3D_krpau")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -0.00146833, 0.581868, 0)
+shape = SubResource("CylinderShape3D_edrbh")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00177002, -0.371094, 0.00714874)
+shape = SubResource("BoxShape3D_fdhmq")
