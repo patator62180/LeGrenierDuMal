@@ -7,6 +7,7 @@ class FocusedObject:
     var contact: Vector3
     var object: RigidBody3D
     var dragging: bool
+    var distance_to_contact: Vector3
 
     func _init(result: Dictionary):
         contact = result['position']
@@ -35,7 +36,6 @@ func _physics_process(delta):
         _focused_object = FocusedObject.new(result) if result.size() > 0 else null
     
     if _focused_object != null and _focused_object.dragging:
-        #self.look_at(_camera.position)
         _drag_wall.global_position.y = _camera.global_position.y
         _drag_wall.global_rotation.y = _camera.global_rotation.y
         var query = PhysicsRayQueryParameters3D.create(origin, end)
@@ -52,7 +52,12 @@ func _physics_process(delta):
             #move_and_slide()
             
             #global_position = result['position']
-            global_position.y = result['position'].y
+            #global_position = result['position']
+            #pass
+            
+            var direction: Vector3 =  _camera.global_position.direction_to(result['position'])
+            var distance = _camera.global_position.distance_to(global_position)
+            global_position = _camera.global_position + direction * distance
             
             
     
@@ -60,7 +65,7 @@ func _physics_process(delta):
 func _process(delta):
     if _focused_object != null:
         if not _focused_object.dragging and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-            self.global_position = _focused_object.contact + Vector3(0, 0.01, 0)
+            global_position = _focused_object.contact
             _focused_object.dragging = true
             _joint.set_node_a(self.get_path())
             _joint.set_node_b(_focused_object.object.get_path())
