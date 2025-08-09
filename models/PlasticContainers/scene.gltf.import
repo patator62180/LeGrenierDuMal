@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dbl2v6dtjgecb"
-path="res://.godot/imported/scene.gltf-90a2a3fce5cf99596330788918d2d8db.scn"
+valid=false
 
 [deps]
 
 source_file="res://models/PlasticContainers/scene.gltf"
-dest_files=["res://.godot/imported/scene.gltf-90a2a3fce5cf99596330788918d2d8db.scn"]
 
 [params]
 
