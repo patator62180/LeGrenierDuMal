@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7gabdogh778y"]
+
+[ext_resource type="ArrayMesh" uid="uid://b8yw2qeafkrbk" path="res://meshes/metal_trash_can_lid.res" id="1_i7bb2"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_4b01u"]
+height = 0.07341
+radius = 0.272949
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kwbql"]
+size = Vector3(0.103455, 0.053772, 0.0332642)
+
+[node name="MetalTrashCan" type="RigidBody3D"]
+collision_layer = 2
+collision_mask = 7
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_i7bb2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00397491, 0)
+shape = SubResource("CylinderShape3D_4b01u")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00088501, 0.0550842, -0.00088501)
+shape = SubResource("BoxShape3D_kwbql")

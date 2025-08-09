@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://dkvya8kjd454f"]
+
+[ext_resource type="PackedScene" uid="uid://c10qq43r6ar16" path="res://models/Wooden table/wooden_table_02_1k.gltf" id="1_hv3se"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hv3se"]
+size = Vector3(1.47974, 0.0951538, 0.922729)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_16tcq"]
+size = Vector3(0.0778809, 1, 0.0726624)
+
+[node name="WoodenTable" type="RigidBody3D"]
+collision_layer = 2
+collision_mask = 7
+
+[node name="wooden_table_02_1k" parent="." instance=ExtResource("1_hv3se")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000854492, 0.996857, 0.00238037)
+shape = SubResource("BoxShape3D_hv3se")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.999038, -0.0438461, 0, 0.0438111, 0.998243, 0.0399051, -0.00174968, -0.0398667, 0.999204, 0.609825, 0.497707, 0.3358)
+shape = SubResource("BoxShape3D_16tcq")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.00174964, 0.0398667, -0.999204, 0.0438111, 0.998243, 0.0399051, 0.999038, -0.0438461, -4.35602e-08, -0.610439, 0.497707, 0.324328)
+shape = SubResource("BoxShape3D_16tcq")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
+transform = Transform3D(-0.999038, 0.0438461, 8.73507e-08, 0.0438111, 0.998243, 0.0399051, 0.00174959, 0.0398667, -0.999204, -0.604703, 0.497707, -0.331492)
+shape = SubResource("BoxShape3D_16tcq")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="."]
+transform = Transform3D(-0.00174955, -0.0398667, 0.999204, 0.0438111, 0.998243, 0.0399051, -0.999038, 0.0438461, 1.31074e-07, 0.607513, 0.497707, -0.325756)
+shape = SubResource("BoxShape3D_16tcq")

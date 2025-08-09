@@ -11,7 +11,7 @@ size = Vector3(0.462646, 0.04245, 0.494995)
 [sub_resource type="BoxShape3D" id="BoxShape3D_x7h7m"]
 size = Vector3(0.303589, 0.0488739, 0.0312195)
 
-[node name="Watermelon" type="RigidBody3D"]
+[node name="Stool" type="RigidBody3D"]
 collision_layer = 2
 collision_mask = 7
 
