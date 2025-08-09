@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://srcm6edfpyg2"]
 
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="1_ig7tw"]
-[ext_resource type="PackedScene" uid="uid://b3njdfw5ehyqs" path="res://scenes/picker/picker.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://b3njdfw5ehyqs" path="res://controllers/picker/picker.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://cjb2dvv4splt8" path="res://rigidbodies/chest.tscn" id="3_7mycd"]
 [ext_resource type="PackedScene" uid="uid://baajbhbgcqegp" path="res://rigidbodies/cone.tscn" id="4_272bh"]
 [ext_resource type="PackedScene" uid="uid://dxtvfb6q2m0j0" path="res://rigidbodies/crate.tscn" id="5_5vw27"]

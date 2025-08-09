@@ -1,6 +1,7 @@
 extends CharacterBody3D
 
 const RAY_LENGTH = 1000
+const PULL_VELOCITY = 2
 
 class FocusedObject:
     var contact: Vector3
@@ -14,6 +15,7 @@ class FocusedObject:
 
 @onready var _camera: Camera3D = get_viewport().get_camera_3d()
 @onready var _joint: PinJoint3D = $PinJoint3D
+@onready var _drag_wall: Area3D = $DragWall
 
 var _focused_object: FocusedObject = null
 
@@ -33,7 +35,9 @@ func _physics_process(delta):
         _focused_object = FocusedObject.new(result) if result.size() > 0 else null
     
     if _focused_object != null and _focused_object.dragging:
-        self.look_at(_camera.position)
+        #self.look_at(_camera.position)
+        _drag_wall.global_position.y = _camera.global_position.y
+        _drag_wall.global_rotation.y = _camera.global_rotation.y
         var query = PhysicsRayQueryParameters3D.create(origin, end)
         query.collide_with_areas = true
         query.collide_with_bodies = false
@@ -41,13 +45,22 @@ func _physics_process(delta):
         var result: Dictionary = space_state.intersect_ray(query)
         
         if result.size() > 0:
+            #var gap = result['position'].y - global_position.y
+            #var direction = Vector3(0, gap, 0).normalized()
+            #var direction = (result['position'] - global_position).normalized()
+            #velocity = direction * PULL_VELOCITY
+            #move_and_slide()
+            
+            #global_position = result['position']
             global_position.y = result['position'].y
+            
+            
     
 
 func _process(delta):
     if _focused_object != null:
         if not _focused_object.dragging and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-            self.global_position = _focused_object.contact
+            self.global_position = _focused_object.contact + Vector3(0, 0.01, 0)
             _focused_object.dragging = true
             _joint.set_node_a(self.get_path())
             _joint.set_node_b(_focused_object.object.get_path())
