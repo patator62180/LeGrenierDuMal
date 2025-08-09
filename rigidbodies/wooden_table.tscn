@@ -1,12 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://dkvya8kjd454f"]
+[gd_scene load_steps=6 format=3 uid="uid://dkvya8kjd454f"]
 
 [ext_resource type="PackedScene" uid="uid://c10qq43r6ar16" path="res://models/Wooden table/wooden_table_02_1k.gltf" id="1_hv3se"]
+[ext_resource type="PackedScene" uid="uid://clhmyj3qhfdtf" path="res://controllers/impact/impact_watcher.tscn" id="2_16tcq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hv3se"]
 size = Vector3(1.47974, 0.0951538, 0.922729)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_16tcq"]
 size = Vector3(0.0778809, 1, 0.0726624)
+
+[sub_resource type="Curve" id="Curve_s7vek"]
+_limits = [0.0, 1.25, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.246537, 1.25), 0.072301, 0.072301, 0, 0, Vector2(0.592798, 1.25), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
 
 [node name="WoodenTable" type="RigidBody3D"]
 collision_layer = 2
@@ -34,3 +40,6 @@ shape = SubResource("BoxShape3D_16tcq")
 [node name="CollisionShape3D5" type="CollisionShape3D" parent="."]
 transform = Transform3D(-0.00174955, -0.0398667, 0.999204, 0.0438111, 0.998243, 0.0399051, -0.999038, 0.0438461, 1.31074e-07, 0.607513, 0.497707, -0.325756)
 shape = SubResource("BoxShape3D_16tcq")
+
+[node name="ImpactWatcher" parent="." instance=ExtResource("2_16tcq")]
+_curve = SubResource("Curve_s7vek")

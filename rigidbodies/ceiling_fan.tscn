@@ -1,10 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://1jbqmnqwdcl6"]
+[gd_scene load_steps=5 format=3 uid="uid://1jbqmnqwdcl6"]
 
 [ext_resource type="PackedScene" uid="uid://dpncfr1fiaoiq" path="res://models/Ceiling Fan/ceiling_fan_1k.gltf" id="1_4jehv"]
+[ext_resource type="PackedScene" uid="uid://clhmyj3qhfdtf" path="res://controllers/impact/impact_watcher.tscn" id="2_hs3aa"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_yo3jg"]
 height = 0.626518
 radius = 0.15332
+
+[sub_resource type="Curve" id="Curve_yo3jg"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.116343, 0.97286), 0.19545, 0.19545, 0, 0, Vector2(0.872576, 0.00596535), -4.78462, 0.0, 0, 0]
+point_count = 3
 
 [node name="CeilingFan" type="RigidBody3D"]
 collision_layer = 2
@@ -36,3 +41,6 @@ polygon = PackedVector2Array(-0.0850306, -0.163708, -0.0904044, -0.462674, -0.00
 transform = Transform3D(1.31134e-07, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, 1.31134e-07, -5.73206e-15, 0, -0.46833, 0)
 depth = 0.07
 polygon = PackedVector2Array(-0.0850306, -0.163708, -0.0904044, -0.462674, -0.00576954, -0.741969, 0.123299, -0.868921, 0.184659, -0.82872, 0.104256, -0.612901, 0.0746031, -0.16915)
+
+[node name="ImpactWatcher" parent="." instance=ExtResource("2_hs3aa")]
+_curve = SubResource("Curve_yo3jg")

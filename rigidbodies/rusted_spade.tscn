@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://blu06mtvvbyax"]
+[gd_scene load_steps=7 format=3 uid="uid://blu06mtvvbyax"]
 
 [ext_resource type="ArrayMesh" uid="uid://doy6nqiuj46o5" path="res://meshes/rusted_spade.res" id="1_e15if"]
+[ext_resource type="PackedScene" uid="uid://clhmyj3qhfdtf" path="res://controllers/impact/impact_watcher.tscn" id="2_krpau"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_krpau"]
 height = 0.834595
@@ -12,6 +13,10 @@ radius = 0.0180664
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fdhmq"]
 size = Vector3(0.185181, 0.257813, 0.0321503)
+
+[sub_resource type="Curve" id="Curve_edrbh"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.105263, 0.929501), 0.0, 0.0, 0, 0, Vector2(0.567867, 0.640456), 0.0, 0.0, 0, 0, Vector2(1, 0.0341649), 0.0, 0.0, 0, 0]
+point_count = 4
 
 [node name="RustedSpade" type="RigidBody3D"]
 collision_layer = 2
@@ -31,3 +36,6 @@ shape = SubResource("CylinderShape3D_edrbh")
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00177002, -0.371094, 0.00714874)
 shape = SubResource("BoxShape3D_fdhmq")
+
+[node name="ImpactWatcher" parent="." instance=ExtResource("2_krpau")]
+_curve = SubResource("Curve_edrbh")

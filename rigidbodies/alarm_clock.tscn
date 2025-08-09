@@ -1,9 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://dmdqxmr6cg45c"]
+[gd_scene load_steps=5 format=3 uid="uid://dmdqxmr6cg45c"]
 
 [ext_resource type="PackedScene" uid="uid://vw63grb58jrm" path="res://models/Alarm Clock/alarm_clock_01_1k.gltf" id="1_l8hlv"]
+[ext_resource type="PackedScene" uid="uid://clhmyj3qhfdtf" path="res://controllers/impact/impact_watcher.tscn" id="2_2vij7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2vij7"]
 size = Vector3(0.202244, 0.232788, 0.104965)
+
+[sub_resource type="Curve" id="Curve_ocptr"]
+_data = [Vector2(0, 0.0200652), 0.0, 0.0, 0, 0, Vector2(0.146814, 1), 0.121191, 0.121191, 0, 0, Vector2(0.637119, 0.725054), -1.88823, -1.88823, 0, 0, Vector2(0.842105, 0.0341649), 0.0, 0.0, 0, 0]
+point_count = 4
 
 [node name="AlarmClock" type="RigidBody3D"]
 collision_layer = 2
@@ -15,3 +20,6 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000635147, 0.114319, 0.0113754)
 shape = SubResource("BoxShape3D_2vij7")
+
+[node name="ImpactWatcher" parent="." instance=ExtResource("2_2vij7")]
+_curve = SubResource("Curve_ocptr")

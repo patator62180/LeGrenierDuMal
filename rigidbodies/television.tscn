@@ -1,12 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://bpp4ec7df6aqv"]
+[gd_scene load_steps=6 format=3 uid="uid://bpp4ec7df6aqv"]
 
 [ext_resource type="PackedScene" uid="uid://cf3o1xwg3tuhl" path="res://models/Television/Television_01_1k.gltf" id="1_r0av5"]
+[ext_resource type="PackedScene" uid="uid://clhmyj3qhfdtf" path="res://controllers/impact/impact_watcher.tscn" id="2_pra10"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r0av5"]
 size = Vector3(0.905273, 0.676636, 0.346802)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pra10"]
 size = Vector3(0.911835, 0.599548, 0.291443)
+
+[sub_resource type="Curve" id="Curve_hjxyt"]
+_limits = [0.0, 1.5, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.260388, 1.5), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
 
 [node name="Television" type="RigidBody3D"]
 collision_layer = 2
@@ -22,3 +28,6 @@ shape = SubResource("BoxShape3D_r0av5")
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00236511, 0.318573, -0.196931)
 shape = SubResource("BoxShape3D_pra10")
+
+[node name="ImpactWatcher" parent="." instance=ExtResource("2_pra10")]
+_curve = SubResource("Curve_hjxyt")
