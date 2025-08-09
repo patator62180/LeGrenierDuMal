@@ -7,12 +7,13 @@ class FocusedObject:
     var contact: Vector3
     var object: RigidBody3D
     var dragging: bool
-    var distance_to_contact: Vector3
+    var distance_to_contact: float
 
-    func _init(result: Dictionary):
+    func _init(result: Dictionary, camera: Camera3D):
         contact = result['position']
         object = result['collider']
         dragging = false
+        distance_to_contact = camera.global_position.distance_to(contact)
 
 @onready var _camera: Camera3D = get_viewport().get_camera_3d()
 @onready var _joint: PinJoint3D = $PinJoint3D
@@ -33,10 +34,14 @@ func _physics_process(delta):
 
         var result: Dictionary = space_state.intersect_ray(query)
         
-        _focused_object = FocusedObject.new(result) if result.size() > 0 else null
+        _focused_object = FocusedObject.new(result, _camera) if result.size() > 0 else null
     
     if _focused_object != null and _focused_object.dragging:
-        _drag_wall.global_position.y = _camera.global_position.y
+        
+        global_position = _camera.global_position + _camera.global_position.direction_to(global_position) * _focused_object.distance_to_contact
+
+        
+        #_drag_wall.global_position.y = _camera.global_position.y
         _drag_wall.global_rotation.y = _camera.global_rotation.y
         var query = PhysicsRayQueryParameters3D.create(origin, end)
         query.collide_with_areas = true
@@ -45,19 +50,7 @@ func _physics_process(delta):
         var result: Dictionary = space_state.intersect_ray(query)
         
         if result.size() > 0:
-            #var gap = result['position'].y - global_position.y
-            #var direction = Vector3(0, gap, 0).normalized()
-            #var direction = (result['position'] - global_position).normalized()
-            #velocity = direction * PULL_VELOCITY
-            #move_and_slide()
-            
-            #global_position = result['position']
-            #global_position = result['position']
-            #pass
-            
-            var direction: Vector3 =  _camera.global_position.direction_to(result['position'])
-            var distance = _camera.global_position.distance_to(global_position)
-            global_position = _camera.global_position + direction * distance
+            global_position = _camera.global_position + _camera.global_position.direction_to(result['position']) * _camera.global_position.distance_to(global_position)
             
             
     
