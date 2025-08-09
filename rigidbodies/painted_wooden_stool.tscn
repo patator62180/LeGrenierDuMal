@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://jecafmdjylkg"]
+[gd_scene load_steps=7 format=3 uid="uid://jecafmdjylkg"]
 
 [ext_resource type="PackedScene" uid="uid://ctkfmfs4xq0cu" path="res://models/Painted Wooden Stool/painted_wooden_stool_1k.gltf" id="1_njji6"]
+[ext_resource type="PackedScene" uid="uid://clhmyj3qhfdtf" path="res://controllers/impact/impact_watcher.tscn" id="2_mjcc1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_njji6"]
 size = Vector3(0.0566711, 0.651245, 0.0588684)
@@ -10,6 +11,10 @@ size = Vector3(0.462646, 0.04245, 0.494995)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x7h7m"]
 size = Vector3(0.303589, 0.0488739, 0.0312195)
+
+[sub_resource type="Curve" id="Curve_x7h7m"]
+_data = [Vector2(0.005, 0.0449438), 0.0, 0.0, 0, 0, Vector2(0.04, 0.505618), 0.0, 0.0, 0, 0, Vector2(0.13, 0.123596), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
 
 [node name="Stool" type="RigidBody3D"]
 collision_layer = 2
@@ -53,3 +58,6 @@ shape = SubResource("BoxShape3D_x7h7m")
 [node name="CollisionShape3D9" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.00354305, 0, -0.999994, 0, 1, 0, 0.999994, 0, 0.00354305, 0.17584, 0.18707, 0.0148835)
 shape = SubResource("BoxShape3D_x7h7m")
+
+[node name="ImpactWatcher" parent="." instance=ExtResource("2_mjcc1")]
+_curve = SubResource("Curve_x7h7m")

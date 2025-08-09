@@ -1,9 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://cpxjgrkja82oi"]
+[gd_scene load_steps=5 format=3 uid="uid://cpxjgrkja82oi"]
 
 [ext_resource type="PackedScene" uid="uid://jvrrljim8rqw" path="res://models/Baseball ball/baseball_01_1k.gltf" id="1_oe2s3"]
+[ext_resource type="PackedScene" uid="uid://clhmyj3qhfdtf" path="res://controllers/impact/impact_watcher.tscn" id="2_k54ye"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_k54ye"]
 radius = 0.0579594
+
+[sub_resource type="Curve" id="Curve_5p7kh"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.035, 0.370787), 0.0, 0.0, 0, 0, Vector2(0.13, 0.0786518), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
 
 [node name="BaseballBall" type="RigidBody3D"]
 collision_layer = 2
@@ -14,3 +19,6 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_k54ye")
+
+[node name="ImpactWatcher" parent="." instance=ExtResource("2_k54ye")]
+_curve = SubResource("Curve_5p7kh")
