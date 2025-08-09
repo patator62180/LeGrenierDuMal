@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3njdfw5ehyqs"]
+
+[ext_resource type="Script" uid="uid://dd0srqqbvijy0" path="res://scenes/picker/picker.gd" id="1_a6xgo"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_a6xgo"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a6xgo"]
+size = Vector3(7.085, 6.57, 0.155)
+
+[node name="Picker" type="CharacterBody3D"]
+collision_layer = 0
+collision_mask = 0
+platform_on_leave = 2
+script = ExtResource("1_a6xgo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_a6xgo")
+
+[node name="PinJoint3D" type="PinJoint3D" parent="."]
+params/bias = 0.99
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_a6xgo")

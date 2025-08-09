@@ -1,22 +1,46 @@
-[gd_scene load_steps=4 format=3 uid="uid://srcm6edfpyg2"]
+[gd_scene load_steps=7 format=3 uid="uid://srcm6edfpyg2"]
 
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://b3njdfw5ehyqs" path="res://scenes/picker/picker.tscn" id="2_0xm2m"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0xm2m"]
-size = Vector3(10, 0.1, 10)
+size = Vector3(20.22, 0.1, 32.84)
 
 [sub_resource type="BoxMesh" id="BoxMesh_h2yge"]
-size = Vector3(10, 0.1, 10)
+size = Vector3(20.22, 0.1, 32.84)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ig7tw"]
+size = Vector3(4.635, 0.22, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0xm2m"]
+size = Vector3(4.635, 0.22, 1)
 
 [node name="Node3D" type="Node3D"]
+
+[node name="Picker" parent="." instance=ExtResource("2_0xm2m")]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("BoxShape3D_0xm2m")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
 mesh = SubResource("BoxMesh_h2yge")
+skeleton = NodePath("../..")
 
 [node name="Character" parent="." instance=ExtResource("1_ig7tw")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.57382, 1.24414, 1.53866)
+platform_floor_layers = 4294967293
+
+[node name="Plank" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.175, 0.865, -3.2)
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Plank"]
+shape = SubResource("BoxShape3D_ig7tw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Plank"]
+mesh = SubResource("BoxMesh_0xm2m")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.823919, 0.566708, 0, -0.566708, 0.823919, 0, 3.45011, 0)
