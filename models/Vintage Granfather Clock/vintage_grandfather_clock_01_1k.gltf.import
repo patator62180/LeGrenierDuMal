@@ -33,6 +33,16 @@ animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
+"materials": {
+"vintage_grandfather_clock_01": {
+"use_external/enabled": true,
+"use_external/path": "res://materials/vintage_grandfather_clock_01.tres"
+},
+"vintage_grandfather_clock_01_glass": {
+"use_external/enabled": true,
+"use_external/path": "res://materials/vintage_grandfather_clock_01_glass.tres"
+}
+},
 "meshes": {
 "vintage_grandfather_clock_01_1k_Cylinder_001": {
 "generate/lightmap_uv": 0,
