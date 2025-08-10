@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://srcm6edfpyg2"]
+[gd_scene load_steps=44 format=3 uid="uid://srcm6edfpyg2"]
 
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://b3njdfw5ehyqs" path="res://controllers/picker/picker.tscn" id="2_0xm2m"]
@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://b042mnyaycqxq" path="res://rigidbodies/plasticContainers/plasticContainer_03.tscn" id="22_1u8w0"]
 [ext_resource type="PackedScene" uid="uid://bpp4ec7df6aqv" path="res://rigidbodies/television.tscn" id="23_0odxb"]
 [ext_resource type="PackedScene" uid="uid://cowymk3rrmwa1" path="res://rigidbodies/vintage_grandfather_clock.tscn" id="24_lswn8"]
+[ext_resource type="Script" uid="uid://cfmw2j7pidsv8" path="res://controllers/world_environment.gd" id="26_lswn8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_272bh"]
 size = Vector3(3.79065, 0.0694885, 11.2885)
@@ -44,6 +45,62 @@ size = Vector3(4.31732, 6.09283, 0.0352173)
 [sub_resource type="BoxShape3D" id="BoxShape3D_dg77c"]
 size = Vector3(1, 0.0961914, 4.20258)
 
+[sub_resource type="Environment" id="Environment_0odxb"]
+background_energy_multiplier = 0.0
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.5
+volumetric_fog_albedo = Color(0.27, 0.135, 0.135, 1)
+volumetric_fog_emission = Color(0.3, 0.03, 0.03, 1)
+volumetric_fog_emission_energy = 0.0
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_0odxb"]
+noise_type = 0
+frequency = 0.0221
+
+[sub_resource type="NoiseTexture3D" id="NoiseTexture3D_lswn8"]
+width = 128
+height = 128
+depth = 384
+noise = SubResource("FastNoiseLite_0odxb")
+
+[sub_resource type="FogMaterial" id="FogMaterial_a6jrf"]
+density = 0.7
+emission = Color(0.5, 0.08, 0.08, 1)
+density_texture = SubResource("NoiseTexture3D_lswn8")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_lswn8"]
+
+[sub_resource type="NoiseTexture3D" id="NoiseTexture3D_a6jrf"]
+width = 99
+height = 103
+depth = 364
+noise = SubResource("FastNoiseLite_lswn8")
+
+[sub_resource type="FogMaterial" id="FogMaterial_xuqvo"]
+density = 0.7
+emission = Color(0.5, 0.08, 0.08, 1)
+density_texture = SubResource("NoiseTexture3D_a6jrf")
+
+[sub_resource type="Gradient" id="Gradient_0odxb"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0.342857, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_a6jrf"]
+noise_type = 3
+
+[sub_resource type="NoiseTexture3D" id="NoiseTexture3D_xuqvo"]
+width = 99
+height = 174
+depth = 768
+color_ramp = SubResource("Gradient_0odxb")
+noise = SubResource("FastNoiseLite_a6jrf")
+
+[sub_resource type="FogMaterial" id="FogMaterial_qsp4k"]
+albedo = Color(0, 0, 0, 1)
+emission = Color(0.76, 0.6878, 0.4712, 1)
+edge_fade = 0.5
+density_texture = SubResource("NoiseTexture3D_xuqvo")
+
 [node name="Node3D" type="Node3D"]
 
 [node name="Controllers" type="Node3D" parent="."]
@@ -62,6 +119,7 @@ platform_floor_layers = 4294967293
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.823919, 0.566708, 0, -0.566708, 0.823919, 0, 3.45011, 0)
+visible = false
 
 [node name="Props" type="Node3D" parent="."]
 
@@ -522,3 +580,28 @@ transform = Transform3D(-0.409361, -0.340269, -0.846546, -0.639224, 0.76902, 3.3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.45058e-09, -1.49012e-08, 0.454784)
 depth = 0.1
 polygon = PackedVector2Array(-0.95717, -0.271091, 1.35416, 1.19518, 2.49698, -0.342712)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_0odxb")
+script = ExtResource("26_lswn8")
+
+[node name="Fog" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.3045, 56.9432)
+
+[node name="FogVolume" type="FogVolume" parent="Fog"]
+transform = Transform3D(0.562429, -0.501644, 0.657287, 0, 0.794934, 0.606696, -0.826845, -0.341224, 0.447094, 0.725565, 0.849318, 3.16372)
+size = Vector3(1.57092, 1.59027, 6)
+material = SubResource("FogMaterial_a6jrf")
+
+[node name="FogVolume2" type="FogVolume" parent="Fog"]
+transform = Transform3D(0.562429, -0.501644, 0.657287, 0, 0.794934, 0.606696, -0.826845, -0.341224, 0.447094, 3.79347, 0.854147, -1.35305)
+size = Vector3(1.54156, 1.61096, 6)
+material = SubResource("FogMaterial_xuqvo")
+
+[node name="FogVolume3" type="FogVolume" parent="Fog"]
+transform = Transform3D(0.826845, -0.346477, -0.443036, 5.96046e-08, 0.787718, -0.616036, 0.562429, 0.509367, 0.651321, -7.51614, -0.443146, 3.19399)
+size = Vector3(1.55, 2.72, 12)
+material = SubResource("FogMaterial_qsp4k")
+
+[node name="Light" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.3045, 56.9432)
