@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://vw63grb58jrm"
+uid="uid://dlo5cn7upa7wb"
 path="res://.godot/imported/alarm_clock_01_1k.gltf-2c22ecd36791e0997b7a8749aa4e09f1.scn"
 
 [deps]
@@ -32,6 +32,17 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"materials": {
+"alarm_clock_01": {
+"use_external/enabled": true,
+"use_external/path": "uid://dniwsrihi3itf"
+},
+"alarm_clock_01_Glass": {
+"use_external/enabled": true,
+"use_external/path": "uid://biuma7oi36pc7"
+}
+}
+}
 gltf/naming_version=1
 gltf/embedded_image_handling=1

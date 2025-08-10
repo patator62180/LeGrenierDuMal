@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dmdqxmr6cg45c"]
 
-[ext_resource type="PackedScene" uid="uid://vw63grb58jrm" path="res://models/Alarm Clock/alarm_clock_01_1k.gltf" id="1_l8hlv"]
+[ext_resource type="PackedScene" uid="uid://dlo5cn7upa7wb" path="res://models/Alarm Clock/alarm_clock_01_1k.gltf" id="1_l8hlv"]
 [ext_resource type="PackedScene" uid="uid://clhmyj3qhfdtf" path="res://controllers/impact/impact_watcher.tscn" id="2_2vij7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2vij7"]
