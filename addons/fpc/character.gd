@@ -58,10 +58,10 @@ extends CharacterBody3D
 @export_group("Controls")
 ## Use the Input Map to map a mouse/keyboard input to an action and add a reference to it to this dictionary to be used in the script.
 @export var controls : Dictionary = {
-    LEFT = "ui_left",
-    RIGHT = "ui_right",
-    FORWARD = "ui_up",
-    BACKWARD = "ui_down",
+    LEFT = "left",
+    RIGHT = "right",
+    FORWARD = "forward",
+    BACKWARD = "backward",
     JUMP = "ui_accept",
     CROUCH = "crouch",
     SPRINT = "sprint",
