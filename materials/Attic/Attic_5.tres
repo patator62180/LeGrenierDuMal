@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c1t4vitup3f6v"]
+
+[ext_resource type="Texture2D" uid="uid://crx63ko2okxqn" path="res://models/Attic/textures/Dachboden_1.5M_Material_u2_v2_baseColor.jpeg" id="1_jih8c"]
+
+[resource]
+albedo_texture = ExtResource("1_jih8c")

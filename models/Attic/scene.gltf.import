@@ -32,6 +32,37 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"materials": {
+"Dachboden_1.5M_Material_u1_v1": {
+"use_external/enabled": true,
+"use_external/path": "uid://brfwrqotpnmt"
+},
+"Dachboden_1.5M_Material_u1_v2": {
+"use_external/enabled": true,
+"use_external/path": "uid://cb0hws05xk5yp"
+},
+"Dachboden_1.5M_Material_u1_v3": {
+"use_external/enabled": true,
+"use_external/path": "uid://qlds8npxqqnk"
+},
+"Dachboden_1.5M_Material_u2_v1": {
+"use_external/enabled": true,
+"use_external/path": "uid://b3sfv8uymfq0h"
+},
+"Dachboden_1.5M_Material_u2_v2": {
+"use_external/enabled": true,
+"use_external/path": "uid://c1t4vitup3f6v"
+},
+"Dachboden_1.5M_Material_u3_v1": {
+"use_external/enabled": true,
+"use_external/path": "uid://blsti6iwsie8x"
+},
+"Dachboden_1.5M_Material_u3_v2": {
+"use_external/enabled": true,
+"use_external/path": "uid://dq6hy361wp7up"
+}
+}
+}
 gltf/naming_version=1
 gltf/embedded_image_handling=1
