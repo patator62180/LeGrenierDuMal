@@ -4,6 +4,8 @@ extends Node3D
 const MAX_VELOCITY: float = 3
 const MIN_VELOCITY: float = 0.001
 
+const MAX_SOUND_VALUE: float = 1.25
+
 class Impact:
     var curve: Curve
     var velocity: float
