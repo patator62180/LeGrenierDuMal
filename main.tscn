@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://srcm6edfpyg2"]
+[gd_scene load_steps=47 format=3 uid="uid://srcm6edfpyg2"]
 
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://b3njdfw5ehyqs" path="res://controllers/picker/picker.tscn" id="2_0xm2m"]
@@ -26,6 +26,8 @@
 [ext_resource type="PackedScene" uid="uid://bpp4ec7df6aqv" path="res://rigidbodies/television.tscn" id="23_0odxb"]
 [ext_resource type="PackedScene" uid="uid://cowymk3rrmwa1" path="res://rigidbodies/vintage_grandfather_clock.tscn" id="24_lswn8"]
 [ext_resource type="Script" uid="uid://cfmw2j7pidsv8" path="res://controllers/world_environment.gd" id="26_lswn8"]
+[ext_resource type="Material" uid="uid://rkegjp157mjj" path="res://materials/emisive_material.tres" id="27_a6jrf"]
+[ext_resource type="Texture2D" uid="uid://bskvr3lvan0uy" path="res://textures/Window light projected.jpg" id="27_xuqvo"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_272bh"]
 size = Vector3(3.79065, 0.0694885, 11.2885)
@@ -46,11 +48,26 @@ size = Vector3(4.31732, 6.09283, 0.0352173)
 size = Vector3(1, 0.0961914, 4.20258)
 
 [sub_resource type="Environment" id="Environment_0odxb"]
-background_energy_multiplier = 0.0
+background_mode = 1
+background_color = Color(0.0946638, 0.0820729, 0.26336, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.153727, 0.343667, 0.455987, 1)
+glow_enabled = true
+glow_levels/2 = 1.0
+glow_levels/4 = 0.5
+glow_levels/5 = 0.2
+glow_intensity = 5.0
+glow_blend_mode = 1
+glow_hdr_threshold = 3.27
+fog_mode = 1
+fog_light_color = Color(0, 0, 0, 1)
+fog_density = 1.0
+fog_depth_begin = 1.0
+fog_depth_end = 5.0
 volumetric_fog_enabled = true
-volumetric_fog_density = 0.5
-volumetric_fog_albedo = Color(0.27, 0.135, 0.135, 1)
-volumetric_fog_emission = Color(0.3, 0.03, 0.03, 1)
+volumetric_fog_density = 4.0
+volumetric_fog_albedo = Color(0.3236, 0.0310728, 0.584585, 1)
+volumetric_fog_emission = Color(0.172811, 0.179458, 0.594197, 1)
 volumetric_fog_emission_energy = 0.0
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_0odxb"]
@@ -101,6 +118,8 @@ emission = Color(0.76, 0.6878, 0.4712, 1)
 edge_fade = 0.5
 density_texture = SubResource("NoiseTexture3D_xuqvo")
 
+[sub_resource type="BoxMesh" id="BoxMesh_xuqvo"]
+
 [node name="Node3D" type="Node3D"]
 
 [node name="Controllers" type="Node3D" parent="."]
@@ -120,6 +139,9 @@ platform_floor_layers = 4294967293
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.823919, 0.566708, 0, -0.566708, 0.823919, 0, 3.45011, 0)
 visible = false
+light_color = Color(0.60499, 0.564837, 0.537868, 1)
+light_energy = 0.0
+light_angular_distance = 5.0
 
 [node name="Props" type="Node3D" parent="."]
 
@@ -313,7 +335,7 @@ transform = Transform3D(-0.322299, 0, -0.946638, 0, 1, 0, 0.946638, 0, -0.322299
 transform = Transform3D(-0.322299, 0.941112, -0.102138, 0, 0.107895, 0.994162, 0.946638, 0.320417, -0.0347745, -1.60857, 18.7951, 56.5011)
 
 [node name="Stool13" parent="Props" instance=ExtResource("13_w48qg")]
-transform = Transform3D(-0.322299, 0.941112, -0.102138, 0, 0.107895, 0.994162, 0.946638, 0.320417, -0.0347745, 0.773671, 19.4715, 54.4753)
+transform = Transform3D(-0.322299, 0.941112, -0.102138, 0, 0.107895, 0.994162, 0.946638, 0.320417, -0.0347745, 0.177875, 19.4715, 52.1349)
 
 [node name="Stool14" parent="Props" instance=ExtResource("13_w48qg")]
 transform = Transform3D(-0.946638, -0.154746, 0.282719, -3.58552e-08, 0.877196, 0.480132, -0.322299, 0.454511, -0.830388, -0.839109, 18.7951, 55.9859)
@@ -502,10 +524,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.70597, 19.082, 53.7337)
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -1.2741, 18.4768, 57.816)
 
 [node name="Television2" parent="Props" instance=ExtResource("23_0odxb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9341, 17.8038, 54.19)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9341, 17.8038, 52.1096)
 
 [node name="Television3" parent="Props" instance=ExtResource("23_0odxb")]
-transform = Transform3D(-0.128328, 0, -0.991732, 0, 1, 0, 0.991732, 0, -0.128328, 1.87777, 18.4901, 54.4198)
+transform = Transform3D(-0.128328, 0, -0.991732, 0, 1, 0, 0.991732, 0, -0.128328, 1.87777, 18.4901, 52.3394)
 
 [node name="Television4" parent="Props" instance=ExtResource("23_0odxb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.68857, 17.7806, 51.789)
@@ -594,7 +616,7 @@ size = Vector3(1.57092, 1.59027, 6)
 material = SubResource("FogMaterial_a6jrf")
 
 [node name="FogVolume2" type="FogVolume" parent="Fog"]
-transform = Transform3D(0.562429, -0.501644, 0.657287, 0, 0.794934, 0.606696, -0.826845, -0.341224, 0.447094, 3.79347, 0.854147, -1.35305)
+transform = Transform3D(0.562429, -0.501644, 0.657287, 0, 0.794934, 0.606696, -0.826845, -0.341224, 0.447094, 4.08165, 1.27675, -1.04757)
 size = Vector3(1.54156, 1.61096, 6)
 material = SubResource("FogMaterial_xuqvo")
 
@@ -605,3 +627,87 @@ material = SubResource("FogMaterial_qsp4k")
 
 [node name="Light" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.3045, 56.9432)
+
+[node name="Window Light 1" type="SpotLight3D" parent="Light"]
+transform = Transform3D(0.314641, -0.788345, 0.528689, 0.372985, 0.614859, 0.69486, -0.872859, -0.0214387, 0.487501, 4.74034, 2.26362, -0.452103)
+light_color = Color(1, 0.247059, 0.337255, 1)
+light_energy = 10.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 0.5
+light_projector = ExtResource("27_xuqvo")
+light_size = 5.0
+shadow_enabled = true
+spot_attenuation = 0.0
+spot_angle = 25.0
+
+[node name="Window Light 2" type="SpotLight3D" parent="Light"]
+transform = Transform3D(0.314641, -0.788345, 0.528689, 0.372985, 0.614859, 0.69486, -0.872859, -0.0214386, 0.487501, 1.61025, 2.26362, 4.30848)
+light_color = Color(1, 0.247059, 0.337255, 1)
+light_energy = 10.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 0.5
+light_projector = ExtResource("27_xuqvo")
+light_size = 5.0
+shadow_enabled = true
+spot_attenuation = 0.0
+spot_angle = 25.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Light"]
+transform = Transform3D(0.035623, 0, -0.372916, 0, 0.647859, 0, 0.0221484, 0, 0.599791, 5.49308, 1.46214, -0.73848)
+material_override = ExtResource("27_a6jrf")
+mesh = SubResource("BoxMesh_xuqvo")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Light"]
+transform = Transform3D(0.035623, 0, -0.372916, 0, 0.647859, 0, 0.0221484, 0, 0.599791, 5.03092, 1.46214, -0.0299568)
+material_override = ExtResource("27_a6jrf")
+mesh = SubResource("BoxMesh_xuqvo")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Light"]
+transform = Transform3D(0.035623, 0, -0.372916, 0, 0.626425, 0, 0.0221484, 0, 0.599791, 5.01125, 2.14027, -0.0476112)
+material_override = ExtResource("27_a6jrf")
+mesh = SubResource("BoxMesh_xuqvo")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Light"]
+transform = Transform3D(0.035623, 0, -0.372916, 0, 0.596397, 0, 0.0221484, 0, 0.599791, 5.49308, 2.13656, -0.735867)
+material_override = ExtResource("27_a6jrf")
+mesh = SubResource("BoxMesh_xuqvo")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Light"]
+transform = Transform3D(0.035623, 0, -0.372916, 0, 0.596397, 0, 0.0221484, 0, 0.599791, 5.49308, 2.93627, -0.769573)
+material_override = ExtResource("27_a6jrf")
+mesh = SubResource("BoxMesh_xuqvo")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Light"]
+transform = Transform3D(0.035623, 0, -0.372916, 0, 0.596397, 0, 0.0221484, 0, 0.599791, 4.96205, 2.93627, -0.100864)
+material_override = ExtResource("27_a6jrf")
+mesh = SubResource("BoxMesh_xuqvo")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Light"]
+transform = Transform3D(0.035623, 0, -0.372916, 0, 0.647859, 0, 0.0221484, 0, 0.599791, 2.42382, 1.46214, 3.80627)
+material_override = ExtResource("27_a6jrf")
+mesh = SubResource("BoxMesh_xuqvo")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Light"]
+transform = Transform3D(0.0344105, 0, -0.403906, 0, 0.647859, 0, 0.023989, 0, 0.579374, 1.90795, 1.46214, 4.49083)
+material_override = ExtResource("27_a6jrf")
+mesh = SubResource("BoxMesh_xuqvo")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="Light"]
+transform = Transform3D(0.153315, 0, -0.394402, 0, 0.634585, 0, 0.113323, 0, 0.533587, 1.91623, 2.14027, 4.4968)
+material_override = ExtResource("27_a6jrf")
+mesh = SubResource("BoxMesh_xuqvo")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="Light"]
+transform = Transform3D(0.035623, 0, -0.372916, 0, 0.596397, 0, 0.0221484, 0, 0.599791, 2.42382, 2.13656, 3.80888)
+material_override = ExtResource("27_a6jrf")
+mesh = SubResource("BoxMesh_xuqvo")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="Light"]
+transform = Transform3D(0.035623, 0, -0.372916, 0, 0.596397, 0, 0.0221484, 0, 0.599791, 2.42382, 2.93627, 3.77518)
+material_override = ExtResource("27_a6jrf")
+mesh = SubResource("BoxMesh_xuqvo")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="Light"]
+transform = Transform3D(0.035623, 0, -0.372916, 0, 0.596397, 0, 0.0221484, 0, 0.599791, 1.93019, 2.93627, 4.52224)
+material_override = ExtResource("27_a6jrf")
+mesh = SubResource("BoxMesh_xuqvo")
