@@ -1,6 +1,7 @@
-[gd_scene load_steps=22 format=3 uid="uid://cc1m2a1obsyn4"]
+[gd_scene load_steps=23 format=3 uid="uid://cc1m2a1obsyn4"]
 
 [ext_resource type="Script" uid="uid://bjhdedu8txjv7" path="res://addons/fpc/character.gd" id="1_0t4e8"]
+[ext_resource type="Texture2D" uid="uid://c1waaqwm018an" path="res://textures/flashlight.png" id="2_bx7cj"]
 [ext_resource type="Script" uid="uid://d37pt5xyvfgyv" path="res://addons/fpc/EditorModule.gd" id="3_v3ckk"]
 [ext_resource type="Script" uid="uid://dn867p31e26y6" path="res://addons/fpc/debug.gd" id="3_x1wcc"]
 
@@ -408,6 +409,12 @@ libraries = {
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
 [node name="Camera" type="Camera3D" parent="Head"]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Head/Camera"]
+light_projector = ExtResource("2_bx7cj")
+shadow_enabled = true
+spot_range = 4.87331
+spot_angle = 30.6751
 
 [node name="HeadbobAnimation" type="AnimationPlayer" parent="Head"]
 libraries = {
