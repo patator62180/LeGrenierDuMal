@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://srcm6edfpyg2"]
+[gd_scene load_steps=61 format=3 uid="uid://srcm6edfpyg2"]
 
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://b3njdfw5ehyqs" path="res://controllers/picker/picker.tscn" id="2_0xm2m"]
@@ -28,6 +28,20 @@
 [ext_resource type="Script" uid="uid://cfmw2j7pidsv8" path="res://controllers/world_environment.gd" id="26_lswn8"]
 [ext_resource type="Material" uid="uid://rkegjp157mjj" path="res://materials/emisive_material.tres" id="27_a6jrf"]
 [ext_resource type="Texture2D" uid="uid://bskvr3lvan0uy" path="res://textures/Window light projected.jpg" id="27_xuqvo"]
+[ext_resource type="PackedScene" uid="uid://d2nwnmflnjd6k" path="res://models/Decorative items/Metal Shelf/metal_shelf.glb" id="29_h8e4i"]
+[ext_resource type="PackedScene" uid="uid://ccrg6kynaemlo" path="res://models/Decorative items/Rocking chair/rocking_chair.glb" id="29_qsp4k"]
+[ext_resource type="PackedScene" uid="uid://8ataathfna2w" path="res://models/Decorative items/Old Work Bench/old_work_bench.glb" id="30_kq58d"]
+[ext_resource type="PackedScene" uid="uid://bfrq53yi8ko75" path="res://models/Decorative items/Old Filing Cabinet/old_filing_cabinet.glb" id="31_seu75"]
+[ext_resource type="PackedScene" uid="uid://b1c5u34lu7g5h" path="res://models/Decorative items/Dusty Old Bookshlef/dusty_old_bookshelf_free.glb" id="32_0rl1p"]
+[ext_resource type="PackedScene" uid="uid://wudumm5b2uco" path="res://models/Decorative items/Wooden Shelf With Drawer/wooden_shelf_with_drawer.glb" id="32_htxhm"]
+[ext_resource type="PackedScene" uid="uid://dnt47pfngt4hk" path="res://models/Decorative items/Old Wooden Chair/old_wooden_chair.glb" id="34_ok6jj"]
+[ext_resource type="PackedScene" uid="uid://byj4aw5glp7yj" path="res://models/Decorative items/Concrete Bags and Pallet/concrete_bags_and_pallet.glb" id="35_facbu"]
+[ext_resource type="PackedScene" uid="uid://cdqwlvwgypbh8" path="res://models/Wood Pallet/wood_pallet.glb" id="36_4lmeg"]
+[ext_resource type="PackedScene" uid="uid://bbtxv213en5p1" path="res://models/Case Boxes/case_boxes.glb" id="38_0cp0l"]
+[ext_resource type="PackedScene" uid="uid://uf1rrqgxpfus" path="res://models/Decorative items/Rusty Japanese Arcade/rusty_japanese_arcade.glb" id="39_d2t1y"]
+[ext_resource type="PackedScene" uid="uid://bymrwn7vkoflu" path="res://models/Decorative items/Water container/water_container.glb" id="40_gngh3"]
+[ext_resource type="PackedScene" uid="uid://plswqt1tx103" path="res://models/Plastic Storage Container/plastic_storage_container.glb" id="41_0cp0l"]
+[ext_resource type="PackedScene" uid="uid://cg6lg2il6cyty" path="res://models/Decorative items/Metal Shelf 14/metal_shelf_-_14mb.glb" id="42_d2t1y"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_272bh"]
 size = Vector3(3.79065, 0.0694885, 11.2885)
@@ -335,7 +349,7 @@ transform = Transform3D(-0.322299, 0, -0.946638, 0, 1, 0, 0.946638, 0, -0.322299
 transform = Transform3D(-0.322299, 0.941112, -0.102138, 0, 0.107895, 0.994162, 0.946638, 0.320417, -0.0347745, -1.60857, 18.7951, 56.5011)
 
 [node name="Stool13" parent="Props" instance=ExtResource("13_w48qg")]
-transform = Transform3D(-0.322299, 0.941112, -0.102138, 0, 0.107895, 0.994162, 0.946638, 0.320417, -0.0347745, 0.177875, 19.4715, 52.1349)
+transform = Transform3D(-0.322299, 0.941112, -0.102138, 0, 0.107895, 0.994162, 0.946638, 0.320417, -0.0347745, 0.177875, 17.9853, 52.1349)
 
 [node name="Stool14" parent="Props" instance=ExtResource("13_w48qg")]
 transform = Transform3D(-0.946638, -0.154746, 0.282719, -3.58552e-08, 0.877196, 0.480132, -0.322299, 0.454511, -0.830388, -0.839109, 18.7951, 55.9859)
@@ -401,7 +415,7 @@ transform = Transform3D(-0.322299, 0, -0.946638, 0, 1, 0, 0.946638, 0, -0.322299
 transform = Transform3D(-0.322299, 0, -0.946638, 0, 1, 0, 0.946638, 0, -0.322299, -0.653251, 19.2084, 50.0097)
 
 [node name="PlasticeContainer30" parent="Props" instance=ExtResource("9_4c57u")]
-transform = Transform3D(-0.322124, 0.946638, 0.0106128, 0.0329284, -4.31857e-08, 0.999458, 0.946125, 0.322299, -0.0311713, -1.46944, 19.1835, 49.6972)
+transform = Transform3D(-0.322124, 0.946638, 0.0106128, 0.0329284, -4.31857e-08, 0.999458, 0.946125, 0.322299, -0.0311713, -1.46944, 19.0396, 49.6972)
 
 [node name="BaseballBall19" parent="Props" instance=ExtResource("12_dg77c")]
 transform = Transform3D(-0.322299, -0.0522654, -0.945194, 0, 0.998475, -0.0552116, 0.946638, -0.0177946, -0.321807, -1.50461, 19.1576, 49.9114)
@@ -470,7 +484,7 @@ transform = Transform3D(-0.22397, 0.0942434, -0.970029, -0.0482202, 0.993023, 0.
 transform = Transform3D(-0.322299, 0, -0.946638, 0, 1, 0, 0.946638, 0, -0.322299, 0.312124, 17.8701, 49.4129)
 
 [node name="MetalTrashCan9" parent="Props" instance=ExtResource("18_cegan")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.81874, 18.219, 50.8669)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.29633, 17.8436, 50.8669)
 
 [node name="PlasticeContainer32" parent="Props" instance=ExtResource("19_cegan")]
 transform = Transform3D(-0.322299, 0.946638, 4.13789e-08, 0, -4.37114e-08, 1, 0.946638, 0.322299, 1.40881e-08, 0.326204, 18.2741, 49.4252)
@@ -628,27 +642,37 @@ material = SubResource("FogMaterial_qsp4k")
 [node name="Light" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.3045, 56.9432)
 
+[node name="Light - Final Stairs" type="OmniLight3D" parent="Light"]
+transform = Transform3D(0.94879, -0.132144, -0.286943, -0.218844, 0.380123, -0.898674, 0.227828, 0.915448, 0.331738, -7.72982, -1.58822, 3.29295)
+light_color = Color(0.837983, 0.582747, 0, 1)
+light_energy = 60.0
+light_volumetric_fog_energy = 0.0
+omni_range = 2.0
+omni_attenuation = 2.0
+
 [node name="Window Light 1" type="SpotLight3D" parent="Light"]
-transform = Transform3D(0.314641, -0.788345, 0.528689, 0.372985, 0.614859, 0.69486, -0.872859, -0.0214387, 0.487501, 4.74034, 2.26362, -0.452103)
+transform = Transform3D(0.598144, -0.529194, 0.601812, 0.236704, 0.834121, 0.49821, -0.765634, -0.15555, 0.624187, 4.78345, 1.62535, 0.614746)
 light_color = Color(1, 0.247059, 0.337255, 1)
-light_energy = 10.0
+light_energy = 6.0
 light_indirect_energy = 2.0
 light_volumetric_fog_energy = 0.5
 light_projector = ExtResource("27_xuqvo")
 light_size = 5.0
 shadow_enabled = true
+spot_range = 6.62653
 spot_attenuation = 0.0
 spot_angle = 25.0
 
 [node name="Window Light 2" type="SpotLight3D" parent="Light"]
-transform = Transform3D(0.314641, -0.788345, 0.528689, 0.372985, 0.614859, 0.69486, -0.872859, -0.0214386, 0.487501, 1.61025, 2.26362, 4.30848)
+transform = Transform3D(0.598144, -0.529194, 0.601812, 0.236704, 0.834121, 0.49821, -0.765634, -0.15555, 0.624187, 2.03221, 1.62535, 4.33197)
 light_color = Color(1, 0.247059, 0.337255, 1)
-light_energy = 10.0
+light_energy = 6.0
 light_indirect_energy = 2.0
 light_volumetric_fog_energy = 0.5
 light_projector = ExtResource("27_xuqvo")
 light_size = 5.0
 shadow_enabled = true
+spot_range = 6.62653
 spot_attenuation = 0.0
 spot_angle = 25.0
 
@@ -711,3 +735,78 @@ mesh = SubResource("BoxMesh_xuqvo")
 transform = Transform3D(0.035623, 0, -0.372916, 0, 0.596397, 0, 0.0221484, 0, 0.599791, 1.93019, 2.93627, 4.52224)
 material_override = ExtResource("27_a6jrf")
 mesh = SubResource("BoxMesh_xuqvo")
+
+[node name="Decorative items" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.3045, 56.9432)
+
+[node name="Metal shelf" parent="Decorative items" instance=ExtResource("29_h8e4i")]
+transform = Transform3D(0.847419, 0, -0.530925, 0, 1, 0, 0.530925, 0, 0.847419, -6.35137, -0.50069, 4.79028)
+
+[node name="Metal shelf2" parent="Decorative items" instance=ExtResource("29_h8e4i")]
+transform = Transform3D(0.847419, 0, -0.530925, 0, 1, 0, 0.530925, 0, 0.847419, -5.53073, -0.50069, 3.42246)
+
+[node name="Rocking Chair" parent="Decorative items" instance=ExtResource("29_qsp4k")]
+transform = Transform3D(-0.118975, 0, 0.219875, 0, 0.25, 0, -0.219875, 0, -0.118975, -9.19856, -0.434437, -11.4732)
+
+[node name="Old Work Bench" parent="Decorative items" instance=ExtResource("30_kq58d")]
+transform = Transform3D(-0.976707, 0, 0.697167, 0, 1.2, 0, -0.697167, 0, -0.976707, -0.530152, -0.434437, 7.14539)
+
+[node name="Old Filing Cabinet" parent="Decorative items" instance=ExtResource("31_seu75")]
+transform = Transform3D(0.0103255, 0, -0.0094543, 0, 0.014, 0, 0.0094543, 0, 0.0103255, 6.8683, -0.178867, -5.92017)
+
+[node name="Dusty Old Bookshelf" parent="Decorative items" instance=ExtResource("32_0rl1p")]
+transform = Transform3D(0.0856388, 0, -1.79796, 0, 1.8, 0, 1.79796, 0, 0.0856388, -10.757, -0.434412, -11.336)
+
+[node name="Wooden Shelf with Drawer" parent="Decorative items" instance=ExtResource("32_htxhm")]
+transform = Transform3D(0.657129, 0, 1.00408, 0, 1.2, 0, -1.00408, 0, 0.657129, -10.5632, 0.134268, -13.1271)
+
+[node name="Wooden chair" parent="Decorative items" instance=ExtResource("34_ok6jj")]
+transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, -1.56541, -0.50069, 6.73714)
+
+[node name="Wood Pallet" parent="Decorative items" instance=ExtResource("36_4lmeg")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -5.62573, -0.50069, 5.38557)
+
+[node name="Wood Pallet2" parent="Decorative items" instance=ExtResource("36_4lmeg")]
+transform = Transform3D(1.19191, 0, -0.13909, 0, 1.2, 0, 0.13909, 0, 1.19191, -5.62573, -0.255011, 5.38557)
+
+[node name="Wood Pallet7" parent="Decorative items" instance=ExtResource("36_4lmeg")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 5.40305, -0.50069, -9.09283)
+
+[node name="Wood Pallet8" parent="Decorative items" instance=ExtResource("36_4lmeg")]
+transform = Transform3D(0.913819, 0, 0.777776, 0, 1.2, 0, -0.777776, 0, 0.913819, 4.61554, -0.285065, -9.41213)
+
+[node name="Wood Pallet3" parent="Decorative items" instance=ExtResource("36_4lmeg")]
+transform = Transform3D(1.19999, 0, 0.00575955, 0, 1.2, 0, -0.00575955, 0, 1.19999, -5.72787, -0.0423813, 5.38557)
+
+[node name="Wood Pallet4" parent="Decorative items" instance=ExtResource("36_4lmeg")]
+transform = Transform3D(-1.01239, -0.602571, -0.227988, -0.0299086, -0.380237, 1.13777, -0.643565, 0.965572, 0.305771, -6.09812, -0.50511, 6.90076)
+
+[node name="Wood Pallet5" parent="Decorative items" instance=ExtResource("36_4lmeg")]
+transform = Transform3D(-0.997445, -0.660558, -0.0936324, 0.00561179, -0.176715, 1.1869, -0.667137, 0.986121, 0.149975, -7.40139, -0.50511, -8.3267)
+
+[node name="Wood Pallet9" parent="Decorative items" instance=ExtResource("36_4lmeg")]
+transform = Transform3D(-0.987382, -0.597337, -0.329036, -0.0185495, -0.55524, 1.06366, -0.681713, 0.880283, 0.447628, -8.63692, -0.50511, -9.72974)
+
+[node name="Wood Pallet6" parent="Decorative items" instance=ExtResource("36_4lmeg")]
+transform = Transform3D(-0.997445, -0.660558, -0.0936324, 0.00561179, -0.176715, 1.1869, -0.667137, 0.986121, 0.149975, -7.40139, -0.50511, -8.60526)
+
+[node name="Concrete Bags and Pallet" parent="Decorative items" instance=ExtResource("35_facbu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.53148, 0.247972, 2.29507)
+
+[node name="Case boxes" parent="Decorative items" instance=ExtResource("38_0cp0l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.1086, -0.422901, -14.3069)
+
+[node name="Arcade" parent="Decorative items" instance=ExtResource("39_d2t1y")]
+transform = Transform3D(0.247411, 0, 0.434497, 0, 0.5, 0, -0.434497, 0, 0.247411, -8.13415, -0.500692, -1.02892)
+
+[node name="water container" parent="Decorative items" instance=ExtResource("40_gngh3")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -2.35472, -0.50069, 8.37581)
+
+[node name="water container2" parent="Decorative items" instance=ExtResource("40_gngh3")]
+transform = Transform3D(0.613509, 0, -0.337056, 0, 0.7, 0, 0.337056, 0, 0.613509, 5.90793, -0.50069, -7.20221)
+
+[node name="Plastic Storage container" parent="Decorative items" instance=ExtResource("41_0cp0l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.58312, -0.201448, 3.22961)
+
+[node name="Metal Shelf 14" parent="Decorative items" instance=ExtResource("42_d2t1y")]
+transform = Transform3D(0.825626, 0, -0.564218, 0, 1, 0, 0.564218, 0, 0.825626, 3.55284, -0.50069, 1.21402)
