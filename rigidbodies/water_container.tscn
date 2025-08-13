@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://cc3fgkm404s1x"]
+
+[ext_resource type="PackedScene" uid="uid://bymrwn7vkoflu" path="res://models/Decorative items/Water container/water_container.glb" id="2_mbm7x"]
+[ext_resource type="PackedScene" uid="uid://clhmyj3qhfdtf" path="res://controllers/impact/impact_watcher.tscn" id="2_onyao"]
+
+[sub_resource type="Curve" id="Curve_ocptr"]
+_data = [Vector2(0, 0.0200652), 0.0, 0.0, 0, 0, Vector2(0.146814, 1), 0.121191, 0.121191, 0, 0, Vector2(0.637119, 0.725054), -1.88823, -1.88823, 0, 0, Vector2(0.842105, 0.0341649), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_onyao"]
+size = Vector3(1.2597, 1.51904, 1.24658)
+
+[node name="WaterContainer" type="RigidBody3D"]
+collision_layer = 2
+collision_mask = 7
+mass = 100.0
+
+[node name="ImpactWatcher" parent="." instance=ExtResource("2_onyao")]
+_curve = SubResource("Curve_ocptr")
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("2_mbm7x")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00283813, 0.758545, 0.0012207)
+shape = SubResource("BoxShape3D_onyao")

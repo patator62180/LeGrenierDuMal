@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://0v140tpyra1e"]
+
+[ext_resource type="PackedScene" uid="uid://clhmyj3qhfdtf" path="res://controllers/impact/impact_watcher.tscn" id="2_rbkle"]
+[ext_resource type="PackedScene" uid="uid://b1c5u34lu7g5h" path="res://models/Decorative items/Dusty Old Bookshlef/dusty_old_bookshelf_free.glb" id="2_rft5n"]
+
+[sub_resource type="Curve" id="Curve_ocptr"]
+_data = [Vector2(0, 0.0200652), 0.0, 0.0, 0, 0, Vector2(0.146814, 1), 0.121191, 0.121191, 0, 0, Vector2(0.637119, 0.725054), -1.88823, -1.88823, 0, 0, Vector2(0.842105, 0.0341649), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rbkle"]
+size = Vector3(1.47876, 3.74502, 0.609851)
+
+[node name="AlarmClock" type="RigidBody3D"]
+collision_layer = 2
+collision_mask = 7
+
+[node name="ImpactWatcher" parent="." instance=ExtResource("2_rbkle")]
+_curve = SubResource("Curve_ocptr")
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("2_rft5n")]
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00280762, 1.84328, 0.047791)
+shape = SubResource("BoxShape3D_rbkle")

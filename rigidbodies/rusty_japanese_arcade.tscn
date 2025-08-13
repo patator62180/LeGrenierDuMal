@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://gqkcqru45w0b"]
+
+[ext_resource type="PackedScene" uid="uid://clhmyj3qhfdtf" path="res://controllers/impact/impact_watcher.tscn" id="2_672uf"]
+[ext_resource type="PackedScene" uid="uid://uf1rrqgxpfus" path="res://models/Decorative items/Rusty Japanese Arcade/rusty_japanese_arcade.glb" id="2_ncuwt"]
+
+[sub_resource type="Curve" id="Curve_ocptr"]
+_data = [Vector2(0, 0.0200652), 0.0, 0.0, 0, 0, Vector2(0.146814, 1), 0.121191, 0.121191, 0, 0, Vector2(0.637119, 0.725054), -1.88823, -1.88823, 0, 0, Vector2(0.842105, 0.0341649), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[node name="RustyJapaneseArcade" type="RigidBody3D"]
+collision_layer = 2
+collision_mask = 7
+
+[node name="ImpactWatcher" parent="." instance=ExtResource("2_672uf")]
+_curve = SubResource("Curve_ocptr")
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("2_ncuwt")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+depth = 1.36184
+polygon = PackedVector2Array(0.402544, -0.0051887, -0.396187, -0.00112525, -0.394871, 1.23942, -0.200687, 1.24704, 0.0494649, 2.15607, -0.294785, 2.22222, -0.24052, 2.46917, 0.400117, 2.41039)

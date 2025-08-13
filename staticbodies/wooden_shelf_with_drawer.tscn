@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://r67rwp8fnx24"]
+
+[ext_resource type="PackedScene" uid="uid://wudumm5b2uco" path="res://models/Decorative items/Wooden Shelf With Drawer/wooden_shelf_with_drawer.glb" id="1_4sl4e"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_elapo"]
+size = Vector3(1.62354, 2.17688, 0.723145)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vp773"]
+size = Vector3(1.39723, 0.254395, 0.795105)
+
+[node name="WoodenShelfWithDrawer" type="StaticBody3D"]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_4sl4e")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000244168, 0.410217, -0.0241699)
+shape = SubResource("BoxShape3D_elapo")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00215719, -0.304382, 0.18504)
+shape = SubResource("BoxShape3D_vp773")

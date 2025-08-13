@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwexvfcocg0ru"]
+
+[ext_resource type="PackedScene" uid="uid://bbtxv213en5p1" path="res://models/Case Boxes/case_boxes.glb" id="1_uk8qs"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_85mdc"]
+size = Vector3(1.22217, 1, 0.410339)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p5yvh"]
+size = Vector3(0.780396, 1, 0.323181)
+
+[node name="CaseBoxes" type="StaticBody3D"]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_uk8qs")]
+transform = Transform3D(0.833333, 0, 0, 0, 0.833333, 0, 0, 0, 0.833333, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.740481, 0, -0.672077, 0, 1, 0, 0.672077, 0, 0.740481, 0.188657, 0, 0.000624439)
+shape = SubResource("BoxShape3D_85mdc")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(-0.889517, 0, -0.456902, 0, 1, 0, 0.456902, 0, -0.889517, -0.351465, 0, 0.00636482)
+shape = SubResource("BoxShape3D_p5yvh")

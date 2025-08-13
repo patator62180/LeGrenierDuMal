@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=3 uid="uid://8eldkemx5mhf"]
+
+[ext_resource type="PackedScene" uid="uid://1po73ciuhrln" path="res://rigidbodies/concrete_bag.tscn" id="1_efar8"]
+[ext_resource type="PackedScene" uid="uid://dviiocvw78ku0" path="res://rigidbodies/wood_pallet.tscn" id="2_p11rx"]
+[ext_resource type="PackedScene" uid="uid://byj4aw5glp7yj" path="res://models/Decorative items/Concrete Bags and Pallet/concrete_bags_and_pallet.glb" id="3_nvwve"]
+
+[node name="ConcreteBagAndPalette" type="Node3D"]
+
+[node name="ConcreteBag" parent="." instance=ExtResource("1_efar8")]
+
+[node name="ConcreteBag2" parent="." instance=ExtResource("1_efar8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.278888, 0)
+
+[node name="ConcreteBag3" parent="." instance=ExtResource("1_efar8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.541274, 0)
+
+[node name="ConcreteBag4" parent="." instance=ExtResource("1_efar8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.541274, 0.899374)
+
+[node name="ConcreteBag5" parent="." instance=ExtResource("1_efar8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.247164, 0.784873)
+
+[node name="ConcreteBag6" parent="." instance=ExtResource("1_efar8")]
+transform = Transform3D(1, 0, 0, 0, 0.991667, 0.128825, 0, -0.128825, 0.991667, 0, 0.0626617, 0.733235)
+
+[node name="ConcreteBag7" parent="." instance=ExtResource("1_efar8")]
+transform = Transform3D(1, 0, 0, 0, 0.999876, 0.0157532, 0, -0.0157532, 0.999876, 0, 0.350037, 0.791608)
+
+[node name="ConcreteBag9" parent="." instance=ExtResource("1_efar8")]
+transform = Transform3D(-1, 1.37718e-09, -8.74119e-08, 0, 0.999876, 0.0157532, 8.74228e-08, 0.0157532, -0.999876, -0.0945619, 0.359017, -0.234795)
+
+[node name="ConcreteBag10" parent="." instance=ExtResource("1_efar8")]
+transform = Transform3D(-1, 1.37718e-09, -8.74119e-08, 0, 0.999876, 0.0157532, 8.74228e-08, 0.0157532, -0.999876, -0.0945619, 0.0267398, -0.0377871)
+
+[node name="ConcreteBag11" parent="." instance=ExtResource("1_efar8")]
+transform = Transform3D(-1, 1.37718e-09, -8.74119e-08, 0, 0.999876, 0.0157532, 8.74228e-08, 0.0157532, -0.999876, -0.0945619, -0.26737, -0.118049)
+
+[node name="ConcreteBag12" parent="." instance=ExtResource("1_efar8")]
+transform = Transform3D(-1, 1.37718e-09, -8.74119e-08, 0, 0.999876, 0.0157532, 8.74228e-08, 0.0157532, -0.999876, -0.0945619, -0.516578, -0.809545)
+
+[node name="ConcreteBag13" parent="." instance=ExtResource("1_efar8")]
+transform = Transform3D(-1, 1.37718e-09, -8.74119e-08, 0, 0.999876, 0.0157532, 8.74228e-08, 0.0157532, -0.999876, -0.0945619, -0.260635, -0.870163)
+
+[node name="ConcreteBag14" parent="." instance=ExtResource("1_efar8")]
+transform = Transform3D(-1, 1.37718e-09, -8.74119e-08, 0, 0.999876, 0.0157532, 8.74228e-08, 0.0157532, -0.999876, -0.0945619, 0.0649068, -0.796098)
+
+[node name="ConcreteBag15" parent="." instance=ExtResource("1_efar8")]
+transform = Transform3D(-1, 1.37718e-09, -8.74119e-08, 3.86236e-08, 0.903961, -0.427615, 7.84281e-08, -0.427615, -0.903961, -0.0945619, 0.327585, -0.552553)
+
+[node name="ConcreteBag8" parent="." instance=ExtResource("1_efar8")]
+transform = Transform3D(1.30555e-07, 0.0992304, 0.995065, -1.00443e-08, 0.995065, -0.0992304, -1, 2.96031e-09, 1.30908e-07, -0.062633, -0.592493, 0.789106)
+
+[node name="Palette" parent="." instance=ExtResource("2_p11rx")]
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("3_nvwve")]
+visible = false

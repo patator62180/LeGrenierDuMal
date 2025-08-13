@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://dviiocvw78ku0"]
+
+[ext_resource type="PackedScene" uid="uid://clhmyj3qhfdtf" path="res://controllers/impact/impact_watcher.tscn" id="1_jxfc6"]
+[ext_resource type="ArrayMesh" uid="uid://cfweman43ygdi" path="res://meshes/pallet.res" id="3_xrfug"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2vij7"]
+size = Vector3(1.79738, 0.236908, 1.79931)
+
+[sub_resource type="Curve" id="Curve_ocptr"]
+_data = [Vector2(0, 0.0200652), 0.0, 0.0, 0, 0, Vector2(0.146814, 1), 0.121191, 0.121191, 0, 0, Vector2(0.637119, 0.725054), -1.88823, -1.88823, 0, 0, Vector2(0.842105, 0.0341649), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[node name="Palette" type="RigidBody3D"]
+collision_layer = 2
+collision_mask = 7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0548523, -0.564102, -0.000101149)
+shape = SubResource("BoxShape3D_2vij7")
+
+[node name="ImpactWatcher" parent="." instance=ExtResource("1_jxfc6")]
+_curve = SubResource("Curve_ocptr")
+
+[node name="Pallet" type="MeshInstance3D" parent="."]
+mesh = ExtResource("3_xrfug")

@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://blpc28o8iifg5"]
+
+[ext_resource type="PackedScene" uid="uid://clhmyj3qhfdtf" path="res://controllers/impact/impact_watcher.tscn" id="1_pci8m"]
+[ext_resource type="PackedScene" uid="uid://dnt47pfngt4hk" path="res://models/Decorative items/Old Wooden Chair/old_wooden_chair.glb" id="2_pci8m"]
+
+[sub_resource type="Curve" id="Curve_ocptr"]
+_data = [Vector2(0, 0.0200652), 0.0, 0.0, 0, 0, Vector2(0.146814, 1), 0.121191, 0.121191, 0, 0, Vector2(0.637119, 0.725054), -1.88823, -1.88823, 0, 0, Vector2(0.842105, 0.0341649), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b8f08"]
+size = Vector3(0.617798, 0.766602, 0.602051)
+
+[node name="OldWoodenChair" type="RigidBody3D"]
+collision_layer = 2
+collision_mask = 7
+
+[node name="ImpactWatcher" parent="." instance=ExtResource("1_pci8m")]
+_curve = SubResource("Curve_ocptr")
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("2_pci8m")]
+transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00115967, 0.385254, 0.0012207)
+shape = SubResource("BoxShape3D_b8f08")
