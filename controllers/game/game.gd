@@ -6,6 +6,14 @@ const MIN_VELOCITY: float = 0.001
 
 const MAX_SOUND_VALUE: float = 1.25
 
+const MAX_WEIGHT: float = 21
+
+class AttachedObject:
+    var weight: float
+    
+    func _init(weight: float):
+        self.weight
+
 class Impact:
     var curve: Curve
     var velocity: float
@@ -29,6 +37,32 @@ class Controller:
     signal cumulated_sound_changed
     
     var _impacts: Array[Impact] = []
+    var _attached_object: AttachedObject = null
+    var _character: Character
+    
+    var character: Character:
+        get: return _character
+    
+    var slow_effort_ratio: float:
+        get: return self._get_slow_effort_ratio()
+
+    func _get_slow_effort_ratio():
+        if _attached_object == null:
+            return 1
+        
+        
+        return 1.0 - min(_attached_object.weight, MAX_WEIGHT) / MAX_WEIGHT
+
+    func register_character(character: Character):
+        _character = character
+
+    func attach_object(weight: float):
+        print(weight)
+        print(1.0 - min(weight, MAX_WEIGHT) / MAX_WEIGHT)
+        _attached_object = AttachedObject.new(weight)
+    
+    func release_object():
+        _attached_object = null
     
     func add_impact(curve: Curve, velocity: float):
         _impacts.push_back(Impact.new(curve, velocity))

@@ -2,7 +2,7 @@
 # MIT license
 # Quality Godot First Person Controller v2
 
-
+class_name Character
 extends CharacterBody3D
 
 
@@ -135,9 +135,22 @@ var gravity : float = ProjectSettings.get_setting("physics/3d/default_gravity") 
 # Stores mouse input for rotating the camera in the physics process
 var mouseInput : Vector2 = Vector2(0,0)
 
+var followed_object: Node3D = null
+var replacement_body: Node3D = null
+var followed_offset: Vector3
+
 #endregion
 
+var is_following_object: bool:
+    get: return followed_object != null
 
+func follow_object(object: Node3D, offset: Vector3, body: Node3D):
+    followed_object = object
+    followed_offset = offset
+    replacement_body = body
+
+func stop_following_object():
+    followed_object = null
 
 #region Main Control Flow
 
@@ -155,6 +168,7 @@ func _ready():
     initialize_animations()
     check_controls()
     enter_normal_state()
+    Game.Controller.instance.register_character(self)
 
 
 func _process(_delta):
@@ -204,7 +218,7 @@ func _physics_process(delta): # Most things happen here.
 #region Input Handling
 
 func handle_jumping():
-    if jumping_enabled:
+    if jumping_enabled and not is_following_object:
         if continuous_jumping: # Hold down the jump button
             if Input.is_action_pressed(controls.JUMP) and is_on_floor() and !low_ceiling:
                 if jump_animation:
@@ -218,12 +232,20 @@ func handle_jumping():
 
 
 func handle_movement(delta, input_dir):
-    var direction = input_dir.rotated(-HEAD.rotation.y)
-    direction = Vector3(direction.x, 0, direction.y)
-    move_and_slide()
+    if not is_following_object:
+        var direction = input_dir.rotated(-HEAD.rotation.y)
+        direction = Vector3(direction.x, 0, direction.y)
+        move_and_slide()
 
-    if in_air_momentum:
-        if is_on_floor():
+        if in_air_momentum:
+            if is_on_floor():
+                if motion_smoothing:
+                    velocity.x = lerp(velocity.x, direction.x * speed, acceleration * delta)
+                    velocity.z = lerp(velocity.z, direction.z * speed, acceleration * delta)
+                else:
+                    velocity.x = direction.x * speed
+                    velocity.z = direction.z * speed
+        else:
             if motion_smoothing:
                 velocity.x = lerp(velocity.x, direction.x * speed, acceleration * delta)
                 velocity.z = lerp(velocity.z, direction.z * speed, acceleration * delta)
@@ -231,39 +253,37 @@ func handle_movement(delta, input_dir):
                 velocity.x = direction.x * speed
                 velocity.z = direction.z * speed
     else:
-        if motion_smoothing:
-            velocity.x = lerp(velocity.x, direction.x * speed, acceleration * delta)
-            velocity.z = lerp(velocity.z, direction.z * speed, acceleration * delta)
-        else:
-            velocity.x = direction.x * speed
-            velocity.z = direction.z * speed
+        global_position = replacement_body.global_position
 
 
 func handle_head_rotation():
-    if invert_camera_x_axis:
-        HEAD.rotation_degrees.y -= mouseInput.x * mouse_sensitivity * -1
-    else:
-        HEAD.rotation_degrees.y -= mouseInput.x * mouse_sensitivity
-
-    if invert_camera_y_axis:
-        HEAD.rotation_degrees.x -= mouseInput.y * mouse_sensitivity * -1
-    else:
-        HEAD.rotation_degrees.x -= mouseInput.y * mouse_sensitivity
-
-    if controller_support:
-        var controller_view_rotation = Input.get_vector(controller_controls.LOOK_DOWN, controller_controls.LOOK_UP, controller_controls.LOOK_RIGHT, controller_controls.LOOK_LEFT) * look_sensitivity # These are inverted because of the nature of 3D rotation.
+    if not is_following_object:
         if invert_camera_x_axis:
-            HEAD.rotation.x += controller_view_rotation.x * -1
+            HEAD.rotation_degrees.y -= mouseInput.x * mouse_sensitivity * -1
         else:
-            HEAD.rotation.x += controller_view_rotation.x
+            HEAD.rotation_degrees.y -= mouseInput.x * mouse_sensitivity * Game.Controller.instance.slow_effort_ratio
 
         if invert_camera_y_axis:
-            HEAD.rotation.y += controller_view_rotation.y * -1
+            HEAD.rotation_degrees.x -= mouseInput.y * mouse_sensitivity * -1
         else:
-            HEAD.rotation.y += controller_view_rotation.y
+            HEAD.rotation_degrees.x -= mouseInput.y * mouse_sensitivity * Game.Controller.instance.slow_effort_ratio
 
-    mouseInput = Vector2(0,0)
-    HEAD.rotation.x = clamp(HEAD.rotation.x, deg_to_rad(-90), deg_to_rad(90))
+        if controller_support:
+            var controller_view_rotation = Input.get_vector(controller_controls.LOOK_DOWN, controller_controls.LOOK_UP, controller_controls.LOOK_RIGHT, controller_controls.LOOK_LEFT) * look_sensitivity # These are inverted because of the nature of 3D rotation.
+            if invert_camera_x_axis:
+                HEAD.rotation.x += controller_view_rotation.x * -1
+            else:
+                HEAD.rotation.x += controller_view_rotation.x
+
+            if invert_camera_y_axis:
+                HEAD.rotation.y += controller_view_rotation.y * -1
+            else:
+                HEAD.rotation.y += controller_view_rotation.y
+
+        mouseInput = Vector2(0,0)
+        HEAD.rotation.x = clamp(HEAD.rotation.x, deg_to_rad(-90), deg_to_rad(90))
+    else:
+        HEAD.look_at(followed_object.global_position + followed_offset)
 
 
 func check_controls(): # If you add a control, you might want to add a check for it here.
@@ -445,15 +465,16 @@ func update_debug_menu_per_tick():
 
 
 func _unhandled_input(event : InputEvent):
-    if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
-        mouseInput.x += event.relative.x
-        mouseInput.y += event.relative.y
-    # Toggle debug menu
-    elif event is InputEventKey:
-        if event.is_released():
-            # Where we're going, we don't need InputMap
-            if event.keycode == 4194338: # F7
-                $UserInterface/DebugPanel.visible = !$UserInterface/DebugPanel.visible
+    if not is_following_object:
+        if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+            mouseInput.x += event.relative.x
+            mouseInput.y += event.relative.y
+        # Toggle debug menu
+        elif event is InputEventKey:
+            if event.is_released():
+                # Where we're going, we don't need InputMap
+                if event.keycode == 4194338: # F7
+                    $UserInterface/DebugPanel.visible = !$UserInterface/DebugPanel.visible
 
 #endregion
 
