@@ -26,4 +26,4 @@ func _ready():
         _rigid_body.max_contacts_reported = 5
 
 func _on_body_entered(body: Node):
-    Game.Controller.instance.add_impact(_curve, _rigid_body.linear_velocity.length())
+    Game.Controller.instance.add_impact(_curve, _rigid_body.linear_velocity.length(), _rigid_body.mass)

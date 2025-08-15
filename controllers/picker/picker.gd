@@ -1,6 +1,6 @@
 extends Node3D
 
-const RAY_LENGTH = 1000
+const RAY_LENGTH = 2
 const PULL_VELOCITY = 2
 
 class FocusedObject:
@@ -65,8 +65,7 @@ func _physics_process(delta):
         
         if result.size() > 0:
             _hand.global_position = _camera.global_position + _camera.global_position.direction_to(result['position']) * _camera.global_position.distance_to(_hand.global_position)
-            
-    
+
 
 func _process(delta):
     if _focused_object != null:

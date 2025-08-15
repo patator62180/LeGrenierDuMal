@@ -17,6 +17,7 @@ point_count = 3
 [node name="Television" type="RigidBody3D"]
 collision_layer = 2
 collision_mask = 7
+mass = 25.0
 
 [node name="Television_01_1k" parent="." instance=ExtResource("1_r0av5")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)

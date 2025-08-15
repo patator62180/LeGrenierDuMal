@@ -17,6 +17,7 @@ point_count = 5
 [node name="MetalTrashCan" type="RigidBody3D"]
 collision_layer = 2
 collision_mask = 7
+mass = 2.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = ExtResource("1_i7bb2")

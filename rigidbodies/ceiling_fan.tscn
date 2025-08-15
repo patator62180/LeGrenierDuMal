@@ -14,6 +14,7 @@ point_count = 3
 [node name="CeilingFan" type="RigidBody3D"]
 collision_layer = 2
 collision_mask = 7
+mass = 20.0
 
 [node name="ceiling_fan_1k" parent="." instance=ExtResource("1_4jehv")]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)

@@ -16,6 +16,7 @@ size = Vector3(0.816269, 0.0741272, 1.47583)
 [node name="MetalShelf2" type="RigidBody3D"]
 collision_layer = 2
 collision_mask = 7
+mass = 25.0
 
 [node name="ImpactWatcher" parent="." instance=ExtResource("1_74rnb")]
 _curve = SubResource("Curve_ocptr")

@@ -13,6 +13,7 @@ points = PackedVector3Array(0.759352, 0.216683, -0.767177, 0.748994, 0.282776, -
 [node name="ConcreteBag" type="RigidBody3D"]
 collision_layer = 2
 collision_mask = 7
+mass = 30.0
 
 [node name="ImpactWatcher" parent="." instance=ExtResource("1_wemmp")]
 _curve = SubResource("Curve_ocptr")

@@ -13,6 +13,7 @@ size = Vector3(0.617798, 0.766602, 0.602051)
 [node name="OldWoodenChair" type="RigidBody3D"]
 collision_layer = 2
 collision_mask = 7
+mass = 10.0
 
 [node name="ImpactWatcher" parent="." instance=ExtResource("1_pci8m")]
 _curve = SubResource("Curve_ocptr")
