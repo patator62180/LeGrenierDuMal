@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="AudioCurve" load_steps=4 format=3 uid="uid://b3vgygds3ug7o"]
+
+[ext_resource type="Script" uid="uid://bq27csxv6igh4" path="res://audio_curve.gd" id="1_0noxg"]
+[ext_resource type="AudioStream" uid="uid://uctrb3jw13q3" path="res://SFX/Objects/Edited/object-fall-soft.mp3" id="2_gw2qx"]
+
+[sub_resource type="Curve" id="Curve_ocptr"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.208543, 1), 0.121191, 0.121191, 0, 0, Vector2(0.637119, 0.725054), -1.88823, -1.88823, 0, 0, Vector2(0.842105, 0.0341649), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[resource]
+script = ExtResource("1_0noxg")
+curve = SubResource("Curve_ocptr")
+stream = ExtResource("2_gw2qx")
+metadata/_custom_type_script = "uid://bq27csxv6igh4"

@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="AudioCurve" load_steps=2 format=3 uid="uid://clb85cpu22fum"]
+
+[ext_resource type="Script" uid="uid://bq27csxv6igh4" path="res://audio_curve.gd" id="1_2vrrk"]
+
+[resource]
+script = ExtResource("1_2vrrk")
