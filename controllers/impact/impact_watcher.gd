@@ -4,7 +4,11 @@ extends Node3D
 
 @onready var _audio_stream_player : AudioStreamPlayer3D = $AudioStreamPlayer3D
 
+const TIME_BETWEEN_IMPACTS: float = 0.3
+
 var _rigid_body: RigidBody3D
+var _contacts_count: int = 0
+var _last_impact_rel_time: float = 0
 
 func _ready():
     var parent = get_parent()
@@ -25,11 +29,16 @@ func _ready():
         _audio_stream_player.stream = _audio_curve.stream
     
     if _rigid_body != null and _audio_curve != null:
-        _rigid_body.body_entered.connect(_on_body_entered)
         _rigid_body.contact_monitor = true
         _rigid_body.max_contacts_reported = 5
 
-func _on_body_entered(body: Node):
-    var velocity = _rigid_body.linear_velocity.length()
-    Game.Controller.instance.add_impact(_audio_curve.curve, velocity, _rigid_body.mass, _audio_stream_player)
-    _audio_stream_player.play();
+func _physics_process(delta):
+    _last_impact_rel_time += delta
+    
+    if _rigid_body.get_contact_count() > _contacts_count and _last_impact_rel_time >= TIME_BETWEEN_IMPACTS:
+        var velocity = _rigid_body.linear_velocity.length()
+        Game.Controller.instance.add_impact(_audio_curve.curve, velocity, _rigid_body.mass, _audio_stream_player)
+        _audio_stream_player.play();
+        _last_impact_rel_time = 0
+    
+    _contacts_count = _rigid_body.get_contact_count()

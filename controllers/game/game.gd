@@ -4,8 +4,7 @@ extends Node3D
 const MAX_VELOCITY: float = 3
 const MIN_VELOCITY: float = 0.001
 
-const MAX_SOUND_VALUE: float = 1.25
-const HIGH_MASS: float = 30
+const MAX_SOUND_VALUE: float = 50
 const LOADING_PERIOD: float = 2
 const LOADING_PERIOD_IMPACTS_THRESHOLD = 80
 
@@ -58,11 +57,11 @@ class Controller:
             
             for impact in _impacts:
                 var velocity_ratio = (max(min(impact.velocity, MAX_VELOCITY), MIN_VELOCITY) - MIN_VELOCITY) / (MAX_VELOCITY - MIN_VELOCITY)
-                var velocity_curve_sample = impact.curve.sample(1.0 - impact.time_left) * velocity_ratio
+                var curve_sample = impact.curve.sample(1.0 - impact.time_left) * velocity_ratio * impact.mass
                 
-                impact.audio_player.volume_linear = remap(velocity_curve_sample, 0, 2, 0, 1)
+                impact.audio_player.volume_linear = remap(curve_sample, 0, 100, 0, 1)
                 
-                cumulated_sound += velocity_curve_sample * impact.mass / HIGH_MASS
+                cumulated_sound += curve_sample
                 
             cumulated_sound_changed.emit(cumulated_sound)
             
