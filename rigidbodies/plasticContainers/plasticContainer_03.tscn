@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://b042mnyaycqxq"]
+[gd_scene load_steps=4 format=3 uid="uid://b042mnyaycqxq"]
 
+[ext_resource type="Script" uid="uid://dl0af51pnqbi8" path="res://rigidbodies/lib/rigid_bodish.gd" id="1_4e6og"]
 [ext_resource type="ArrayMesh" uid="uid://c5u6t12e6b2m" path="res://meshes/PlasticContainers/PlasticContainer_03.res" id="1_iorb3"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_4e6og"]
@@ -8,6 +9,7 @@ points = PackedVector3Array(-1.87084e-05, -0.16735, 0.0246906, 0.0707103, -0.166
 [node name="PlasticeContainer03" type="RigidBody3D"]
 collision_layer = 2
 collision_mask = 7
+script = ExtResource("1_4e6og")
 
 [node name="PlasticContainer01" type="MeshInstance3D" parent="."]
 mesh = ExtResource("1_iorb3")

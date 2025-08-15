@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="AudioCurve" load_steps=4 format=3 uid="uid://day058pyvkxy4"]
+
+[ext_resource type="Script" uid="uid://bq27csxv6igh4" path="res://audio_curve.gd" id="1_3u7r2"]
+[ext_resource type="AudioStream" uid="uid://clj2wuvwpsbeo" path="res://SFX/Objects/ground-impact-352053.mp3" id="2_yhg8f"]
+
+[sub_resource type="Curve" id="Curve_8vqvi"]
+_data = [Vector2(0.06, 0.876405), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[resource]
+script = ExtResource("1_3u7r2")
+curve = SubResource("Curve_8vqvi")
+stream = ExtResource("2_yhg8f")
+metadata/_custom_type_script = "uid://bq27csxv6igh4"

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="AudioCurve" load_steps=4 format=3 uid="uid://b02ahtcvr8l7v"]
+
+[ext_resource type="Script" uid="uid://bq27csxv6igh4" path="res://audio_curve.gd" id="1_iqwr7"]
+[ext_resource type="AudioStream" uid="uid://b1pm6xm8qspib" path="res://SFX/Objects/object-dropped-on-plastic-bag-81895.mp3" id="2_a6jdv"]
+
+[sub_resource type="Curve" id="Curve_kgr5d"]
+_data = [Vector2(0.115, 0.786517), 0.0, 0.0, 0, 0, Vector2(0.575, 0.348315), -3.06435, -3.06435, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[resource]
+script = ExtResource("1_iqwr7")
+curve = SubResource("Curve_kgr5d")
+stream = ExtResource("2_a6jdv")
+metadata/_custom_type_script = "uid://bq27csxv6igh4"

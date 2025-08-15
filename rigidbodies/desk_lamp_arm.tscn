@@ -1,6 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://d3i5fdb6hnw51"]
 
 [ext_resource type="PackedScene" uid="uid://bt6p8oqeu6yc2" path="res://models/Arm Desk Lamp/desk_lamp_arm_01_1k.gltf" id="1_csdp7"]
+[ext_resource type="Script" uid="uid://dl0af51pnqbi8" path="res://rigidbodies/lib/rigid_bodish.gd" id="1_k70pw"]
 [ext_resource type="PackedScene" uid="uid://clhmyj3qhfdtf" path="res://controllers/impact/impact_watcher.tscn" id="2_736a6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_736a6"]
@@ -13,14 +14,11 @@ size = Vector3(0.038208, 0.0449219, 0.517456)
 height = 0.175278
 radius = 0.101563
 
-[sub_resource type="Curve" id="Curve_k70pw"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.0886427, 1), 0.0, 0.0, 0, 0, Vector2(0.792244, 0.964751), 0.0, 0.0, 0, 0, Vector2(0.99446, 0), -3.92134, 0.0, 0, 0]
-point_count = 4
-
 [node name="DeskLampArm" type="RigidBody3D"]
 collision_layer = 2
 collision_mask = 7
 mass = 4.0
+script = ExtResource("1_k70pw")
 
 [node name="desk_lamp_arm_01_1k" parent="." instance=ExtResource("1_csdp7")]
 
@@ -37,4 +35,3 @@ transform = Transform3D(0.967241, 0.210449, -0.141971, -0.248833, 0.896698, -0.3
 shape = SubResource("CylinderShape3D_mbkje")
 
 [node name="ImpactWatcher" parent="." instance=ExtResource("2_736a6")]
-_curve = SubResource("Curve_k70pw")

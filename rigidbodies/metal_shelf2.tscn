@@ -1,11 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://plk0fvixr1ja"]
 
+[ext_resource type="Script" uid="uid://dl0af51pnqbi8" path="res://rigidbodies/lib/rigid_bodish.gd" id="1_2nf6f"]
 [ext_resource type="PackedScene" uid="uid://clhmyj3qhfdtf" path="res://controllers/impact/impact_watcher.tscn" id="1_74rnb"]
 [ext_resource type="PackedScene" uid="uid://d2nwnmflnjd6k" path="res://models/Decorative items/Metal Shelf/metal_shelf.glb" id="2_74rnb"]
-
-[sub_resource type="Curve" id="Curve_ocptr"]
-_data = [Vector2(0, 0.0200652), 0.0, 0.0, 0, 0, Vector2(0.146814, 1), 0.121191, 0.121191, 0, 0, Vector2(0.637119, 0.725054), -1.88823, -1.88823, 0, 0, Vector2(0.842105, 0.0341649), 0.0, 0.0, 0, 0]
-point_count = 4
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_woh8g"]
 size = Vector3(0.0803223, 3.17397, 0.0623779)
@@ -17,9 +14,9 @@ size = Vector3(0.816269, 0.0741272, 1.47583)
 collision_layer = 2
 collision_mask = 7
 mass = 25.0
+script = ExtResource("1_2nf6f")
 
 [node name="ImpactWatcher" parent="." instance=ExtResource("1_74rnb")]
-_curve = SubResource("Curve_ocptr")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.189901, 1.59119, -1.08028)
