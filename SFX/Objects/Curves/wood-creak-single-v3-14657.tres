@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="AudioCurve" load_steps=4 format=3 uid="uid://bsouhqrvrr0xq"]
+
+[ext_resource type="Script" uid="uid://bq27csxv6igh4" path="res://audio_curve.gd" id="1_oqpbn"]
+[ext_resource type="AudioStream" uid="uid://cxetuwobn4lqn" path="res://SFX/Objects/wood-creak-single-v3-14657.mp3" id="2_dgd8y"]
+
+[sub_resource type="Curve" id="Curve_66p1w"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.85, 0.595506), -0.919306, -0.919306, 0, 0, Vector2(1, 0), -8.02568, 0.0, 0, 0]
+point_count = 3
+
+[resource]
+script = ExtResource("1_oqpbn")
+curve = SubResource("Curve_66p1w")
+stream = ExtResource("2_dgd8y")
+metadata/_custom_type_script = "uid://bq27csxv6igh4"
