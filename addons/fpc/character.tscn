@@ -1,9 +1,11 @@
-[gd_scene load_steps=23 format=3 uid="uid://cc1m2a1obsyn4"]
+[gd_scene load_steps=28 format=3 uid="uid://cc1m2a1obsyn4"]
 
 [ext_resource type="Script" uid="uid://bjhdedu8txjv7" path="res://addons/fpc/character.gd" id="1_0t4e8"]
 [ext_resource type="Texture2D" uid="uid://c1waaqwm018an" path="res://textures/flashlight.png" id="2_bx7cj"]
 [ext_resource type="Script" uid="uid://d37pt5xyvfgyv" path="res://addons/fpc/EditorModule.gd" id="3_v3ckk"]
 [ext_resource type="Script" uid="uid://dn867p31e26y6" path="res://addons/fpc/debug.gd" id="3_x1wcc"]
+[ext_resource type="PackedScene" uid="uid://c4f81g18e1r1c" path="res://models/hand/left_hand.glb" id="5_gv6je"]
+[ext_resource type="PackedScene" uid="uid://dpi0tlx6ywb47" path="res://models/hand/right_hand.glb" id="6_4fv23"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kp17n"]
 albedo_color = Color(0.909804, 0.596078, 0, 1)
@@ -147,6 +149,139 @@ tracks/4/keys = {
 _data = {
 &"RESET": SubResource("Animation_j8cx7"),
 &"crouch": SubResource("Animation_5ec5e")
+}
+
+[sub_resource type="Animation" id="Animation_q62an"]
+resource_name = "Ensnaring_Hands"
+length = 1.75
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LeftHand:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.46, 1.46667, 1.73333, 1.73388),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-2, 1, 0), Vector3(-1.06119, 1, -1.77513), Vector3(-1, 1, -1.78323), Vector3(-0.5, 1.2, -0.5), Vector3(-0.21664, 1.39987, -0.25134)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LeftHand:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.46667, 1.73333, 1.73388),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-1.5708, 2.35619, 0), Vector3(-1.5708, 1.5708, 0), Vector3(-1.5708, 0.785398, 0), Vector3(-1.5708, 0.785398, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RightHand:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.46667, 1.73333, 1.73388),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(2, 2, 0), Vector3(1, 2, -1.29137), Vector3(0.5, 1.5, -1), Vector3(0.67283, 1.333, -0.54017)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RightHand:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.46667, 1.73333, 1.73388),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-1.5708, -2.35619, 0), Vector3(-1.19595, -1.5708, -8.74228e-08), Vector3(-1.5708, -1.309, 0), Vector3(-1.5708, -1.309, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../SpotLight3D:light_energy")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.23, 0.368087, 0.792264, 0.930351, 1.3812, 1.51929, 1.73527),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_q34qd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LeftHand:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-4, 1, -1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LeftHand:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.5708, 1.5708, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RightHand:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(4, 2, -1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RightHand:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.5708, -1.5708, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../SpotLight3D:light_energy")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ex63h"]
+_data = {
+&"Ensnaring_Hands": SubResource("Animation_q62an"),
+&"RESET": SubResource("Animation_q34qd")
 }
 
 [sub_resource type="Animation" id="Animation_gh776"]
@@ -414,6 +549,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 light_projector = ExtResource("2_bx7cj")
 shadow_enabled = true
 spot_range = 4.87331
+
+[node name="Hands" type="Node3D" parent="Head/Camera"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)
+
+[node name="LeftHand" parent="Head/Camera/Hands" instance=ExtResource("5_gv6je")]
+transform = Transform3D(-3.61999e-06, -1, -3.61999e-06, 0, -3.61999e-06, 1, -1, 3.61999e-06, 1.31043e-11, -4, 1, -1)
+
+[node name="RightHand" parent="Head/Camera/Hands" instance=ExtResource("6_4fv23")]
+transform = Transform3D(-3.61999e-06, 1, 3.61999e-06, 0, -3.61999e-06, 1, 1, 3.61999e-06, 1.31043e-11, 4, 2, -1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Head/Camera/Hands"]
+libraries = {
+&"": SubResource("AnimationLibrary_ex63h")
+}
 
 [node name="HeadbobAnimation" type="AnimationPlayer" parent="Head"]
 libraries = {

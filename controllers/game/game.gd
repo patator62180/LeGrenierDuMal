@@ -69,6 +69,9 @@ class Controller:
                 new_impacts.push_back(impact)
 
         _impacts = new_impacts
+        
+    func trigger_end_game() -> void:
+        return
 
         
 

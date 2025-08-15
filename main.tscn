@@ -75,6 +75,7 @@ size = Vector3(4.73444, 1.41492, 0.318481)
 [sub_resource type="Environment" id="Environment_0odxb"]
 background_mode = 1
 background_color = Color(0.0946638, 0.0820729, 0.26336, 1)
+background_energy_multiplier = 0.0
 ambient_light_source = 2
 ambient_light_color = Color(0.153727, 0.343667, 0.455987, 1)
 glow_enabled = true
