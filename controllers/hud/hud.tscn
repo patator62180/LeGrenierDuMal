@@ -1,7 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://b3sn7b3h2ri6u"]
+[gd_scene load_steps=9 format=3 uid="uid://b3sn7b3h2ri6u"]
 
 [ext_resource type="Script" uid="uid://ddd1xerpx7hse" path="res://controllers/hud/hud.gd" id="1_coeob"]
 [ext_resource type="Texture2D" uid="uid://b4eaxitmcjq5i" path="res://controllers/hud/loading.png" id="2_qlil0"]
+[ext_resource type="Shader" uid="uid://c0yuxmxggsel1" path="res://shaders/vignette.gdshader" id="3_3os43"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_60on8"]
+shader = ExtResource("3_3os43")
+shader_parameter/color = Color(1, 0, 0, 1)
+shader_parameter/inner_radius = 0.398
+shader_parameter/outer_radius = 2.0
 
 [sub_resource type="Animation" id="Animation_3os43"]
 length = 0.001
@@ -78,6 +85,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_coeob")
+
+[node name="Vignette" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_60on8")
+layout_mode = 0
+offset_right = 1151.0
+offset_bottom = 649.0
 
 [node name="SoundGauge" type="Control" parent="."]
 anchors_preset = 0
