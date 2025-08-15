@@ -6,23 +6,22 @@ extends Node3D
 
 const TIME_BETWEEN_IMPACTS: float = 0.3
 
-var _rigid_body: RigidBody3D
-var _contacts_count: int = 0
+var _rigid_body: RigidBodish
 var _last_impact_rel_time: float = 0
 
 func _ready():
     var parent = get_parent()
     
-    if parent != null and is_instance_of(parent, RigidBody3D):
+    if is_instance_of(parent, RigidBodish):
         _rigid_body = parent
     
     if _rigid_body == null:
-        printerr("ImpactWatcher is deactivated because it's not under a rigid body")
+        printerr("%s: ImpactWatcher parent is not a RigidBodish" % parent.name)
         set_process(false)
         set_physics_process(false)
 
     if _audio_curve == null:
-        printerr("ImpactWatcher is deactivated because curve hasn't been set")
+        printerr("%s: ImpactWatcher has no AudioCurve" % parent.name)
         set_process(false)
         set_physics_process(false)
     else:
@@ -30,15 +29,25 @@ func _ready():
     
     if _rigid_body != null and _audio_curve != null:
         _rigid_body.contact_monitor = true
-        _rigid_body.max_contacts_reported = 5
+        _rigid_body.max_contacts_reported = 20
+        _rigid_body.contact_occured.connect(_on_contact_occured)
 
-func _physics_process(delta):
-    _last_impact_rel_time += delta
-    
-    if _rigid_body.get_contact_count() > _contacts_count and _last_impact_rel_time >= TIME_BETWEEN_IMPACTS:
-        var velocity = _rigid_body.linear_velocity.length()
-        Game.Controller.instance.add_impact(_audio_curve.curve, velocity, _rigid_body.mass, _audio_stream_player)
+func _on_contact_occured(velocity: Vector3):
+    if _last_impact_rel_time >= TIME_BETWEEN_IMPACTS:
+        Game.Controller.instance.add_impact(_audio_curve.curve, velocity.length(), _rigid_body.mass, _audio_stream_player)
         _audio_stream_player.play();
         _last_impact_rel_time = 0
-    
-    _contacts_count = _rigid_body.get_contact_count()
+
+func _process(delta):
+    _last_impact_rel_time += delta
+
+#func _physics_process(delta):
+    #_last_impact_rel_time += delta
+    #
+    #if _rigid_body.get_contact_count() > _contacts_count and _last_impact_rel_time >= TIME_BETWEEN_IMPACTS:
+        #var velocity = _rigid_body.linear_velocity.length()
+        #Game.Controller.instance.add_impact(_audio_curve.curve, velocity, _rigid_body.mass, _audio_stream_player)
+        #_audio_stream_player.play();
+        #_last_impact_rel_time = 0
+    #
+    #_contacts_count = _rigid_body.get_contact_count()

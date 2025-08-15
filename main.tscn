@@ -664,6 +664,7 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1.70796, -0.405891, 5.0367)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_Scene"]
 transform = Transform3D(0.837719, 0, -0.546102, 0, 1, 0, 0.546102, 0, 0.837719, 0.112878, 8.97982, 25.4698)
+collision_mask = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_Scene/StaticBody3D"]
 transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0.923529, 0.0902863, 0.0270348)
