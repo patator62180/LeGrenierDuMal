@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://0v140tpyra1e"]
 
-[ext_resource type="Script" uid="uid://dl0af51pnqbi8" path="res://rigidbodies/lib/rigid_bodish.gd" id="1_rbkle"]
+[ext_resource type="Resource" uid="uid://8s018xin6o8m" path="res://SFX/Objects/Curves/giant-fall-impact-352446.tres" id="2_bt35w"]
 [ext_resource type="PackedScene" uid="uid://clhmyj3qhfdtf" path="res://controllers/impact/impact_watcher.tscn" id="2_rbkle"]
 [ext_resource type="PackedScene" uid="uid://b1c5u34lu7g5h" path="res://models/Decorative items/Dusty Old Bookshlef/dusty_old_bookshelf_free.glb" id="2_rft5n"]
 
@@ -11,9 +11,9 @@ size = Vector3(1.47876, 3.74502, 0.609851)
 collision_layer = 2
 collision_mask = 7
 mass = 15.0
-script = ExtResource("1_rbkle")
 
 [node name="ImpactWatcher" parent="." instance=ExtResource("2_rbkle")]
+_audio_curve = ExtResource("2_bt35w")
 
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("2_rft5n")]
 transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 0, 0, 0)

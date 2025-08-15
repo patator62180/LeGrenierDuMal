@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://d3t01pm5tsrno"]
 
 [ext_resource type="PackedScene" uid="uid://clhmyj3qhfdtf" path="res://controllers/impact/impact_watcher.tscn" id="1_5jieu"]
-[ext_resource type="Script" uid="uid://dl0af51pnqbi8" path="res://rigidbodies/lib/rigid_bodish.gd" id="1_c1ghk"]
+[ext_resource type="Resource" uid="uid://unmfp5ppttxd" path="res://SFX/Objects/Curves/sliding-object-in-draw-24331.tres" id="2_2ri6b"]
 [ext_resource type="PackedScene" uid="uid://bfrq53yi8ko75" path="res://models/Decorative items/Old Filing Cabinet/old_filing_cabinet.glb" id="2_c1ghk"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2ri6b"]
@@ -11,9 +11,9 @@ size = Vector3(2.10027, 1.11642, 0.846878)
 collision_layer = 2
 collision_mask = 7
 mass = 60.0
-script = ExtResource("1_c1ghk")
 
 [node name="ImpactWatcher" parent="." instance=ExtResource("1_5jieu")]
+_audio_curve = ExtResource("2_2ri6b")
 
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("2_c1ghk")]
 transform = Transform3D(0.014, 0, 0, 0, 0.014, 0, 0, 0, 0.014, 0, 0, 0)
