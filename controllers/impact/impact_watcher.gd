@@ -1,6 +1,9 @@
 extends Node3D
 
 @export var _curve: Curve
+@export var _audio_stream: AudioStream
+
+@onready var _audio_stream_player : AudioStreamPlayer3D = $AudioStreamPlayer3D
 
 var _rigid_body: RigidBody3D
 
@@ -24,6 +27,11 @@ func _ready():
         _rigid_body.body_entered.connect(_on_body_entered)
         _rigid_body.contact_monitor = true
         _rigid_body.max_contacts_reported = 5
+    
+    _audio_stream_player.stream = _audio_stream
 
 func _on_body_entered(body: Node):
-    Game.Controller.instance.add_impact(_curve, _rigid_body.linear_velocity.length(), _rigid_body.mass)
+    var velocity = _rigid_body.linear_velocity.length()
+    Game.Controller.instance.add_impact(_curve, velocity, _rigid_body.mass)
+    _audio_stream_player.volume_db = remap(velocity, Game.MIN_VELOCITY, Game.MAX_VELOCITY, -60, -3);
+    _audio_stream_player.play();

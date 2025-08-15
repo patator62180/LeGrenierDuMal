@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://pqmf1essro0j"]
+[gd_scene load_steps=6 format=3 uid="uid://pqmf1essro0j"]
 
 [ext_resource type="PackedScene" uid="uid://clhmyj3qhfdtf" path="res://controllers/impact/impact_watcher.tscn" id="1_xq8e6"]
+[ext_resource type="AudioStream" uid="uid://bvmyx5gwoe1xu" path="res://SFX/Objects/object-fall-soft-275694.mp3" id="2_6532g"]
 [ext_resource type="PackedScene" uid="uid://cdqwlvwgypbh8" path="res://models/Wood Pallet/wood_pallet.glb" id="2_xq8e6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2vij7"]
@@ -21,6 +22,7 @@ shape = SubResource("BoxShape3D_2vij7")
 
 [node name="ImpactWatcher" parent="." instance=ExtResource("1_xq8e6")]
 _curve = SubResource("Curve_ocptr")
+_audio_stream = ExtResource("2_6532g")
 
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("2_xq8e6")]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
