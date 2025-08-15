@@ -29,7 +29,6 @@ class FocusedObject:
                 (object as RigidBody3D).set_deferred('freeze', false)
 
 
-
 @onready var _camera: Camera3D = get_viewport().get_camera_3d()
 @onready var _joint: Generic6DOFJoint3D = $Joint
 @onready var _drag_wall: Area3D = $Hand/DragWall
@@ -50,7 +49,14 @@ func _physics_process(delta):
 
         var result: Dictionary = space_state.intersect_ray(query)
         
+        if _focused_object != null:
+            Fresnel.toggle(_focused_object.object, false)
+        
         _focused_object = FocusedObject.new(result, _camera) if result.size() > 0 else null
+
+        if _focused_object != null:
+            Fresnel.toggle(_focused_object.object, true)
+        
     
     if _focused_object != null and _focused_object.dragging:
         _focused_object.update(delta)

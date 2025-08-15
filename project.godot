@@ -15,6 +15,10 @@ run/main_scene="uid://srcm6edfpyg2"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Fresnel="*res://controllers/fresnel.gd"
+
 [input]
 
 crouch={
