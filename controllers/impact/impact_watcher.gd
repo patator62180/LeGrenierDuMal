@@ -32,6 +32,5 @@ func _ready():
 
 func _on_body_entered(body: Node):
     var velocity = _rigid_body.linear_velocity.length()
-    Game.Controller.instance.add_impact(_curve, velocity, _rigid_body.mass)
-    _audio_stream_player.volume_db = remap(velocity, Game.MIN_VELOCITY, Game.MAX_VELOCITY, -60, -3);
+    Game.Controller.instance.add_impact(_curve, velocity, _rigid_body.mass, _audio_stream_player)
     _audio_stream_player.play();
