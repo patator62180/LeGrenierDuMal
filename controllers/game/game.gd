@@ -4,7 +4,7 @@ extends Node3D
 const MAX_VELOCITY: float = 3
 const MIN_VELOCITY: float = 0.001
 
-const MAX_SOUND_VALUE: float = 50
+const MAX_SOUND_VALUE: float = 100
 const LOADING_PERIOD: float = 2
 const LOADING_PERIOD_IMPACTS_THRESHOLD = 80
 
