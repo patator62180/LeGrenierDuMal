@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cc3fgkm404s1x"]
+[gd_scene load_steps=6 format=3 uid="uid://cc3fgkm404s1x"]
 
 [ext_resource type="Script" uid="uid://dl0af51pnqbi8" path="res://rigidbodies/lib/rigid_bodish.gd" id="1_onyao"]
 [ext_resource type="PackedScene" uid="uid://bymrwn7vkoflu" path="res://models/Decorative items/Water container/water_container.glb" id="2_mbm7x"]
 [ext_resource type="PackedScene" uid="uid://clhmyj3qhfdtf" path="res://controllers/impact/impact_watcher.tscn" id="2_onyao"]
+[ext_resource type="Resource" uid="uid://8s018xin6o8m" path="res://SFX/Objects/Curves/giant-fall-impact-352446.tres" id="3_l3p6n"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_onyao"]
 size = Vector3(1.2597, 1.51904, 1.24658)
@@ -14,6 +15,7 @@ mass = 100.0
 script = ExtResource("1_onyao")
 
 [node name="ImpactWatcher" parent="." instance=ExtResource("2_onyao")]
+_audio_curve = ExtResource("3_l3p6n")
 
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("2_mbm7x")]
 

@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dviiocvw78ku0"]
+[gd_scene load_steps=6 format=3 uid="uid://dviiocvw78ku0"]
 
 [ext_resource type="PackedScene" uid="uid://clhmyj3qhfdtf" path="res://controllers/impact/impact_watcher.tscn" id="1_jxfc6"]
 [ext_resource type="Script" uid="uid://dl0af51pnqbi8" path="res://rigidbodies/lib/rigid_bodish.gd" id="1_vob5l"]
+[ext_resource type="Resource" uid="uid://b3vgygds3ug7o" path="res://SFX/Objects/Curves/ball.tres" id="3_qqxgn"]
 [ext_resource type="ArrayMesh" uid="uid://cfweman43ygdi" path="res://meshes/pallet.res" id="3_xrfug"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2vij7"]
@@ -18,6 +19,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0548523, -0.564102, -0.000
 shape = SubResource("BoxShape3D_2vij7")
 
 [node name="ImpactWatcher" parent="." instance=ExtResource("1_jxfc6")]
+_audio_curve = ExtResource("3_qqxgn")
 
 [node name="Pallet" type="MeshInstance3D" parent="."]
 mesh = ExtResource("3_xrfug")

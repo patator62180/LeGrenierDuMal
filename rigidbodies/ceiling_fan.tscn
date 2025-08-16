@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://1jbqmnqwdcl6"]
+[gd_scene load_steps=6 format=3 uid="uid://1jbqmnqwdcl6"]
 
 [ext_resource type="PackedScene" uid="uid://dpncfr1fiaoiq" path="res://models/Ceiling Fan/ceiling_fan_1k.gltf" id="1_4jehv"]
 [ext_resource type="Script" uid="uid://dl0af51pnqbi8" path="res://rigidbodies/lib/rigid_bodish.gd" id="1_yo3jg"]
 [ext_resource type="PackedScene" uid="uid://clhmyj3qhfdtf" path="res://controllers/impact/impact_watcher.tscn" id="2_hs3aa"]
+[ext_resource type="Resource" uid="uid://4puo0xo7qvlh" path="res://SFX/Objects/Curves/metallic-heavy-object.tres" id="4_xgyxr"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_yo3jg"]
 height = 0.626518
@@ -42,3 +43,4 @@ depth = 0.07
 polygon = PackedVector2Array(-0.0850306, -0.163708, -0.0904044, -0.462674, -0.00576954, -0.741969, 0.123299, -0.868921, 0.184659, -0.82872, 0.104256, -0.612901, 0.0746031, -0.16915)
 
 [node name="ImpactWatcher" parent="." instance=ExtResource("2_hs3aa")]
+_audio_curve = ExtResource("4_xgyxr")

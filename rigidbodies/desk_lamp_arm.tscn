@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://d3i5fdb6hnw51"]
+[gd_scene load_steps=8 format=3 uid="uid://d3i5fdb6hnw51"]
 
 [ext_resource type="PackedScene" uid="uid://bt6p8oqeu6yc2" path="res://models/Arm Desk Lamp/desk_lamp_arm_01_1k.gltf" id="1_csdp7"]
 [ext_resource type="Script" uid="uid://dl0af51pnqbi8" path="res://rigidbodies/lib/rigid_bodish.gd" id="1_k70pw"]
 [ext_resource type="PackedScene" uid="uid://clhmyj3qhfdtf" path="res://controllers/impact/impact_watcher.tscn" id="2_736a6"]
+[ext_resource type="Resource" uid="uid://ct60s2vwxs4rk" path="res://SFX/Objects/Curves/small_object.tres" id="4_mbkje"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_736a6"]
 size = Vector3(0.0541992, 0.496521, 0.03302)
@@ -35,3 +36,4 @@ transform = Transform3D(0.967241, 0.210449, -0.141971, -0.248833, 0.896698, -0.3
 shape = SubResource("CylinderShape3D_mbkje")
 
 [node name="ImpactWatcher" parent="." instance=ExtResource("2_736a6")]
+_audio_curve = ExtResource("4_mbkje")
