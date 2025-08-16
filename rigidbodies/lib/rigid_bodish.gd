@@ -21,7 +21,7 @@ func _integrate_forces(state):
     for index in range(state.get_contact_count()):
         var pos = state.get_contact_local_position(index)
         var collider = state.get_contact_collider_object(index)
-        var velocity = state.get_contact_collider_velocity_at_position(index)
+        var velocity = state.get_contact_local_velocity_at_position(index)
         
         if not _contact_exists(pos) and not is_instance_of(collider, CharacterBody3D):
             contact_occured.emit(velocity)

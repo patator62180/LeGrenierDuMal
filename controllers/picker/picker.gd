@@ -5,7 +5,7 @@ const PULL_VELOCITY = 2
 
 class FocusedObject:
     var contact: Vector3
-    var object: RigidBody3D
+    var object: RigidBodish
     var dragging: bool
     var distance_to_contact: float
     var normal: Vector3
@@ -19,14 +19,14 @@ class FocusedObject:
         distance_to_contact = camera.global_position.distance_to(contact)
 
     func pause():
-        (object as RigidBody3D).set_deferred('freeze', true)
+        object.set_deferred('freeze', true)
         pause_time_left = 0.1
 
     func update(delta: float):
         if pause_time_left > 0:
             pause_time_left -= delta
             if pause_time_left <= 0:
-                (object as RigidBody3D).set_deferred('freeze', false)
+                object.set_deferred('freeze', false)
 
 
 @onready var _camera: Camera3D = get_viewport().get_camera_3d()
