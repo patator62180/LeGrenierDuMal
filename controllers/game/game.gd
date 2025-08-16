@@ -1,10 +1,10 @@
 class_name Game
 extends Node3D
 
-const MAX_VELOCITY: float = 3
+const MAX_VELOCITY: float = 6
 const MIN_VELOCITY: float = 0.001
 
-const MAX_SOUND_VALUE: float = 100
+const MAX_SOUND_VALUE: float = 4
 const LOADING_PERIOD: float = 2
 const LOADING_PERIOD_IMPACTS_THRESHOLD = 80
 
@@ -39,6 +39,8 @@ class Controller:
     var _impacts: Array[Impact] = []
     var _loading_period_finished: bool = false
     var _loading_period_counter: float = 0
+    var _min_velocity: float = INF
+    var _max_velocity: float = -INF
     
     func add_impact(curve: Curve, velocity: float, mass: float, audio_player: AudioStreamPlayer3D):
         _impacts.push_back(Impact.new(curve, velocity, mass, audio_player))
@@ -57,10 +59,19 @@ class Controller:
             var cumulated_sound = 0
             
             for impact in _impacts:
-                var velocity_ratio = (max(min(impact.velocity, MAX_VELOCITY), MIN_VELOCITY) - MIN_VELOCITY) / (MAX_VELOCITY - MIN_VELOCITY)
-                var curve_sample = impact.curve.sample(1.0 - impact.time_left) * velocity_ratio * impact.mass
+                if impact.velocity < _min_velocity:
+                    _min_velocity = impact.velocity
+                    #print("min velocity:", _min_velocity)
+
+                if impact.velocity > _max_velocity:
+                    _max_velocity = impact.velocity
+                    #print("max velocity:", _max_velocity)
                 
-                impact.audio_player.volume_linear = remap(curve_sample, 0, 100, 0, 1)
+                
+                var velocity_ratio = remap(impact.velocity, MIN_VELOCITY, MAX_VELOCITY, 0, 1)
+                var curve_sample = impact.curve.sample(1.0 - impact.time_left) * velocity_ratio
+                
+                impact.audio_player.volume_linear = min(curve_sample, 1)
                 
                 cumulated_sound += curve_sample
                 

@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cqbmplfb2ihv6"]
+[gd_scene load_steps=6 format=3 uid="uid://cqbmplfb2ihv6"]
 
 [ext_resource type="Script" uid="uid://dl0af51pnqbi8" path="res://rigidbodies/lib/rigid_bodish.gd" id="1_an4y8"]
 [ext_resource type="PackedScene" uid="uid://clhmyj3qhfdtf" path="res://controllers/impact/impact_watcher.tscn" id="2_an4y8"]
 [ext_resource type="PackedScene" uid="uid://plswqt1tx103" path="res://models/Plastic Storage Container/plastic_storage_container.glb" id="2_w0yr2"]
+[ext_resource type="Resource" uid="uid://b4erwnrmjert4" path="res://SFX/Objects/Curves/hard-plastic-bottle-drop.tres" id="3_uf0v4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_an4y8"]
 size = Vector3(0.465454, 0.341492, 0.800293)
@@ -14,6 +15,7 @@ mass = 2.0
 script = ExtResource("1_an4y8")
 
 [node name="ImpactWatcher" parent="." instance=ExtResource("2_an4y8")]
+_audio_curve = ExtResource("3_uf0v4")
 
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("2_w0yr2")]
 
