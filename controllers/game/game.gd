@@ -43,6 +43,7 @@ class Controller:
     var _min_velocity: float = INF
     var _max_velocity: float = -INF
     var _vfx_scene : PackedScene
+    var is_death_triggered : bool = false
     
     func add_impact(curve: Curve, velocity: float, mass: float, audio_player: AudioStreamPlayer3D):
         _impacts.push_back(Impact.new(curve, velocity, mass, audio_player))
@@ -79,8 +80,9 @@ class Controller:
                 
             cumulated_sound_changed.emit(cumulated_sound)
             
-            if cumulated_sound >= MAX_SOUND_VALUE:
+            if cumulated_sound >= MAX_SOUND_VALUE and not is_death_triggered:
                 death_triggered.emit();
+                is_death_triggered = true
                 
             
         var new_impacts: Array[Impact] = []
