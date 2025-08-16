@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c6wj1ev6iji2i"]
+[gd_scene load_steps=7 format=3 uid="uid://c6wj1ev6iji2i"]
 
 [ext_resource type="Script" uid="uid://bfrurdepaakj8" path="res://controllers/vfx.gd" id="1_vq2n0"]
 
@@ -13,28 +13,27 @@ curve = SubResource("Curve_lnhva")
 lifetime_randomness = 0.5
 spread = 180.0
 flatness = 0.95
-radial_velocity_min = 0.749978
-radial_velocity_max = 0.999978
+radial_velocity_min = 0.499978
+radial_velocity_max = 0.749978
 radial_velocity_curve = SubResource("CurveTexture_vq2n0")
 gravity = Vector3(0, 0, 0)
+scale_min = 0.5
+scale_max = 0.75
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vq2n0"]
 transparency = 1
-albedo_color = Color(0.22, 0.165147, 0.1232, 0.501961)
+albedo_color = Color(0.45, 0.327, 0.27, 0.501961)
 
 [sub_resource type="SphereMesh" id="SphereMesh_tsj3x"]
 material = SubResource("StandardMaterial3D_vq2n0")
 radius = 0.05
 height = 0.1
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_sbh5b"]
-
 [node name="Base" type="GPUParticles3D"]
+emitting = false
 amount = 15
+one_shot = true
 explosiveness = 1.0
 process_material = SubResource("ParticleProcessMaterial_tsj3x")
 draw_pass_1 = SubResource("SphereMesh_tsj3x")
 script = ExtResource("1_vq2n0")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_sbh5b")

@@ -52,6 +52,8 @@ class Controller:
     
     func register_rigid_bodish(rigid_bodish: RigidBodish):
         _rigid_bodishes.push_back(rigid_bodish)
+
+    var _vfx_scene : PackedScene
     
     func add_impact(curve: Curve, velocity: float, mass: float, audio_player: AudioStreamPlayer3D):
         _impacts.push_back(Impact.new(curve, velocity, mass, audio_player))
@@ -103,6 +105,9 @@ class Controller:
 
         _impacts = new_impacts
     
+
+func _ready() -> void:
+    Controller.instance._vfx_scene = load("res://vfx/base.tscn") 
 
 func _process(delta):
     Controller.instance.update(delta)

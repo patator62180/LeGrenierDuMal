@@ -3,10 +3,11 @@ extends RigidBody3D
 
 const PRECISION = 0.1
 
+
 var _contacts: Array[Vector3] = []
 var _stop_requested: bool = false
 
-signal contact_occured
+signal contact_occured    
 
 func _ready():
     Game.Controller.instance.register_rigid_bodish(self)
@@ -31,6 +32,10 @@ func _integrate_forces(state):
         
         if not _contact_exists(pos) and not is_instance_of(collider, CharacterBody3D):
             contact_occured.emit(velocity)
+            var vfx = Game.Controller.instance._vfx_scene.instantiate() as GPUParticles3D
+            get_tree().get_root().add_child(vfx)
+            vfx.global_position = pos
+            vfx.emitting = true
         
         new_contacts.push_back(pos)
     
