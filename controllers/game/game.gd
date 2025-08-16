@@ -34,6 +34,7 @@ class Controller:
 
     signal cumulated_sound_changed
     signal loading_completed
+    signal death_triggered
     
     var _impacts: Array[Impact] = []
     var _loading_period_finished: bool = false
@@ -65,6 +66,10 @@ class Controller:
                 
             cumulated_sound_changed.emit(cumulated_sound)
             
+            if cumulated_sound >= MAX_SOUND_VALUE:
+                death_triggered.emit();
+                
+            
         var new_impacts: Array[Impact] = []
 
         for impact in _impacts:
@@ -74,9 +79,7 @@ class Controller:
                 new_impacts.push_back(impact)
 
         _impacts = new_impacts
-
-        
-
+    
 
 func _process(delta):
     Controller.instance.update(delta)
