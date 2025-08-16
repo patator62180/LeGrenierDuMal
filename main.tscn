@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://srcm6edfpyg2"]
+[gd_scene load_steps=67 format=3 uid="uid://srcm6edfpyg2"]
 
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://b3njdfw5ehyqs" path="res://controllers/picker/picker.tscn" id="2_0xm2m"]
@@ -39,6 +39,7 @@
 [ext_resource type="PackedScene" uid="uid://cqbmplfb2ihv6" path="res://rigidbodies/plastic_storage_container.tscn" id="43_0n3wm"]
 [ext_resource type="PackedScene" uid="uid://8eldkemx5mhf" path="res://rigidbodies/concrete_bag_and_palette.tscn" id="43_d2t1y"]
 [ext_resource type="PackedScene" uid="uid://0v140tpyra1e" path="res://rigidbodies/old_bookshelf.tscn" id="44_gngh3"]
+[ext_resource type="AudioStream" uid="uid://b8nhmuul67ewd" path="res://SFX/Shh/12-shhh-47022.mp3" id="45_0n3wm"]
 [ext_resource type="PackedScene" uid="uid://c0scrot8r0f22" path="res://staticbodies/old_work_bench.tscn" id="46_f6a44"]
 [ext_resource type="PackedScene" uid="uid://dy8oa0men4dlq" path="res://rigidbodies/rocking_chair.tscn" id="47_0cbny"]
 [ext_resource type="PackedScene" uid="uid://r67rwp8fnx24" path="res://staticbodies/wooden_shelf_with_drawer.tscn" id="48_0cbny"]
@@ -61,10 +62,10 @@ size = Vector3(0.929962, 0.0454102, 7.82677)
 size = Vector3(2.72318, 0.134521, 11.9528)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4c57u"]
-size = Vector3(5.05455, 6.09283, 0.0352173)
+size = Vector3(5.05455, 11.19, 0.0352173)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dg77c"]
-size = Vector3(1, 0.0961914, 4.20258)
+size = Vector3(1, 0.0961914, 4.27414)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_d2t1y"]
 size = Vector3(0.243652, 1.25574, 4.56973)
@@ -691,7 +692,7 @@ shape = SubResource("BoxShape3D_kek77")
 transform = Transform3D(0.374811, 0.837719, -0.39717, -0.727282, -5.96046e-08, -0.686339, -0.574959, 0.546102, 0.609258, 3.23915, 10.2685, 21.7392)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_Scene/StaticBody3D3"]
-transform = Transform3D(0.999999, -2.98023e-08, 0, 1.57952e-06, 1, -2.98023e-08, -7.7486e-07, 2.98023e-08, 1, -0.540037, -0.643607, 0.0555792)
+transform = Transform3D(0.999999, 6.25849e-07, -8.9407e-08, 1.49012e-06, 0.999997, 1.49012e-07, -7.45058e-07, 3.42727e-06, 1, -0.540041, -3.19218, 0.0555782)
 shape = SubResource("BoxShape3D_4c57u")
 
 [node name="StaticBody3D4" type="StaticBody3D" parent="Sketchfab_Scene"]
@@ -705,7 +706,7 @@ shape = SubResource("BoxShape3D_4c57u")
 transform = Transform3D(0.846546, -0.340269, -0.409361, -3.72529e-09, 0.76902, -0.639224, 0.532315, 0.541133, 0.651011, -2.95452, 8.69932, 27.619)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_Scene/StaticBody3D5"]
-transform = Transform3D(1, 0, 2.98023e-08, -1.19209e-07, 1, -2.98023e-08, 1.78814e-07, 2.98023e-08, 1, 1.90735e-06, -0.451904, 1.07297)
+transform = Transform3D(0.999998, -2.38419e-07, -7.03335e-06, -1.49012e-07, 0.999999, 3.8147e-06, -1.78814e-07, -2.68221e-07, 0.99999, 3.8147e-06, -0.4519, 1.03719)
 shape = SubResource("BoxShape3D_dg77c")
 
 [node name="StaticBody3D6" type="StaticBody3D" parent="Sketchfab_Scene"]
@@ -878,3 +879,10 @@ transform = Transform3D(-0.698691, 0, -0.975618, 0, 1.2, 0, 0.975618, 0, -0.6986
 
 [node name="CaseBoxes" parent="Decorative items" instance=ExtResource("42_gngh3")]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -9.0924, -0.422901, -14.3109)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("45_0n3wm")
+volume_db = 10.0
+pitch_scale = 0.8
+autoplay = true
+panning_strength = 0.0
