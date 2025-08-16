@@ -1,8 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://b3sn7b3h2ri6u"]
+[gd_scene load_steps=13 format=3 uid="uid://b3sn7b3h2ri6u"]
 
 [ext_resource type="Script" uid="uid://ddd1xerpx7hse" path="res://controllers/hud/hud.gd" id="1_coeob"]
 [ext_resource type="Texture2D" uid="uid://b4eaxitmcjq5i" path="res://controllers/hud/loading.png" id="2_qlil0"]
-[ext_resource type="Shader" path="res://shaders/vignette.gdshader" id="3_3os43"]
+[ext_resource type="Shader" uid="uid://c0yuxmxggsel1" path="res://shaders/vignette.gdshader" id="3_3os43"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_60on8"]
 shader = ExtResource("3_3os43")
@@ -13,6 +13,10 @@ shader_parameter/outer_radius = 2.0
 [sub_resource type="LabelSettings" id="LabelSettings_rkyny"]
 font_size = 100
 font_color = Color(1, 1, 1, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3os43"]
+font_size = 100
+font_color = Color(0.1674, 0.454047, 0.62, 1)
 
 [sub_resource type="Animation" id="Animation_3os43"]
 length = 0.001
@@ -121,6 +125,22 @@ tracks/1/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_rkyny"]
+resource_name = "escape"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GameWin:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_qlil0"]
 resource_name = "loading"
 length = 2.4
@@ -136,22 +156,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.615686), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_rkyny"]
-resource_name = "escape"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("GameWin:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_60on8"]
@@ -279,7 +283,7 @@ offset_bottom = 62.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "You Escaped"
-label_settings = SubResource("LabelSettings_rkyny")
+label_settings = SubResource("LabelSettings_3os43")
 horizontal_alignment = 1
 vertical_alignment = 1
 
