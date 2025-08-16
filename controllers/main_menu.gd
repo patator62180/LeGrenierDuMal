@@ -3,6 +3,7 @@ extends Control
 @onready var _button : Button = $Button
 
 func _ready() -> void:
+    Game.Controller.delete_instance()
     _button.pressed.connect(start_game)
 
 func start_game():

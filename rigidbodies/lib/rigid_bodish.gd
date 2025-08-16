@@ -5,8 +5,15 @@ const PRECISION = 0.1
 
 
 var _contacts: Array[Vector3] = []
+var _stop_requested: bool = false
 
 signal contact_occured    
+
+func _ready():
+    Game.Controller.instance.register_rigid_bodish(self)
+
+func stop():
+    _stop_requested = true
 
 func _contact_exists(other: Vector3):
     for contact in _contacts:
@@ -14,7 +21,6 @@ func _contact_exists(other: Vector3):
             return true
     
     return false
-            
 
 func _integrate_forces(state):
     var new_contacts: Array[Vector3] = []

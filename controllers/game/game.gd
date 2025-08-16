@@ -5,8 +5,8 @@ const MAX_VELOCITY: float = 6
 const MIN_VELOCITY: float = 0.001
 
 const MAX_SOUND_VALUE: float = 1.25
-const LOADING_PERIOD: float = 2
-const LOADING_PERIOD_IMPACTS_THRESHOLD = 80
+const LOADING_PERIOD: float = 5
+const LOADING_PERIOD_IMPACTS_THRESHOLD = 1
 
 class Impact:
     var curve: Curve
@@ -25,6 +25,9 @@ class Impact:
 class Controller:
     #region singleton
     
+    static func delete_instance():
+        _instance = null
+
     static var _instance: Controller
     static var instance: Controller:
         get:
@@ -42,6 +45,14 @@ class Controller:
     var _loading_period_counter: float = 0
     var _min_velocity: float = INF
     var _max_velocity: float = -INF
+    var _rigid_bodishes: Array[RigidBodish] = []
+    
+    var loaded: bool:
+        get: return _loading_period_finished
+    
+    func register_rigid_bodish(rigid_bodish: RigidBodish):
+        _rigid_bodishes.push_back(rigid_bodish)
+
     var _vfx_scene : PackedScene
     var is_death_triggered : bool = false
     
@@ -55,6 +66,7 @@ class Controller:
                 
                 if _loading_period_counter >= LOADING_PERIOD:
                     _loading_period_finished = true
+
                     loading_completed.emit()
             else:
                 _loading_period_counter = 0
