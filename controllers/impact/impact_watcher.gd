@@ -40,14 +40,3 @@ func _on_contact_occured(velocity: Vector3):
 
 func _process(delta):
     _last_impact_rel_time += delta
-
-#func _physics_process(delta):
-    #_last_impact_rel_time += delta
-    #
-    #if _rigid_body.get_contact_count() > _contacts_count and _last_impact_rel_time >= TIME_BETWEEN_IMPACTS:
-        #var velocity = _rigid_body.linear_velocity.length()
-        #Game.Controller.instance.add_impact(_audio_curve.curve, velocity, _rigid_body.mass, _audio_stream_player)
-        #_audio_stream_player.play();
-        #_last_impact_rel_time = 0
-    #
-    #_contacts_count = _rigid_body.get_contact_count()

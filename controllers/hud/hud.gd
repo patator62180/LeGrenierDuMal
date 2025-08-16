@@ -28,5 +28,5 @@ func _on_escape():
     
 func _on_animation_finished(animation_name : StringName):
     if animation_name == "death" or animation_name == "escape":
-        get_tree().quit()
+        get_tree().change_scene_to_file("res://menus/main_menu.tscn")
         
