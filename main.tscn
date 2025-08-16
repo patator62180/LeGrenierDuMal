@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://srcm6edfpyg2"]
+[gd_scene load_steps=67 format=3 uid="uid://srcm6edfpyg2"]
 
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://b3njdfw5ehyqs" path="res://controllers/picker/picker.tscn" id="2_0xm2m"]
@@ -39,6 +39,7 @@
 [ext_resource type="PackedScene" uid="uid://cqbmplfb2ihv6" path="res://rigidbodies/plastic_storage_container.tscn" id="43_0n3wm"]
 [ext_resource type="PackedScene" uid="uid://8eldkemx5mhf" path="res://rigidbodies/concrete_bag_and_palette.tscn" id="43_d2t1y"]
 [ext_resource type="PackedScene" uid="uid://0v140tpyra1e" path="res://rigidbodies/old_bookshelf.tscn" id="44_gngh3"]
+[ext_resource type="AudioStream" uid="uid://b8nhmuul67ewd" path="res://SFX/Shh/12-shhh-47022.mp3" id="45_0n3wm"]
 [ext_resource type="PackedScene" uid="uid://c0scrot8r0f22" path="res://staticbodies/old_work_bench.tscn" id="46_f6a44"]
 [ext_resource type="PackedScene" uid="uid://dy8oa0men4dlq" path="res://rigidbodies/rocking_chair.tscn" id="47_0cbny"]
 [ext_resource type="PackedScene" uid="uid://r67rwp8fnx24" path="res://staticbodies/wooden_shelf_with_drawer.tscn" id="48_0cbny"]
@@ -878,3 +879,10 @@ transform = Transform3D(-0.698691, 0, -0.975618, 0, 1.2, 0, 0.975618, 0, -0.6986
 
 [node name="CaseBoxes" parent="Decorative items" instance=ExtResource("42_gngh3")]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -9.0924, -0.422901, -14.3109)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("45_0n3wm")
+volume_db = 10.0
+pitch_scale = 0.8
+autoplay = true
+panning_strength = 0.0
