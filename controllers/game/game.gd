@@ -35,6 +35,7 @@ class Controller:
     signal cumulated_sound_changed
     signal loading_completed
     signal death_triggered
+    signal escape_triggered
     
     var _impacts: Array[Impact] = []
     var _loading_period_finished: bool = false
