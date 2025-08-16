@@ -35,8 +35,17 @@ class FocusedObject:
 @onready var _hand: CharacterBody3D = $Hand
 
 var _focused_object: FocusedObject = null
+var _enable: bool = true
+
+func _ready():
+    Game.Controller.instance.death_triggered.connect(_on_death_trigger)
+    
+func _on_death_trigger():
+    _enable = false    
 
 func _physics_process(delta):
+    if not _enable:
+        return
     var mousepos = get_viewport().get_mouse_position()
     var space_state = get_world_3d().direct_space_state
     var origin = _camera.project_ray_origin(mousepos)
@@ -74,6 +83,8 @@ func _physics_process(delta):
 
 
 func _process(delta):
+    if not _enable:
+        return
     if _focused_object != null:
         if not _focused_object.dragging and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
             _hand.global_position = _focused_object.contact

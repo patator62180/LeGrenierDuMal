@@ -155,7 +155,14 @@ func _ready():
     initialize_animations()
     check_controls()
     enter_normal_state()
+    
+    Game.Controller.instance.death_triggered.connect(_on_death_triggered)
 
+func _on_death_triggered():
+    immobile = true
+    mouse_sensitivity = 0
+    $UserInterface.visible = false
+    Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 func _process(_delta):
     if pausing_enabled:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://srcm6edfpyg2"]
+[gd_scene load_steps=66 format=3 uid="uid://srcm6edfpyg2"]
 
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://b3njdfw5ehyqs" path="res://controllers/picker/picker.tscn" id="2_0xm2m"]
@@ -26,7 +26,6 @@
 [ext_resource type="PackedScene" uid="uid://bpp4ec7df6aqv" path="res://rigidbodies/television.tscn" id="23_0odxb"]
 [ext_resource type="PackedScene" uid="uid://cowymk3rrmwa1" path="res://rigidbodies/vintage_grandfather_clock.tscn" id="24_lswn8"]
 [ext_resource type="PackedScene" uid="uid://d3t01pm5tsrno" path="res://rigidbodies/old_filing_cabinet.tscn" id="26_0n3wm"]
-[ext_resource type="Script" uid="uid://cfmw2j7pidsv8" path="res://controllers/world_environment.gd" id="26_lswn8"]
 [ext_resource type="Material" uid="uid://rkegjp157mjj" path="res://materials/emisive_material.tres" id="27_a6jrf"]
 [ext_resource type="PackedScene" uid="uid://blpc28o8iifg5" path="res://rigidbodies/old_wooden_chair.tscn" id="27_wnkbs"]
 [ext_resource type="Texture2D" uid="uid://bskvr3lvan0uy" path="res://textures/Window light projected.jpg" id="27_xuqvo"]
@@ -41,7 +40,6 @@
 [ext_resource type="PackedScene" uid="uid://0v140tpyra1e" path="res://rigidbodies/old_bookshelf.tscn" id="44_gngh3"]
 [ext_resource type="AudioStream" uid="uid://b8nhmuul67ewd" path="res://SFX/Shh/12-shhh-47022.mp3" id="45_0n3wm"]
 [ext_resource type="PackedScene" uid="uid://c0scrot8r0f22" path="res://staticbodies/old_work_bench.tscn" id="46_f6a44"]
-[ext_resource type="Script" uid="uid://d4bpyi8n2qflj" path="res://controllers/death_animation.gd" id="46_qnost"]
 [ext_resource type="PackedScene" uid="uid://dy8oa0men4dlq" path="res://rigidbodies/rocking_chair.tscn" id="47_0cbny"]
 [ext_resource type="PackedScene" uid="uid://r67rwp8fnx24" path="res://staticbodies/wooden_shelf_with_drawer.tscn" id="48_0cbny"]
 [ext_resource type="PackedScene" uid="uid://cc3fgkm404s1x" path="res://rigidbodies/water_container.tscn" id="48_f6a44"]
@@ -145,43 +143,6 @@ edge_fade = 0.5
 density_texture = SubResource("NoiseTexture3D_xuqvo")
 
 [sub_resource type="BoxMesh" id="BoxMesh_xuqvo"]
-
-[sub_resource type="Animation" id="Animation_qnost"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("WorldEnvironment:environment:ambient_light_energy")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1.0]
-}
-
-[sub_resource type="Animation" id="Animation_0n3wm"]
-resource_name = "death"
-length = 5.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("WorldEnvironment:environment:ambient_light_energy")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [1.0, 0.0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_wnkbs"]
-_data = {
-&"RESET": SubResource("Animation_qnost"),
-&"death": SubResource("Animation_0n3wm")
-}
 
 [node name="Node3D" type="Node3D"]
 
@@ -786,7 +747,6 @@ shape = SubResource("BoxShape3D_gngh3")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_0odxb")
-script = ExtResource("26_lswn8")
 
 [node name="Fog" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.3045, 56.9432)
@@ -924,9 +884,3 @@ volume_db = 10.0
 pitch_scale = 0.8
 autoplay = true
 panning_strength = 0.0
-
-[node name="DeathAnimation" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_wnkbs")
-}
-script = ExtResource("46_qnost")

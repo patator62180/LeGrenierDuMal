@@ -10,6 +10,10 @@ shader_parameter/color = Color(1, 0, 0, 1)
 shader_parameter/inner_radius = 0.398
 shader_parameter/outer_radius = 2.0
 
+[sub_resource type="LabelSettings" id="LabelSettings_rkyny"]
+font_size = 100
+font_color = Color(1, 1, 1, 0)
+
 [sub_resource type="Animation" id="Animation_3os43"]
 length = 0.001
 tracks/0/type = "value"
@@ -39,10 +43,22 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Label:label_settings:font_color")
+tracks/2/path = NodePath("GameOver/Label:label_settings:font_color")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GameOver:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -65,6 +81,34 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_3fgn5"]
+resource_name = "death"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GameOver/Label:label_settings:font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.55, 0.176, 0.176, 0), Color(0.54902, 0.176471, 0.176471, 0), Color(0.55, 0.176, 0.176, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GameOver:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_qlil0"]
 resource_name = "loading"
 length = 2.4
@@ -82,22 +126,6 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.615686), Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_3fgn5"]
-resource_name = "death"
-length = 5.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Label:label_settings:font_color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2, 5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(0.55, 0.176, 0.176, 0), Color(0.54902, 0.176471, 0.176471, 0), Color(0.55, 0.176, 0.176, 1)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_60on8"]
 _data = {
 &"RESET": SubResource("Animation_3os43"),
@@ -105,10 +133,6 @@ _data = {
 &"death": SubResource("Animation_3fgn5"),
 &"loading": SubResource("Animation_qlil0")
 }
-
-[sub_resource type="LabelSettings" id="LabelSettings_rkyny"]
-font_size = 100
-font_color = Color(1, 1, 1, 0)
 
 [node name="Hud" type="Control"]
 layout_mode = 3
@@ -176,23 +200,33 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_qlil0")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_60on8")
-}
+[node name="GameOver" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="GameOver"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
+offset_left = -420.0
+offset_top = -75.0
+offset_right = 424.0
+offset_bottom = 62.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Too much noise..."
 label_settings = SubResource("LabelSettings_rkyny")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_60on8")
+}
