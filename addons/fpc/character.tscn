@@ -2110,11 +2110,13 @@ skin = SubResource("Skin_3wo4l")
 libraries = {
 &"": SubResource("AnimationLibrary_j3y15")
 }
+speed_scale = 0.75
 
 [node name="AnimationRightHand" type="AnimationPlayer" parent="Head/Camera/hands anim"]
 libraries = {
 &"": SubResource("AnimationLibrary_j3y15")
 }
+speed_scale = 0.75
 
 [node name="HeadbobAnimation" type="AnimationPlayer" parent="Head"]
 libraries = {

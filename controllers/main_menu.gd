@@ -1,6 +1,6 @@
 extends Control
 
-@onready var _button : Button = $Button
+@onready var _button : Button = $TextureRect2/Button
 
 func _ready() -> void:
     Game.Controller.delete_instance()
