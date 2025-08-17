@@ -252,18 +252,7 @@ offset_right = 0.151855
 offset_bottom = -0.296082
 
 [node name="SoundGauge" parent="." instance=ExtResource("3_3fgn5")]
-
-[node name="Timer" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -64.0
-offset_bottom = 23.0
-grow_horizontal = 0
-text = "00:00:00"
-horizontal_alignment = 2
-vertical_alignment = 1
+scale = Vector2(0.5, 0.5)
 
 [node name="LoadingOverlay" type="ColorRect" parent="."]
 layout_mode = 1

@@ -4,7 +4,6 @@ extends Control
 @onready var _sound_gauge: SoundGauge = $SoundGauge
 @onready var _animation_player: AnimationPlayer = $AnimationPlayer
 @onready var _vignette : CanvasItem = $Vignette
-@onready var _timer: Label = $Timer
 @onready var _game_win_timer: Label = $GameWin/Timer
 
 func _ready():
@@ -25,7 +24,6 @@ static func seconds2hhmmss(total_seconds: float) -> String:
 
 func _on_time_updated(time: float):
     var formatted_time = seconds2hhmmss(time)
-    _timer.text = formatted_time
     _game_win_timer.text = formatted_time
 
 func _on_loading_complete():
