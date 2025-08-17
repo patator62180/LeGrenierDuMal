@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://srcm6edfpyg2"]
+[gd_scene load_steps=74 format=3 uid="uid://srcm6edfpyg2"]
 
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://b3njdfw5ehyqs" path="res://controllers/picker/picker.tscn" id="2_0xm2m"]
@@ -35,6 +35,7 @@
 [ext_resource type="PackedScene" uid="uid://djvlyv6my30ck" path="res://rigidbodies/metal_shelf.tscn" id="35_d2t1y"]
 [ext_resource type="PackedScene" uid="uid://dviiocvw78ku0" path="res://rigidbodies/wood_pallet.tscn" id="37_gngh3"]
 [ext_resource type="Script" uid="uid://kipogrhylpgc" path="res://controllers/escape_area.gd" id="39_0n3wm"]
+[ext_resource type="Texture2D" uid="uid://dlnltvurvj2lh" path="res://2D assets/circle_05.png" id="40_qnost"]
 [ext_resource type="PackedScene" uid="uid://bwexvfcocg0ru" path="res://staticbodies/case_boxes.tscn" id="42_gngh3"]
 [ext_resource type="PackedScene" uid="uid://cqbmplfb2ihv6" path="res://rigidbodies/plastic_storage_container.tscn" id="43_0n3wm"]
 [ext_resource type="PackedScene" uid="uid://8eldkemx5mhf" path="res://rigidbodies/concrete_bag_and_palette.tscn" id="43_d2t1y"]
@@ -141,10 +142,59 @@ color_ramp = SubResource("Gradient_0odxb")
 noise = SubResource("FastNoiseLite_a6jrf")
 
 [sub_resource type="FogMaterial" id="FogMaterial_qsp4k"]
-albedo = Color(0, 0, 0, 1)
+density = 3.0
+albedo = Color(0.445172, 0.335106, 0.132759, 1)
 emission = Color(0.76, 0.6878, 0.4712, 1)
 edge_fade = 0.5
 density_texture = SubResource("NoiseTexture3D_xuqvo")
+
+[sub_resource type="Curve" id="Curve_wnkbs"]
+_data = [Vector2(0.00330033, 0), 0.0, 0.0, 0, 0, Vector2(0.254125, 0.123595), 0.0, 0.0, 0, 0, Vector2(1, 0), -0.124286, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_f6a44"]
+width = 248
+curve = SubResource("Curve_wnkbs")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_0cbny"]
+lifetime_randomness = 1.0
+emission_shape = 3
+emission_box_extents = Vector3(8, 8, 8)
+spread = 30.0
+initial_velocity_min = 0.5
+initial_velocity_max = 1.0
+angular_velocity_min = 0.499984
+angular_velocity_max = 1.99998
+gravity = Vector3(0, -1, 0)
+linear_accel_min = -2.23517e-06
+linear_accel_max = 0.0999978
+scale_min = 0.01
+scale_max = 0.03
+scale_curve = SubResource("CurveTexture_f6a44")
+scale_over_velocity_max = 1.0
+color = Color(0.525101, 0.525101, 0.525101, 1)
+turbulence_enabled = true
+turbulence_noise_scale = 1.0
+collision_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hrvbo"]
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("40_qnost")
+emission_enabled = true
+emission = Color(0.614817, 0.301045, 0.283491, 1)
+emission_energy_multiplier = 2.0
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+grow = true
+use_point_size = true
+point_size = 7.0
+proximity_fade_distance = 0.2
+
+[sub_resource type="QuadMesh" id="QuadMesh_uypp3"]
+material = SubResource("StandardMaterial3D_hrvbo")
 
 [sub_resource type="BoxMesh" id="BoxMesh_xuqvo"]
 
@@ -780,16 +830,38 @@ transform = Transform3D(0.826845, -0.346477, -0.443036, 5.96046e-08, 0.787718, -
 size = Vector3(1.55, 2.72, 12)
 material = SubResource("FogMaterial_qsp4k")
 
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Fog"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.45665, 0, 0)
+visibility_range_begin = 1.0
+amount = 1000
+lifetime = 50.0
+process_material = SubResource("ParticleProcessMaterial_0cbny")
+draw_pass_1 = SubResource("QuadMesh_uypp3")
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="Fog"]
+transform = Transform3D(0.200568, 0, -0.0646559, 0, 0.192785, 0, 0.113605, 0, 0.114149, 3.27673, 1.12499, -2.1912)
+visibility_range_begin = 1.0
+amount = 200
+lifetime = 50.0
+process_material = SubResource("ParticleProcessMaterial_0cbny")
+draw_pass_1 = SubResource("QuadMesh_uypp3")
+
+[node name="GPUParticles3D3" type="GPUParticles3D" parent="Fog"]
+transform = Transform3D(0.200568, 0, -0.0646559, 0, 0.192785, 0, 0.113605, 0, 0.114149, 0.416658, 1.12499, 2.98296)
+visibility_range_begin = 1.0
+amount = 200
+lifetime = 50.0
+process_material = SubResource("ParticleProcessMaterial_0cbny")
+draw_pass_1 = SubResource("QuadMesh_uypp3")
+
 [node name="Light" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.3045, 56.9432)
 
 [node name="Light - Final Stairs" type="OmniLight3D" parent="Light"]
-transform = Transform3D(0.94879, -0.132144, -0.286943, -0.218844, 0.380123, -0.898674, 0.227828, 0.915448, 0.331738, -7.72982, -1.58822, 3.29295)
+transform = Transform3D(0.94879, -0.132144, -0.286943, -0.218844, 0.380123, -0.898673, 0.227828, 0.915448, 0.331738, -7.72982, -0.199787, 2.03234)
 light_color = Color(0.837983, 0.582747, 0, 1)
-light_energy = 60.0
-light_volumetric_fog_energy = 0.0
-omni_range = 2.0
-omni_attenuation = 2.0
+light_energy = 120.0
+light_volumetric_fog_energy = 2.0
 
 [node name="Window Light 1" type="SpotLight3D" parent="Light"]
 transform = Transform3D(0.598144, -0.529194, 0.601812, 0.236704, 0.834121, 0.49821, -0.765634, -0.15555, 0.624187, 4.78345, 1.62535, 0.614746)
