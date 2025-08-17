@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://cdcnpoait2bct"]
+
+[ext_resource type="Script" uid="uid://dttxk4uuw53ur" path="res://controllers/hud/sound_gauge.gd" id="1_6w0ly"]
+[ext_resource type="Texture2D" uid="uid://c3lyjnwe3qqia" path="res://controllers/hud/progress_grey.png" id="1_xaiid"]
+[ext_resource type="Texture2D" uid="uid://ovrdk3isbc7w" path="res://controllers/hud/progress_red.png" id="2_6w0ly"]
+[ext_resource type="Texture2D" uid="uid://640ud8ogbnse" path="res://controllers/hud/progress_red_tip.png" id="3_38o1a"]
+[ext_resource type="Texture2D" uid="uid://xkhydqo8ax0h" path="res://controllers/hud/progress_red_face.png" id="4_7um1r"]
+
+[node name="SoundGauge" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 696.0
+offset_bottom = 56.0
+script = ExtResource("1_6w0ly")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_xaiid")
+
+[node name="Gauge" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 782.0
+offset_bottom = 231.0
+
+[node name="Value" type="TextureRect" parent="Gauge"]
+layout_mode = 2
+offset_right = 778.0
+offset_bottom = 231.0
+scale = Vector2(0.1, 1)
+pivot_offset = Vector2(111.77, 87.67)
+texture = ExtResource("2_6w0ly")
+
+[node name="Tip" type="TextureRect" parent="Gauge"]
+layout_mode = 2
+offset_left = -268.645
+offset_right = 509.355
+offset_bottom = 231.0
+texture = ExtResource("3_38o1a")
+
+[node name="Face" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("4_7um1r")
