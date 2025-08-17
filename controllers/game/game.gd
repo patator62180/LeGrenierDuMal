@@ -127,3 +127,23 @@ func _ready() -> void:
 
 func _process(delta):
     Controller.instance.update(delta)
+
+#var ctrl = false
+#var alt = false
+#
+#func _input(event):
+    #if is_instance_of(event, InputEventKey):
+        #var key_event: InputEventKey = event
+        #
+        #if key_event.keycode == KEY_CTRL and key_event.pressed:
+            #ctrl = true
+        #else:
+            #ctrl = false
+        #
+        #if key_event.keycode == KEY_ALT and key_event.pressed:
+            #alt = true
+        #else:
+            #alt = false
+        #
+        #if key_event.keycode == KEY_H:
+            #Controller.instance.notify_character_escaped()

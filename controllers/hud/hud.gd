@@ -5,6 +5,7 @@ extends Control
 @onready var _animation_player: AnimationPlayer = $AnimationPlayer
 @onready var _vignette : CanvasItem = $Vignette
 @onready var _game_win_timer: Label = $GameWin/Timer
+@onready var _escape_audio_stream_player: AudioStreamPlayer = $EscapeAudioStreamPlayer
 
 func _ready():
     Game.Controller.instance.cumulated_sound_changed.connect(_on_cumulated_sound_changed)
@@ -39,7 +40,8 @@ func _on_death():
 
 func _on_escape():
     _animation_player.play("escape")
-    
+    _escape_audio_stream_player.play()
+
 func _on_animation_finished(animation_name : StringName):
     if animation_name == "death" or animation_name == "escape":
         get_tree().change_scene_to_file("res://menus/main_menu.tscn")
