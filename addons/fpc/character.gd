@@ -160,6 +160,7 @@ func _ready():
     enter_normal_state()
     
     Game.Controller.instance.death_triggered.connect(_on_death_triggered)
+    Game.Controller.instance.escape_triggered.connect(_on_escape_triggered)
     
     animation_left_hand = $"Head/Camera/hands anim/AnimationLeftHand"
     animation_right_hand = $"Head/Camera/hands anim/AnimationRightHand"
@@ -171,6 +172,12 @@ func _on_death_triggered():
     Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
     animation_left_hand.play("RIG-ArmatureAction")
     animation_right_hand.play("RIG-Armature_001Action")
+    
+func _on_escape_triggered():
+    immobile = true
+    mouse_sensitivity = 0
+    $UserInterface.visible = false
+    Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 func _process(_delta):
     if pausing_enabled:
