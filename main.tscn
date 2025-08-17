@@ -149,8 +149,9 @@ density_texture = SubResource("NoiseTexture3D_xuqvo")
 [sub_resource type="BoxMesh" id="BoxMesh_xuqvo"]
 
 [sub_resource type="Curve" id="Curve_0n3wm"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.249292, 1), 0.0, 0.0, 0, 0, Vector2(0.74221, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 4
+_limits = [0.0, 10.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.254491, 10), 0.0, 0.0, 0, 0, Vector2(0.350299, 8.68609), 0.0, 0.0, 0, 0, Vector2(0.458084, 9.69084), 0.0, 0.0, 0, 0, Vector2(0.577844, 4.4352), 0.0, 0.0, 0, 0, Vector2(0.748503, 8.29964), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 7
 
 [sub_resource type="CurveTexture" id="CurveTexture_qnost"]
 curve = SubResource("Curve_0n3wm")
@@ -165,10 +166,9 @@ spread = 180.0
 initial_velocity_min = 0.1
 initial_velocity_max = 0.2
 gravity = Vector3(0, 0, 0)
-alpha_curve = SubResource("CurveTexture_qnost")
+emission_curve = SubResource("CurveTexture_qnost")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0n3wm"]
-transparency = 1
 vertex_color_use_as_albedo = true
 albedo_color = Color(1, 0, 0, 1)
 emission_enabled = true
