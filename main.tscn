@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=3 uid="uid://srcm6edfpyg2"]
+[gd_scene load_steps=83 format=3 uid="uid://srcm6edfpyg2"]
 
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://b3njdfw5ehyqs" path="res://controllers/picker/picker.tscn" id="2_0xm2m"]
@@ -197,6 +197,84 @@ proximity_fade_distance = 0.2
 material = SubResource("StandardMaterial3D_hrvbo")
 
 [sub_resource type="BoxMesh" id="BoxMesh_xuqvo"]
+
+[sub_resource type="Curve3D" id="Curve3D_0n3wm"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 1.73898, 0.00552177, 0.15493, -1.06405, -0.142107, -1.08714, 1.06405, 0.142107, 1.08714, 8.94121, 0.316292, 0.265499, 0.222376, 0.0677891, -0.945301, -0.222376, -0.0677891, 0.945301, 10.2807, 0.412773, 3.24111, 0.0202293, -0.0202484, -1.06962, -0.0202293, 0.0202484, 1.06962, 8.20647, 0.541733, 6.62073, -0.142218, 0.253931, -0.670261, 0.142218, -0.253931, 0.670261, 8.72837, 0.646646, 8.95634, 0, 0, 0, 0, 0, 0, 8.93047, -2.22258, 13.0719),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0)
+}
+point_count = 6
+
+[sub_resource type="Curve" id="Curve_qnost"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_wnkbs"]
+curve = SubResource("Curve_qnost")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qnost"]
+lifetime_randomness = 0.2
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 0.1
+emission_ring_radius = 0.1
+emission_ring_inner_radius = 0.0
+emission_ring_cone_angle = 90.0
+direction = Vector3(1, 0, -1)
+initial_velocity_min = 0.1
+initial_velocity_max = 0.3
+gravity = Vector3(0, 0, 0)
+damping_min = 0.05
+damping_max = 0.1
+emission_curve = SubResource("CurveTexture_wnkbs")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wnkbs"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.839216, 0.584314, 0, 1)
+emission_enabled = true
+emission = Color(0.839216, 0.584314, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_f6a44"]
+material = SubResource("StandardMaterial3D_wnkbs")
+radius = 0.005
+height = 0.01
+
+[sub_resource type="Animation" id="Animation_hrvbo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow3D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_0cbny"]
+resource_name = "progress"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow3D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uypp3"]
+_data = {
+&"RESET": SubResource("Animation_hrvbo"),
+&"progress": SubResource("Animation_0cbny")
+}
 
 [node name="Node3D" type="Node3D"]
 
@@ -970,5 +1048,26 @@ volume_db = 10.0
 pitch_scale = 0.8
 autoplay = true
 panning_strength = 0.0
+
+[node name="Path3D" type="Path3D" parent="."]
+transform = Transform3D(0.805866, 0, -0.592097, 0, 1, 0, 0.592097, 0, 0.805866, -7.35288, 18.3659, 44.3834)
+curve = SubResource("Curve3D_0n3wm")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(-0.0153477, -0.0430916, -0.998811, 1.86234e-09, 0.9989, -0.0430979, 0.999721, -0.000661541, -0.0153337, 1.73898, 0.00552177, 0.15493)
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="Path3D/PathFollow3D"]
+transform = Transform3D(1, 1.86265e-09, 2.98023e-08, -1.86265e-09, 1, 0, 0, -1.86265e-09, 1, -0.000995636, -5.72205e-06, -0.000165939)
+amount = 250
+lifetime = 5.0
+preprocess = 1.0
+process_material = SubResource("ParticleProcessMaterial_qnost")
+draw_pass_1 = SubResource("SphereMesh_f6a44")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Path3D"]
+libraries = {
+&"": SubResource("AnimationLibrary_uypp3")
+}
+autoplay = "progress"
 
 [connection signal="area_entered" from="Attic/Area3D" to="Attic/Area3D" method="_on_area_entered"]
