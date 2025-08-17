@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://crfio4vjtosxa"]
+
+[ext_resource type="Script" uid="uid://dl0af51pnqbi8" path="res://rigidbodies/lib/rigid_bodish.gd" id="1_ol7m1"]
+[ext_resource type="PackedScene" uid="uid://clhmyj3qhfdtf" path="res://controllers/impact/impact_watcher.tscn" id="3_lor4d"]
+[ext_resource type="ArrayMesh" uid="uid://bejpwi8hfhghr" path="res://meshes/Dices/dice1.res" id="4_3naf6"]
+[ext_resource type="Resource" uid="uid://ct60s2vwxs4rk" path="res://SFX/Objects/Curves/small_object.tres" id="4_kai1q"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3naf6"]
+size = Vector3(0.06, 0.06, 0.06)
+
+[node name="Dice1" type="RigidBody3D"]
+collision_layer = 2
+collision_mask = 7
+mass = 0.004
+script = ExtResource("1_ol7m1")
+
+[node name="ImpactWatcher" parent="." instance=ExtResource("3_lor4d")]
+_audio_curve = ExtResource("4_kai1q")
+
+[node name="Dice1" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 0, 0, 0)
+mesh = ExtResource("4_3naf6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_3naf6")
