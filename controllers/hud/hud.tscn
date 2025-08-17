@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://b3sn7b3h2ri6u"]
+[gd_scene load_steps=15 format=3 uid="uid://b3sn7b3h2ri6u"]
 
 [ext_resource type="Script" uid="uid://ddd1xerpx7hse" path="res://controllers/hud/hud.gd" id="1_coeob"]
 [ext_resource type="Texture2D" uid="uid://b4eaxitmcjq5i" path="res://controllers/hud/loading.png" id="2_qlil0"]
+[ext_resource type="PackedScene" uid="uid://cdcnpoait2bct" path="res://controllers/hud/sound_gauge.tscn" id="3_3fgn5"]
 [ext_resource type="Shader" uid="uid://c0yuxmxggsel1" path="res://shaders/vignette.gdshader" id="3_3os43"]
 [ext_resource type="AudioStream" uid="uid://cs3ea26udisbv" path="res://SFX/jumpscare-203379.mp3" id="4_60on8"]
 
@@ -234,29 +235,7 @@ anchor_bottom = 1.002
 offset_right = 0.151855
 offset_bottom = -0.296082
 
-[node name="SoundGauge" type="Control" parent="."]
-anchors_preset = 0
-offset_right = 696.0
-offset_bottom = 56.0
-
-[node name="Background" type="ColorRect" parent="SoundGauge"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.205117, 0.205117, 0.205117, 1)
-
-[node name="Value" type="ColorRect" parent="SoundGauge"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(1e-05, 1)
-color = Color(0.796078, 0.203922, 0.203922, 1)
+[node name="SoundGauge" parent="." instance=ExtResource("3_3fgn5")]
 
 [node name="LoadingOverlay" type="ColorRect" parent="."]
 layout_mode = 1

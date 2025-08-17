@@ -1,6 +1,6 @@
 extends Control
 
-@onready var _sound_gauge_value: ColorRect = $SoundGauge/Value
+@onready var _sound_gauge: SoundGauge = $SoundGauge
 @onready var _animation_player: AnimationPlayer = $AnimationPlayer
 @onready var _vignette : CanvasItem = $Vignette
 
@@ -17,7 +17,7 @@ func _on_loading_complete():
 
 func _on_cumulated_sound_changed(sound: float):
     var relative_sound = min(Game.MAX_SOUND_VALUE, sound) / Game.MAX_SOUND_VALUE
-    _sound_gauge_value.scale.x = relative_sound
+    _sound_gauge.value = relative_sound
     _vignette.material.set_shader_parameter("inner_radius", 1.0-relative_sound)
 
 func _on_death():
