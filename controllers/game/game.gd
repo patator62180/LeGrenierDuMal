@@ -63,7 +63,9 @@ class Controller:
     func notify_character_escaped():
         Game.Controller.instance.escape_triggered.emit()
         _character_escaped = true
-        GameSave.save(_best_time, _time)
+        if _time < _best_time:
+            _best_time = _time
+            GameSave.save(_time)
 
     func add_impact(curve: Curve, velocity: float, mass: float, audio_player: AudioStreamPlayer3D):
         _impacts.push_back(Impact.new(curve, velocity, mass, audio_player))

@@ -1,3 +1,4 @@
+class_name HUD
 extends Control
 
 @onready var _sound_gauge: SoundGauge = $SoundGauge
@@ -15,7 +16,7 @@ func _ready():
     _animation_player.animation_finished.connect(_on_animation_finished)
     _animation_player.play("loading")
 
-func seconds2hhmmss(total_seconds: float) -> String:
+static func seconds2hhmmss(total_seconds: float) -> String:
     var seconds:float = fmod(total_seconds , 60.0)
     var minutes:int = int(total_seconds / 60.0) % 60
     var hours: int = int(total_seconds / 3600.0)

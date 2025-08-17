@@ -9,18 +9,17 @@ class Content:
     func _init(best_time: float):
         self.best_time = best_time
 
-static func save(best_time: float, time: float):
-    if time < best_time:
-        var save_file = FileAccess.open(FILE_NAME, FileAccess.WRITE)
-        var json_string = JSON.stringify({
-            "best_time": best_time
-        })
-        
-        save_file.store_line(json_string)
+static func save(best_time: float):
+    var save_file = FileAccess.open(FILE_NAME, FileAccess.WRITE)
+    var json_string = JSON.stringify({
+        "best_time": best_time
+    })
+    
+    save_file.store_line(json_string)
 
 static func load():
     if FileAccess.file_exists(FILE_NAME):
-        var save_file = FileAccess.open("user://savegame.save", FileAccess.READ)
+        var save_file = FileAccess.open(FILE_NAME, FileAccess.READ)
         var text = save_file.get_as_text()
         var json_string = JSON.parse_string(text)
         
