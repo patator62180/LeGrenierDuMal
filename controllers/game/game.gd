@@ -39,6 +39,7 @@ class Controller:
     signal loading_completed
     signal death_triggered
     signal escape_triggered
+    signal time_updated
     
     var _impacts: Array[Impact] = []
     var _loading_period_finished: bool = false
@@ -46,6 +47,9 @@ class Controller:
     var _min_velocity: float = INF
     var _max_velocity: float = -INF
     var _rigid_bodishes: Array[RigidBodish] = []
+    var _time: float = 0
+    var _character_escaped: bool = false
+    var _best_time: float = INF
     
     var loaded: bool:
         get: return _loading_period_finished
@@ -55,7 +59,14 @@ class Controller:
 
     var _vfx_scene : PackedScene
     var is_death_triggered : bool = false
-    
+
+    func notify_character_escaped():
+        Game.Controller.instance.escape_triggered.emit()
+        _character_escaped = true
+        if _time < _best_time:
+            _best_time = _time
+            GameSave.save(_time)
+
     func add_impact(curve: Curve, velocity: float, mass: float, audio_player: AudioStreamPlayer3D):
         _impacts.push_back(Impact.new(curve, velocity, mass, audio_player))
 
@@ -70,8 +81,11 @@ class Controller:
                     loading_completed.emit()
             else:
                 _loading_period_counter = 0
-        else:
+        elif not _character_escaped:
             var cumulated_sound = 0
+            
+            _time += delta
+            time_updated.emit(_time)
             
             for impact in _impacts:
                 if impact.velocity < _min_velocity:

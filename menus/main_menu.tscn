@@ -1,27 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://byrfq04ujdh0w"]
+[gd_scene load_steps=9 format=3 uid="uid://byrfq04ujdh0w"]
 
 [ext_resource type="Script" uid="uid://bk2jpt65cfaxg" path="res://controllers/main_menu.gd" id="1_8gy84"]
 [ext_resource type="Texture2D" uid="uid://b0u62377kjr5h" path="res://menus/splash_screen.jpg" id="2_ij7vn"]
 [ext_resource type="Texture2D" uid="uid://bd0rg2ndl50i1" path="res://menus/button.jpg" id="3_yjgyn"]
 [ext_resource type="AudioStream" uid="uid://b56jgibm77hqf" path="res://SFX/criminal-shadows-219112.mp3" id="4_rqbgu"]
-
-[sub_resource type="Animation" id="Animation_rqbgu"]
-resource_name = "idle"
-length = 4.0
-loop_mode = 1
-step = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect2/Button:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 2, 3, 4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [0.0, 0.174533, 0.0, -0.174533, 0.0]
-}
+[ext_resource type="FontFile" uid="uid://v1quocn4gx46" path="res://menus/Halloween Spooky.otf" id="5_oblsv"]
 
 [sub_resource type="Animation" id="Animation_oblsv"]
 length = 0.001
@@ -48,6 +31,24 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_rqbgu"]
+resource_name = "idle"
+length = 4.0
+loop_mode = 1
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect2/Button:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.174533, 0.0, -0.174533, 0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pwbes"]
@@ -98,3 +99,28 @@ autoplay = "idle"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_rqbgu")
 autoplay = true
+
+[node name="BestTime" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -635.0
+offset_top = -100.0
+grow_horizontal = 0
+grow_vertical = 0
+alignment = 2
+
+[node name="Label" type="Label" parent="BestTime"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_oblsv")
+theme_override_font_sizes/font_size = 100
+text = "Best Time: "
+
+[node name="Value" type="Label" parent="BestTime"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_oblsv")
+theme_override_font_sizes/font_size = 100
+text = "00:00:00"

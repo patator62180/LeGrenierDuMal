@@ -5,4 +5,4 @@ func _ready():
     
 func on_body_entered(body : Node3D):
     if body.name == "Character":
-        Game.Controller.instance.escape_triggered.emit()
+        Game.Controller.instance.notify_character_escaped()
