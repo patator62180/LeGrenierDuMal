@@ -135,6 +135,9 @@ var gravity : float = ProjectSettings.get_setting("physics/3d/default_gravity") 
 # Stores mouse input for rotating the camera in the physics process
 var mouseInput : Vector2 = Vector2(0,0)
 
+var animation_left_hand : AnimationPlayer
+var animation_right_hand : AnimationPlayer
+
 #endregion
 
 
@@ -157,12 +160,17 @@ func _ready():
     enter_normal_state()
     
     Game.Controller.instance.death_triggered.connect(_on_death_triggered)
+    
+    animation_left_hand = $"Head/Camera/hands anim/AnimationLeftHand"
+    animation_right_hand = $"Head/Camera/hands anim/AnimationRightHand"
 
 func _on_death_triggered():
     immobile = true
     mouse_sensitivity = 0
     $UserInterface.visible = false
     Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+    animation_left_hand.play("RIG-ArmatureAction")
+    animation_right_hand.play("RIG-Armature_001Action")
 
 func _process(_delta):
     if pausing_enabled:
