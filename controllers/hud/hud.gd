@@ -4,8 +4,8 @@ extends Control
 @onready var _sound_gauge: SoundGauge = $SoundGauge
 @onready var _animation_player: AnimationPlayer = $AnimationPlayer
 @onready var _vignette : CanvasItem = $Vignette
-@onready var _timer: Label = $Timer
 @onready var _game_win_timer: Label = $GameWin/Timer
+@onready var _escape_audio_stream_player: AudioStreamPlayer = $EscapeAudioStreamPlayer
 
 func _ready():
     Game.Controller.instance.cumulated_sound_changed.connect(_on_cumulated_sound_changed)
@@ -25,7 +25,6 @@ static func seconds2hhmmss(total_seconds: float) -> String:
 
 func _on_time_updated(time: float):
     var formatted_time = seconds2hhmmss(time)
-    _timer.text = formatted_time
     _game_win_timer.text = formatted_time
 
 func _on_loading_complete():
@@ -41,7 +40,8 @@ func _on_death():
 
 func _on_escape():
     _animation_player.play("escape")
-    
+    _escape_audio_stream_player.play()
+
 func _on_animation_finished(animation_name : StringName):
     if animation_name == "death" or animation_name == "escape":
         get_tree().change_scene_to_file("res://menus/main_menu.tscn")
