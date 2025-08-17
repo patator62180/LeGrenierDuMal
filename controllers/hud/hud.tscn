@@ -237,6 +237,18 @@ offset_bottom = -0.296082
 
 [node name="SoundGauge" parent="." instance=ExtResource("3_3fgn5")]
 
+[node name="Timer" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -64.0
+offset_bottom = 23.0
+grow_horizontal = 0
+text = "00:00:00"
+horizontal_alignment = 2
+vertical_alignment = 1
+
 [node name="LoadingOverlay" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -312,6 +324,21 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "You Escaped"
 label_settings = SubResource("LabelSettings_3os43")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Label" parent="GameWin"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 69.875
+offset_bottom = 92.875
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "00:00:00"
 horizontal_alignment = 1
 vertical_alignment = 1
 
