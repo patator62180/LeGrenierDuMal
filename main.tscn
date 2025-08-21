@@ -19,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://cqt7a5hm1djee" path="res://rigidbodies/old_tire.tscn" id="16_yaehf"]
 [ext_resource type="PackedScene" uid="uid://cukmbgx13cobk" path="res://rigidbodies/metal_trash_can.tscn" id="18_cegan"]
 [ext_resource type="PackedScene" uid="uid://b8gt741xv2cl2" path="res://rigidbodies/plasticContainers/plasticContainer_02.tscn" id="19_cegan"]
-[ext_resource type="PackedScene" uid="uid://dkvya8kjd454f" path="res://rigidbodies/wooden_table.tscn" id="20_82xsv"]
+[ext_resource type="PackedScene" uid="uid://dkvya8kjd454f" path="res://rigidbodies/wooden_table/wooden_table.tscn" id="20_82xsv"]
 [ext_resource type="PackedScene" uid="uid://d3i5fdb6hnw51" path="res://rigidbodies/desk_lamp_arm.tscn" id="21_d13ii"]
 [ext_resource type="PackedScene" uid="uid://blu06mtvvbyax" path="res://rigidbodies/rusted_spade.tscn" id="21_getpj"]
 [ext_resource type="PackedScene" uid="uid://b042mnyaycqxq" path="res://rigidbodies/plasticContainers/plasticContainer_03.tscn" id="22_1u8w0"]
@@ -1110,7 +1110,7 @@ transform = Transform3D(0.805866, 0, -0.592097, 0, 1, 0, 0.592097, 0, 0.805866, 
 curve = SubResource("Curve3D_0n3wm")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(-0.0153478, -0.0430916, -0.998797, 1.86236e-09, 0.998901, -0.0430972, 0.999727, -0.000661542, -0.0153335, 1.73898, 0.00552177, 0.15493)
+transform = Transform3D(-0.0153478, -0.0430916, -0.998797, 1.86236e-09, 0.998901, -0.0430973, 0.999727, -0.000661542, -0.0153335, 1.73898, 0.00552177, 0.15493)
 
 [node name="GPUParticles3D2" type="GPUParticles3D" parent="Path3D/PathFollow3D"]
 transform = Transform3D(1, 1.86265e-09, 2.98023e-08, -1.86265e-09, 1, 0, 0, -1.86265e-09, 1, -0.000995636, -5.72205e-06, -0.000165939)

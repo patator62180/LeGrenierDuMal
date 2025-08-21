@@ -1,0 +1,47 @@
+[gd_scene load_steps=9 format=3 uid="uid://bapou07gbco8e"]
+
+[ext_resource type="PackedScene" uid="uid://dkvya8kjd454f" path="res://rigidbodies/wooden_table/wooden_table.tscn" id="1_xywnw"]
+[ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="2_u81wn"]
+[ext_resource type="PackedScene" uid="uid://c6efs7uxfi5sv" path="res://controllers/game/game.tscn" id="3_l1m2t"]
+[ext_resource type="PackedScene" uid="uid://b3njdfw5ehyqs" path="res://controllers/picker/picker.tscn" id="4_8xwp6"]
+[ext_resource type="PackedScene" uid="uid://3u2wn7w5v44h" path="res://controllers/debug/audio_debug.tscn" id="5_jv2oj"]
+[ext_resource type="PackedScene" uid="uid://crfio4vjtosxa" path="res://rigidbodies/dices/dice1.tscn" id="6_3a3xy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u81wn"]
+size = Vector3(30, 1, 30)
+
+[sub_resource type="BoxMesh" id="BoxMesh_l1m2t"]
+size = Vector3(30, 1, 30)
+
+[node name="TestWoodenTable" type="Node3D"]
+
+[node name="WoodenTable" parent="." instance=ExtResource("1_xywnw")]
+
+[node name="Ground" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+shape = SubResource("BoxShape3D_u81wn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+mesh = SubResource("BoxMesh_l1m2t")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.22906, 3.14194, 0.153047)
+
+[node name="Character" parent="." instance=ExtResource("2_u81wn")]
+transform = Transform3D(0.976114, 0, 0.217257, 0, 1, 0, -0.217257, 0, 0.976114, 0, 0, 3.87749)
+
+[node name="Game" parent="." instance=ExtResource("3_l1m2t")]
+
+[node name="Picker" parent="." instance=ExtResource("4_8xwp6")]
+
+[node name="AudioDebug" parent="." instance=ExtResource("5_jv2oj")]
+offset_left = 1600.0
+offset_top = 859.0
+offset_right = 1654.0
+offset_bottom = 911.92
+scale = Vector2(3.225, 1.83)
+
+[node name="Dice1" parent="." instance=ExtResource("6_3a3xy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.28206, 0)

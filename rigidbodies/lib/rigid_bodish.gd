@@ -29,9 +29,21 @@ func _integrate_forces(state):
         var pos = state.get_contact_local_position(index)
         var collider = state.get_contact_collider_object(index)
         var velocity = state.get_contact_local_velocity_at_position(index)
+        var collider_velocity = state.get_contact_collider_velocity_at_position(index)
+        
+        var contact_direction = state.get_contact_local_position(index).direction_to(state.get_contact_collider_position(index))
+        var impact_strengh = abs(velocity.dot(contact_direction))
         
         if not _contact_exists(pos) and not is_instance_of(collider, CharacterBody3D):
-            contact_occured.emit(velocity)
+            var other: RigidBodish = collider as RigidBodish
+            
+            if collider_velocity.length() == 0 and other != null:
+                contact_occured.emit(impact_strengh / 2)
+                other.contact_occured.emit(impact_strengh / 2)
+                other._contacts.push_back(state.get_contact_collider_position(index))
+            else:
+                contact_occured.emit(impact_strengh)
+            
             var vfx = Game.Controller.instance._vfx_scene.instantiate() as GPUParticles3D
             get_tree().get_root().add_child(vfx)
             vfx.global_position = pos

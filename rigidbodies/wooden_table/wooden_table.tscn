@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://c10qq43r6ar16" path="res://models/Wooden table/wooden_table_02_1k.gltf" id="1_hv3se"]
 [ext_resource type="Script" uid="uid://dl0af51pnqbi8" path="res://rigidbodies/lib/rigid_bodish.gd" id="1_ollb4"]
 [ext_resource type="PackedScene" uid="uid://clhmyj3qhfdtf" path="res://controllers/impact/impact_watcher.tscn" id="2_16tcq"]
-[ext_resource type="Resource" uid="uid://bsouhqrvrr0xq" path="res://SFX/Objects/Curves/wood-creak-single-v3-14657.tres" id="3_s7vek"]
+[ext_resource type="AudioStream" uid="uid://b2a34l3u8swa5" path="res://rigidbodies/wooden_table/impact.mp3" id="4_dmda1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hv3se"]
 size = Vector3(1.47974, 0.0951538, 0.922729)
@@ -41,4 +41,4 @@ transform = Transform3D(-0.00174955, -0.0398667, 0.999204, 0.0438111, 0.998243, 
 shape = SubResource("BoxShape3D_16tcq")
 
 [node name="ImpactWatcher" parent="." instance=ExtResource("2_16tcq")]
-_audio_curve = ExtResource("3_s7vek")
+_audio_stream = ExtResource("4_dmda1")

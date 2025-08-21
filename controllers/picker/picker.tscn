@@ -17,10 +17,13 @@ script = ExtResource("1_a6xgo")
 linear_limit_x/damping = 0.01
 linear_limit_y/damping = 0.01
 linear_limit_z/damping = 0.01
-angular_limit_x/upper_angle = 0.523599
-angular_limit_x/lower_angle = -0.523599
+angular_limit_x/enabled = false
+angular_limit_x/upper_angle = 3.14159
+angular_limit_x/lower_angle = -3.14159
+angular_limit_y/enabled = false
 angular_limit_y/upper_angle = 0.523599
 angular_limit_y/lower_angle = -0.523599
+angular_limit_z/enabled = false
 angular_limit_z/upper_angle = 0.523599
 angular_limit_z/lower_angle = -0.523599
 

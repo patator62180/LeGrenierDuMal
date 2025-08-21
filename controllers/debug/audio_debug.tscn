@@ -1,0 +1,56 @@
+[gd_scene load_steps=2 format=3 uid="uid://3u2wn7w5v44h"]
+
+[ext_resource type="PackedScene" uid="uid://ccgsb6t7pqd7f" path="res://controllers/debug/audio_debug_bar.tscn" id="1_m8uar"]
+
+[node name="AudioDebug" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 54.0
+offset_bottom = 52.92
+
+[node name="SubBass" parent="." instance=ExtResource("1_m8uar")]
+layout_mode = 0
+_min_frequency = 20.0
+_max_frequency = 60.0
+
+[node name="Bass" parent="." instance=ExtResource("1_m8uar")]
+layout_mode = 0
+offset_left = 11.0
+offset_right = 21.0
+_min_frequency = 60.0
+_max_frequency = 250.0
+
+[node name="LowerMids" parent="." instance=ExtResource("1_m8uar")]
+layout_mode = 0
+offset_left = 22.0
+offset_right = 32.0
+_min_frequency = 250.0
+_max_frequency = 500.0
+
+[node name="Mids" parent="." instance=ExtResource("1_m8uar")]
+layout_mode = 0
+offset_left = 33.0
+offset_right = 43.0
+_min_frequency = 500.0
+_max_frequency = 2000.0
+
+[node name="HighMids" parent="." instance=ExtResource("1_m8uar")]
+layout_mode = 0
+offset_left = 44.0
+offset_right = 54.0
+_min_frequency = 2000.0
+_max_frequency = 4000.0
+
+[node name="Presence" parent="." instance=ExtResource("1_m8uar")]
+layout_mode = 0
+offset_left = 55.0
+offset_right = 65.0
+_min_frequency = 4000.0
+_max_frequency = 6000.0
+
+[node name="Air" parent="." instance=ExtResource("1_m8uar")]
+layout_mode = 0
+offset_left = 66.0
+offset_right = 76.0
+_min_frequency = 6000.0
+_max_frequency = 20000.0
