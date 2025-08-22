@@ -41,4 +41,7 @@ transform = Transform3D(-0.00174955, -0.0398667, 0.999204, 0.0438111, 0.998243, 
 shape = SubResource("BoxShape3D_16tcq")
 
 [node name="ImpactWatcher" parent="." instance=ExtResource("2_16tcq")]
-_audio_stream = ExtResource("4_dmda1")
+_impact_sounds = Array[AudioStream]([ExtResource("4_dmda1")])
+_random_pitch_variations = true
+_min_random_pitch = 0.9
+_max_random_pitch = 1.1

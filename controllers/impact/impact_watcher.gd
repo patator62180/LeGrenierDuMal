@@ -1,8 +1,17 @@
+class_name ImpactWatcher
 extends Node3D
 
-@export var _audio_stream: AudioStream
+@export_group("Sounds")
+@export var _impact_sounds: Array[AudioStream]
+
+@export_group("Pitch")
+@export var _random_pitch_variations: bool = false
+@export var _min_random_pitch: float = 1
+@export var _max_random_pitch: float = 1
 
 @onready var _audio_stream_player : AudioStreamPlayer3D = $AudioStreamPlayer3D
+
+
 
 const AUDIO_BUS_COUNT: int = 20
 const TIME_BETWEEN_IMPACTS: float = 0.3
@@ -14,6 +23,7 @@ class AudioBusHandle:
     var _time_since_impact: float
     var _pitch_shift: AudioEffectPitchShift
     var _bus_name: StringName
+    var _impact_watcher: ImpactWatcher
 
     var expired: bool:
         get: return _time_since_impact >= EXPIRATION_DURATION
@@ -21,15 +31,16 @@ class AudioBusHandle:
     var bus_name: StringName:
         get: return _bus_name
 
-    func _init(bus_idx: int):
+    func _init(bus_idx: int, impact_watcher: ImpactWatcher):
         _pitch_shift = AudioServer.get_bus_effect(bus_idx, 0)
         _bus_name = AudioServer.get_bus_name(bus_idx)
+        _impact_watcher = impact_watcher
 
     func update(delta: float):
         _time_since_impact += delta
     
     func handle_impact():
-        _pitch_shift.pitch_scale = randf_range(0.9, 1.1)
+        _pitch_shift.pitch_scale = _impact_watcher.get_pitch_scale()
         _time_since_impact = 0
 
 
@@ -56,10 +67,10 @@ static func _initialize_audio_server():
 
         _audio_server_initialized = true
 
-static func _allocate_audio_bus():
+static func _allocate_audio_bus(impact_watcher: ImpactWatcher):
     for bus_idx in range(_initial_bus_count, AUDIO_BUS_COUNT + _initial_bus_count):
         if _audio_bus_handles[bus_idx] == null or _audio_bus_handles[bus_idx].expired:
-            _audio_bus_handles[bus_idx] = AudioBusHandle.new(bus_idx)
+            _audio_bus_handles[bus_idx] = AudioBusHandle.new(bus_idx, impact_watcher)
             return _audio_bus_handles[bus_idx]
 
 
@@ -75,21 +86,19 @@ func _ready():
         set_process(false)
         set_physics_process(false)
 
-    if _audio_stream == null:
+    if _impact_sounds.size() == 0:
         printerr("%s: ImpactWatcher has no AudioStream" % parent.name)
         set_process(false)
         set_physics_process(false)
-    else:
-        _audio_stream_player.stream = _audio_stream
     
-    if _rigid_body != null and _audio_stream != null:
+    if _rigid_body != null and _impact_sounds.size() > 0:
         _rigid_body.contact_monitor = true
         _rigid_body.max_contacts_reported = 20
         _rigid_body.contact_occured.connect(_on_contact_occured)
 
 func _on_contact_occured(impact_strengh: float):
     if _audio_bus_handle == null or _audio_bus_handle.expired:
-        _audio_bus_handle = _allocate_audio_bus()
+        _audio_bus_handle = _allocate_audio_bus(self)
         
         if _audio_bus_handle != null:
             _audio_stream_player.bus = _audio_bus_handle.bus_name
@@ -99,6 +108,10 @@ func _on_contact_occured(impact_strengh: float):
         
         _audio_stream_player.volume_linear = min(velocity_ratio, 1)
         _audio_bus_handle.handle_impact()
+        _audio_stream_player.stream = _impact_sounds[randi_range(0, _impact_sounds.size() - 1)]
         _audio_stream_player.play();
     else:
         printerr("Not enough AudioBus available to allocate for impact")
+
+func get_pitch_scale():
+    return randf_range(_min_random_pitch, _max_random_pitch) if _random_pitch_variations else 1

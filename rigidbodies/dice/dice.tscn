@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://crfio4vjtosxa"]
+[gd_scene load_steps=9 format=3 uid="uid://crfio4vjtosxa"]
 
 [ext_resource type="Script" uid="uid://dl0af51pnqbi8" path="res://rigidbodies/lib/rigid_bodish.gd" id="1_ol7m1"]
-[ext_resource type="AudioStream" uid="uid://byt6uxurf84xq" path="res://rigidbodies/dices/dice.mp3" id="3_3naf6"]
+[ext_resource type="AudioStream" uid="uid://b1ppi8gaqfcu0" path="res://rigidbodies/dice/dice1.mp3" id="3_hu3o4"]
 [ext_resource type="PackedScene" uid="uid://clhmyj3qhfdtf" path="res://controllers/impact/impact_watcher.tscn" id="3_lor4d"]
 [ext_resource type="ArrayMesh" uid="uid://bejpwi8hfhghr" path="res://meshes/Dices/dice1.res" id="4_3naf6"]
+[ext_resource type="AudioStream" uid="uid://c8hvcmknkd3nf" path="res://rigidbodies/dice/dice9.mp3" id="11_w2b2e"]
+[ext_resource type="AudioStream" uid="uid://du83a0rcq51x4" path="res://rigidbodies/dice/dice10.mp3" id="12_siegc"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gnu0s"]
 rough = true
@@ -21,7 +23,9 @@ physics_material_override = SubResource("PhysicsMaterial_gnu0s")
 script = ExtResource("1_ol7m1")
 
 [node name="ImpactWatcher" parent="." instance=ExtResource("3_lor4d")]
-_audio_stream = ExtResource("3_3naf6")
+_impact_sounds = Array[AudioStream]([ExtResource("3_hu3o4"), ExtResource("11_w2b2e"), ExtResource("12_siegc")])
+_min_random_pitch = 0.95
+_max_random_pitch = 1.05
 
 [node name="Dice1" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 0, 0, 0)

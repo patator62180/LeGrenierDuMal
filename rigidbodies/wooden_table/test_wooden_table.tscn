@@ -1,11 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://bapou07gbco8e"]
+[gd_scene load_steps=8 format=3 uid="uid://bapou07gbco8e"]
 
 [ext_resource type="PackedScene" uid="uid://dkvya8kjd454f" path="res://rigidbodies/wooden_table/wooden_table.tscn" id="1_xywnw"]
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="2_u81wn"]
 [ext_resource type="PackedScene" uid="uid://c6efs7uxfi5sv" path="res://controllers/game/game.tscn" id="3_l1m2t"]
 [ext_resource type="PackedScene" uid="uid://b3njdfw5ehyqs" path="res://controllers/picker/picker.tscn" id="4_8xwp6"]
 [ext_resource type="PackedScene" uid="uid://3u2wn7w5v44h" path="res://controllers/debug/audio_debug.tscn" id="5_jv2oj"]
-[ext_resource type="PackedScene" uid="uid://crfio4vjtosxa" path="res://rigidbodies/dices/dice1.tscn" id="6_3a3xy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_u81wn"]
 size = Vector3(30, 1, 30)
@@ -42,6 +41,3 @@ offset_top = 859.0
 offset_right = 1654.0
 offset_bottom = 911.92
 scale = Vector2(3.225, 1.83)
-
-[node name="Dice1" parent="." instance=ExtResource("6_3a3xy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.28206, 0)
