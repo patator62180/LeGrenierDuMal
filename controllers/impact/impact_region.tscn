@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://50qv1gpv8o"]
+
+[ext_resource type="Script" uid="uid://bt4oc43mf87lw" path="res://controllers/impact/impact_region.gd" id="1_7k81i"]
+
+[node name="ImpactRegion" type="Area3D"]
+collision_layer = 16
+collision_mask = 16
+input_ray_pickable = false
+script = ExtResource("1_7k81i")

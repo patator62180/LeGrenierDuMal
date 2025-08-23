@@ -1,29 +1,23 @@
+@tool
 class_name ImpactWatcher
 extends Node3D
 
-@export_group("Sounds")
-@export var _impact_sounds: Array[AudioStream]
-
-@export_group("Pitch")
-@export var _random_pitch_variations: bool = false
-@export var _min_random_pitch: float = 1
-@export var _max_random_pitch: float = 1
-
 @onready var _audio_stream_player : AudioStreamPlayer3D = $AudioStreamPlayer3D
-
-
+@onready var _regions: Array[ImpactRegion] = _get_regions()
 
 const AUDIO_BUS_COUNT: int = 20
-const TIME_BETWEEN_IMPACTS: float = 0.3
 const IMPACTS_BUS_NAME = "Impacts"
 
 class AudioBusHandle:
     const EXPIRATION_DURATION: float = 1
     
     var _time_since_impact: float
-    var _pitch_shift: AudioEffectPitchShift
+    var _pitch_effect: AudioEffectPitchShift
     var _bus_name: StringName
     var _impact_watcher: ImpactWatcher
+    
+    var pitch_effect: AudioEffectPitchShift:
+        get: return _pitch_effect
 
     var expired: bool:
         get: return _time_since_impact >= EXPIRATION_DURATION
@@ -32,17 +26,12 @@ class AudioBusHandle:
         get: return _bus_name
 
     func _init(bus_idx: int, impact_watcher: ImpactWatcher):
-        _pitch_shift = AudioServer.get_bus_effect(bus_idx, 0)
+        _pitch_effect = AudioServer.get_bus_effect(bus_idx, 0)
         _bus_name = AudioServer.get_bus_name(bus_idx)
         _impact_watcher = impact_watcher
 
     func update(delta: float):
         _time_since_impact += delta
-    
-    func handle_impact():
-        _pitch_shift.pitch_scale = _impact_watcher.get_pitch_scale()
-        _time_since_impact = 0
-
 
 var _rigid_body: RigidBodish
 var _last_impact_rel_time: float = 0
@@ -86,17 +75,15 @@ func _ready():
         set_process(false)
         set_physics_process(false)
 
-    if _impact_sounds.size() == 0:
-        printerr("%s: ImpactWatcher has no AudioStream" % parent.name)
+    if _regions.size() == 0:
+        printerr("%s: ImpactWatcher has no ImpactRegion" % parent.name)
         set_process(false)
         set_physics_process(false)
     
-    if _rigid_body != null and _impact_sounds.size() > 0:
-        _rigid_body.contact_monitor = true
-        _rigid_body.max_contacts_reported = 20
+    if _rigid_body != null and _regions.size() > 0:
         _rigid_body.contact_occured.connect(_on_contact_occured)
 
-func _on_contact_occured(impact_strengh: float):
+func _on_contact_occured(impact_point: ImpactPoint, impact_strengh: float):
     if _audio_bus_handle == null or _audio_bus_handle.expired:
         _audio_bus_handle = _allocate_audio_bus(self)
         
@@ -106,12 +93,29 @@ func _on_contact_occured(impact_strengh: float):
     if _audio_bus_handle != null:
         var velocity_ratio = remap(impact_strengh, Game.MIN_VELOCITY, Game.MAX_VELOCITY, 0, 1)
         
-        _audio_stream_player.volume_linear = min(velocity_ratio, 1)
-        _audio_bus_handle.handle_impact()
-        _audio_stream_player.stream = _impact_sounds[randi_range(0, _impact_sounds.size() - 1)]
-        _audio_stream_player.play();
+        _handle_impact(impact_point, velocity_ratio)
     else:
         printerr("Not enough AudioBus available to allocate for impact")
 
-func get_pitch_scale():
-    return randf_range(_min_random_pitch, _max_random_pitch) if _random_pitch_variations else 1
+func _get_regions() -> Array[ImpactRegion]:
+    var regions: Array[ImpactRegion] = []
+    
+    for child in get_children():
+        if is_instance_of(child, ImpactRegion):
+            regions.push_back(child)
+    
+    return regions
+    
+func _get_configuration_warnings():
+    var warnings = []
+    var regions = _get_regions()
+
+    if regions.size() == 0:
+        warnings.append("Add at least one ImpactRegion")
+
+    return warnings
+
+func _handle_impact(impact_point: ImpactPoint, velocity_ratio: float):
+    for region in _regions:
+        if region.handle_impact(_audio_stream_player, _audio_bus_handle.pitch_effect, velocity_ratio, impact_point):
+            break

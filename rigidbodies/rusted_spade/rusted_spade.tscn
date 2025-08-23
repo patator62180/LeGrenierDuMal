@@ -1,0 +1,79 @@
+[gd_scene load_steps=15 format=3 uid="uid://blu06mtvvbyax"]
+
+[ext_resource type="ArrayMesh" uid="uid://doy6nqiuj46o5" path="res://meshes/rusted_spade.res" id="1_e15if"]
+[ext_resource type="Script" uid="uid://dl0af51pnqbi8" path="res://rigidbodies/lib/rigid_bodish.gd" id="1_edrbh"]
+[ext_resource type="PackedScene" uid="uid://clhmyj3qhfdtf" path="res://controllers/impact/impact_watcher.tscn" id="2_krpau"]
+[ext_resource type="PackedScene" uid="uid://50qv1gpv8o" path="res://controllers/impact/impact_region.tscn" id="4_daxg8"]
+[ext_resource type="AudioStream" uid="uid://b2a34l3u8swa5" path="res://rigidbodies/wooden_table/impact.mp3" id="5_bcpyk"]
+[ext_resource type="Script" uid="uid://2ukr515a7cwy" path="res://controllers/impact/impact_material.gd" id="6_2n5f3"]
+[ext_resource type="AudioStream" uid="uid://b63pfiggqtbrw" path="res://rigidbodies/rusted_spade/metal_impact.mp3" id="7_bcpyk"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_krpau"]
+height = 0.834595
+radius = 0.0161133
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_edrbh"]
+height = 0.144165
+radius = 0.0180664
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fdhmq"]
+size = Vector3(0.185181, 0.257813, 0.0321503)
+
+[sub_resource type="Resource" id="Resource_2n5f3"]
+script = ExtResource("6_2n5f3")
+impact_sounds = Array[AudioStream]([ExtResource("7_bcpyk")])
+random_pitch_variations = true
+min_random_pitch = 0.9
+max_random_pitch = 1.1
+metadata/_custom_type_script = "uid://2ukr515a7cwy"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bcpyk"]
+size = Vector3(0.224838, 0.421692, 0.144104)
+
+[sub_resource type="Resource" id="Resource_q5u1p"]
+script = ExtResource("6_2n5f3")
+impact_sounds = Array[AudioStream]([ExtResource("5_bcpyk")])
+random_pitch_variations = true
+min_random_pitch = 0.85
+max_random_pitch = 1.0
+metadata/_custom_type_script = "uid://2ukr515a7cwy"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_daxg8"]
+size = Vector3(0.174744, 0.861313, 0.12793)
+
+[node name="RustedSpade" type="RigidBody3D"]
+collision_layer = 2
+collision_mask = 7
+mass = 5.0
+script = ExtResource("1_edrbh")
+
+[node name="RustedSpade" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_e15if")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.162903, 0)
+shape = SubResource("CylinderShape3D_krpau")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -0.00146833, 0.581868, 0)
+shape = SubResource("CylinderShape3D_edrbh")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00177002, -0.371094, 0.00714874)
+shape = SubResource("BoxShape3D_fdhmq")
+
+[node name="ImpactWatcher" parent="." instance=ExtResource("2_krpau")]
+
+[node name="Metal" parent="ImpactWatcher" instance=ExtResource("4_daxg8")]
+_material = SubResource("Resource_2n5f3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ImpactWatcher/Metal"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00655365, -0.328616, 0.00619507)
+shape = SubResource("BoxShape3D_bcpyk")
+
+[node name="Wood" parent="ImpactWatcher" instance=ExtResource("4_daxg8")]
+_material = SubResource("Resource_q5u1p")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ImpactWatcher/Wood"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000152588, 0.222694, 0.00732422)
+shape = SubResource("BoxShape3D_daxg8")

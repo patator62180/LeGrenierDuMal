@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgoy0freodk5t"]
+
+[ext_resource type="Script" uid="uid://b60ph0bimjkmo" path="res://controllers/impact/impact_point.gd" id="1_ussbc"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_u0fx8"]
+radius = 0.001
+
+[node name="ImpactPoint" type="Area3D"]
+collision_layer = 16
+collision_mask = 16
+input_ray_pickable = false
+script = ExtResource("1_ussbc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_u0fx8")

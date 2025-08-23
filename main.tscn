@@ -21,7 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://b8gt741xv2cl2" path="res://rigidbodies/plasticContainers/plasticContainer_02.tscn" id="19_cegan"]
 [ext_resource type="PackedScene" uid="uid://dkvya8kjd454f" path="res://rigidbodies/wooden_table/wooden_table.tscn" id="20_82xsv"]
 [ext_resource type="PackedScene" uid="uid://d3i5fdb6hnw51" path="res://rigidbodies/desk_lamp_arm.tscn" id="21_d13ii"]
-[ext_resource type="PackedScene" uid="uid://blu06mtvvbyax" path="res://rigidbodies/rusted_spade.tscn" id="21_getpj"]
+[ext_resource type="PackedScene" uid="uid://blu06mtvvbyax" path="res://rigidbodies/rusted_spade/rusted_spade.tscn" id="21_getpj"]
 [ext_resource type="PackedScene" uid="uid://b042mnyaycqxq" path="res://rigidbodies/plasticContainers/plasticContainer_03.tscn" id="22_1u8w0"]
 [ext_resource type="PackedScene" uid="uid://bpp4ec7df6aqv" path="res://rigidbodies/television.tscn" id="23_0odxb"]
 [ext_resource type="PackedScene" uid="uid://cowymk3rrmwa1" path="res://rigidbodies/vintage_grandfather_clock.tscn" id="24_lswn8"]
