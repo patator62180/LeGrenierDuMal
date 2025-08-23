@@ -25,9 +25,9 @@ shape = SubResource("ConvexPolygonShape3D_s3xv4")
 
 [node name="ImpactWatcher" parent="." instance=ExtResource("3_sydfh")]
 
-[node name="ImpactRegion" parent="ImpactWatcher" instance=ExtResource("4_mvhbv")]
+[node name="ThinPlastic" parent="ImpactWatcher" instance=ExtResource("4_mvhbv")]
 _material = ExtResource("5_0o2ys")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ImpactWatcher/ImpactRegion"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ImpactWatcher/ThinPlastic"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0274963, 0.0156403, 0.229004)
 shape = SubResource("BoxShape3D_qr72g")

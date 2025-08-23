@@ -1,0 +1,38 @@
+[gd_scene load_steps=9 format=3 uid="uid://b8w7vtt42a8wf"]
+
+[ext_resource type="PackedScene" uid="uid://b0gqnf86m2s7g" path="res://test_base.tscn" id="1_gs7l7"]
+[ext_resource type="PackedScene" uid="uid://5610qe10odiw" path="res://rigid_bodies/plastic_containers/08/plastic_container_08.tscn" id="2_xghmc"]
+[ext_resource type="PackedScene" uid="uid://b8gt741xv2cl2" path="res://rigid_bodies/plastic_containers/02/plastic_container_02.tscn" id="3_s5ymv"]
+[ext_resource type="PackedScene" uid="uid://dt0ucid6bd5ea" path="res://rigid_bodies/plastic_containers/01/plastic_container_01.tscn" id="4_jyecm"]
+[ext_resource type="PackedScene" uid="uid://b042mnyaycqxq" path="res://rigid_bodies/plastic_containers/03/plastic_container_03.tscn" id="5_3xsgl"]
+[ext_resource type="PackedScene" uid="uid://db1trtjmgrrj3" path="res://rigid_bodies/plastic_containers/04/plastic_container_04.tscn" id="6_ilq4a"]
+[ext_resource type="PackedScene" uid="uid://3em8osdjeuna" path="res://rigid_bodies/plastic_containers/05/plastic_container_05.tscn" id="7_xuux6"]
+[ext_resource type="PackedScene" uid="uid://cr0jvvlcvjj2v" path="res://rigid_bodies/plastic_containers/06/plastic_container_06.tscn" id="8_qu2is"]
+
+[node name="TestPlasticContainers" type="Node3D"]
+
+[node name="TestBase" parent="." instance=ExtResource("1_gs7l7")]
+
+[node name="PlasticeContainer07" parent="." instance=ExtResource("2_xghmc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.06876, 0, 0)
+
+[node name="PlasticeContainer02" parent="." instance=ExtResource("3_s5ymv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.27909, 0, 3.82195)
+
+[node name="PlasticeContainer01" parent="." instance=ExtResource("4_jyecm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.54063, 0, 1.95512)
+
+[node name="PlasticeContainer08" parent="." instance=ExtResource("2_xghmc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.88065, 0, -5.30811)
+
+[node name="PlasticeContainer03" parent="." instance=ExtResource("5_3xsgl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.36394, 0, -5.41535)
+
+[node name="PlasticeContainer04" parent="." instance=ExtResource("6_ilq4a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.55822)
+
+[node name="PlasticeContainer05" parent="." instance=ExtResource("7_xuux6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8196, 0, 0)
+
+[node name="PlasticeContainer06" parent="." instance=ExtResource("8_qu2is")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.65443, 0, 0)
