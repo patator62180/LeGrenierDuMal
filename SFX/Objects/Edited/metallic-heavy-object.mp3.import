@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://btd3ojv6p112f"
-path="res://.godot/imported/metallic-heavy-object.mp3-3fc8974ec5c7d7b1a9f81aa03b053199.mp3str"
+path="res://.godot/imported/metallic-heavy-object.mp3-0fff54b8e71ab708f5b66bfa7bbfbc7a.mp3str"
 
 [deps]
 
-source_file="res://SFX/Objects/Edited/metallic-heavy-object.mp3"
-dest_files=["res://.godot/imported/metallic-heavy-object.mp3-3fc8974ec5c7d7b1a9f81aa03b053199.mp3str"]
+source_file="res://sfx/Objects/Edited/metallic-heavy-object.mp3"
+dest_files=["res://.godot/imported/metallic-heavy-object.mp3-0fff54b8e71ab708f5b66bfa7bbfbc7a.mp3str"]
 
 [params]
 

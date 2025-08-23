@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://ck62vgsv8x1dc"
-path="res://.godot/imported/ball.mp3-2e821bb55d730a50bd8d1c1dbd24851d.mp3str"
+path="res://.godot/imported/ball.mp3-de4db0632622ab03029de6f88148ee64.mp3str"
 
 [deps]
 
-source_file="res://SFX/Objects/Edited/ball.mp3"
-dest_files=["res://.godot/imported/ball.mp3-2e821bb55d730a50bd8d1c1dbd24851d.mp3str"]
+source_file="res://sfx/Objects/Edited/ball.mp3"
+dest_files=["res://.godot/imported/ball.mp3-de4db0632622ab03029de6f88148ee64.mp3str"]
 
 [params]
 

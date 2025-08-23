@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://gqkcqru45w0b"]
 
-[ext_resource type="Script" uid="uid://dl0af51pnqbi8" path="res://rigidbodies/lib/rigid_bodish.gd" id="1_672uf"]
+[ext_resource type="Script" uid="uid://dl0af51pnqbi8" path="res://controllers/rigid_bodish.gd" id="1_672uf"]
 [ext_resource type="PackedScene" uid="uid://clhmyj3qhfdtf" path="res://controllers/impact/impact_watcher.tscn" id="2_672uf"]
 [ext_resource type="PackedScene" uid="uid://uf1rrqgxpfus" path="res://models/Decorative items/Rusty Japanese Arcade/rusty_japanese_arcade.glb" id="2_ncuwt"]
-[ext_resource type="Resource" uid="uid://bsouhqrvrr0xq" path="res://SFX/Objects/Curves/wood-creak-single-v3-14657.tres" id="3_7bal6"]
+[ext_resource type="Resource" uid="uid://bsouhqrvrr0xq" path="res://sfx/Objects/Curves/wood-creak-single-v3-14657.tres" id="3_7bal6"]
 
 [node name="RustyJapaneseArcade" type="RigidBody3D"]
 collision_layer = 2

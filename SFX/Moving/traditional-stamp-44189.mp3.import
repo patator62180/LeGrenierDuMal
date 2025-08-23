@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://blogwy5fckhhu"
-path="res://.godot/imported/traditional-stamp-44189.mp3-277bfb57c1e5af7441c2ab5ae2dde84b.mp3str"
+path="res://.godot/imported/traditional-stamp-44189.mp3-271f4f8de744d220b2fd7efccfc4fe27.mp3str"
 
 [deps]
 
-source_file="res://SFX/Moving/traditional-stamp-44189.mp3"
-dest_files=["res://.godot/imported/traditional-stamp-44189.mp3-277bfb57c1e5af7441c2ab5ae2dde84b.mp3str"]
+source_file="res://sfx/Moving/traditional-stamp-44189.mp3"
+dest_files=["res://.godot/imported/traditional-stamp-44189.mp3-271f4f8de744d220b2fd7efccfc4fe27.mp3str"]
 
 [params]
 

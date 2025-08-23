@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cdcnpoait2bct" path="res://controllers/hud/sound_gauge.tscn" id="3_3fgn5"]
 [ext_resource type="Shader" uid="uid://c0yuxmxggsel1" path="res://shaders/vignette.gdshader" id="3_3os43"]
 [ext_resource type="Shader" uid="uid://bftgup2c1bvna" path="res://shaders/film_grain.gdshader" id="3_rkyny"]
-[ext_resource type="AudioStream" uid="uid://cs3ea26udisbv" path="res://SFX/jumpscare-203379.mp3" id="4_60on8"]
+[ext_resource type="AudioStream" uid="uid://cs3ea26udisbv" path="res://sfx/jumpscare-203379.mp3" id="4_60on8"]
 [ext_resource type="FontFile" uid="uid://v1quocn4gx46" path="res://menus/Halloween Spooky.otf" id="6_sav7t"]
 [ext_resource type="AudioStream" uid="uid://bxeeaslnu65xn" path="res://controllers/hud/main-door-opening-closing-38280.mp3" id="8_sclnq"]
 

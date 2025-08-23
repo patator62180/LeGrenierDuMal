@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://cfpojasrgnw1j"
-path="res://.godot/imported/organic-drop.mp3-18edd7d322824a570920a11d4bc8f95e.mp3str"
+path="res://.godot/imported/organic-drop.mp3-14873639f787e0e2b72692146aeeefae.mp3str"
 
 [deps]
 
-source_file="res://SFX/Objects/Edited/organic-drop.mp3"
-dest_files=["res://.godot/imported/organic-drop.mp3-18edd7d322824a570920a11d4bc8f95e.mp3str"]
+source_file="res://sfx/Objects/Edited/organic-drop.mp3"
+dest_files=["res://.godot/imported/organic-drop.mp3-14873639f787e0e2b72692146aeeefae.mp3str"]
 
 [params]
 

@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://d3i5fdb6hnw51"]
 
 [ext_resource type="PackedScene" uid="uid://bt6p8oqeu6yc2" path="res://models/Arm Desk Lamp/desk_lamp_arm_01_1k.gltf" id="1_csdp7"]
-[ext_resource type="Script" uid="uid://dl0af51pnqbi8" path="res://rigidbodies/lib/rigid_bodish.gd" id="1_k70pw"]
+[ext_resource type="Script" uid="uid://dl0af51pnqbi8" path="res://controllers/rigid_bodish.gd" id="1_k70pw"]
 [ext_resource type="PackedScene" uid="uid://clhmyj3qhfdtf" path="res://controllers/impact/impact_watcher.tscn" id="2_736a6"]
-[ext_resource type="Resource" uid="uid://ct60s2vwxs4rk" path="res://SFX/Objects/Curves/small_object.tres" id="4_mbkje"]
+[ext_resource type="Resource" uid="uid://ct60s2vwxs4rk" path="res://sfx/Objects/Curves/small_object.tres" id="4_mbkje"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_736a6"]
 size = Vector3(0.0541992, 0.496521, 0.03302)

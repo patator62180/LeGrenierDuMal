@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://djvlyv6my30ck"]
 
-[ext_resource type="Script" uid="uid://dl0af51pnqbi8" path="res://rigidbodies/lib/rigid_bodish.gd" id="1_woh8g"]
+[ext_resource type="Script" uid="uid://dl0af51pnqbi8" path="res://controllers/rigid_bodish.gd" id="1_woh8g"]
 [ext_resource type="PackedScene" uid="uid://cg6lg2il6cyty" path="res://models/Decorative items/Metal Shelf 14/metal_shelf_-_14mb.glb" id="2_c8abq"]
 [ext_resource type="PackedScene" uid="uid://clhmyj3qhfdtf" path="res://controllers/impact/impact_watcher.tscn" id="2_woh8g"]
-[ext_resource type="Resource" uid="uid://4puo0xo7qvlh" path="res://SFX/Objects/Curves/metallic-heavy-object.tres" id="3_nawvs"]
+[ext_resource type="Resource" uid="uid://4puo0xo7qvlh" path="res://sfx/Objects/Curves/metallic-heavy-object.tres" id="3_nawvs"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_woh8g"]
 size = Vector3(0.0541992, 3.00052, 0.0623779)

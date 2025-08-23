@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://bvmyx5gwoe1xu"
-path="res://.godot/imported/object-fall-soft-275694.mp3-ef5aa65ae51ba3938679bcfe0206bc6d.mp3str"
+path="res://.godot/imported/object-fall-soft-275694.mp3-dc28cb91863f9efaf1794bbd8fedbde3.mp3str"
 
 [deps]
 
-source_file="res://SFX/Objects/object-fall-soft-275694.mp3"
-dest_files=["res://.godot/imported/object-fall-soft-275694.mp3-ef5aa65ae51ba3938679bcfe0206bc6d.mp3str"]
+source_file="res://sfx/Objects/object-fall-soft-275694.mp3"
+dest_files=["res://.godot/imported/object-fall-soft-275694.mp3-dc28cb91863f9efaf1794bbd8fedbde3.mp3str"]
 
 [params]
 

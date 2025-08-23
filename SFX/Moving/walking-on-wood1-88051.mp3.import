@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://4s6lugekv05y"
-path="res://.godot/imported/walking-on-wood1-88051.mp3-c7782349bbcc107c7f159f178618ac5d.mp3str"
+path="res://.godot/imported/walking-on-wood1-88051.mp3-bdae6ac368bf328494bf37b52c90ed7f.mp3str"
 
 [deps]
 
-source_file="res://SFX/Moving/walking-on-wood1-88051.mp3"
-dest_files=["res://.godot/imported/walking-on-wood1-88051.mp3-c7782349bbcc107c7f159f178618ac5d.mp3str"]
+source_file="res://sfx/Moving/walking-on-wood1-88051.mp3"
+dest_files=["res://.godot/imported/walking-on-wood1-88051.mp3-bdae6ac368bf328494bf37b52c90ed7f.mp3str"]
 
 [params]
 

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ImpactMaterial" load_steps=3 format=3 uid="uid://dx3pxgetmf8k5"]
+
+[ext_resource type="Script" uid="uid://2ukr515a7cwy" path="res://controllers/impact/impact_material.gd" id="1_0omqm"]
+[ext_resource type="AudioStream" uid="uid://b4lp4ai7g82wr" path="res://sfx/materials/thin_plastic/thin_plastic.mp3" id="1_gom5b"]
+
+[resource]
+script = ExtResource("1_0omqm")
+impact_sounds = Array[AudioStream]([ExtResource("1_gom5b")])
+random_pitch_variations = true
+min_random_pitch = 1.0
+max_random_pitch = 1.1
+metadata/_custom_type_script = "uid://2ukr515a7cwy"

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://d1mvquva7eamn"
-path="res://.godot/imported/sandbag.wav-d761202ffc0568880296275ee030d277.sample"
+path="res://.godot/imported/sandbag.wav-eab664486a74c845fefc86ac783d4cbf.sample"
 
 [deps]
 
-source_file="res://SFX/Objects/sandbag.wav"
-dest_files=["res://.godot/imported/sandbag.wav-d761202ffc0568880296275ee030d277.sample"]
+source_file="res://sfx/Objects/sandbag.wav"
+dest_files=["res://.godot/imported/sandbag.wav-eab664486a74c845fefc86ac783d4cbf.sample"]
 
 [params]
 

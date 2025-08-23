@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ImpactMaterial" load_steps=5 format=3 uid="uid://rebmuvy8jvq"]
+
+[ext_resource type="AudioStream" uid="uid://b1ppi8gaqfcu0" path="res://sfx/materials/thick_plastic/thick_plastic_01.mp3" id="1_pa8n0"]
+[ext_resource type="AudioStream" uid="uid://c8hvcmknkd3nf" path="res://sfx/materials/thick_plastic/thick_plastic_02.mp3" id="2_hc4nd"]
+[ext_resource type="AudioStream" uid="uid://du83a0rcq51x4" path="res://sfx/materials/thick_plastic/thick_plastic_03.mp3" id="3_r1ftu"]
+[ext_resource type="Script" uid="uid://2ukr515a7cwy" path="res://controllers/impact/impact_material.gd" id="4_85udp"]
+
+[resource]
+script = ExtResource("4_85udp")
+impact_sounds = Array[AudioStream]([ExtResource("1_pa8n0"), ExtResource("2_hc4nd"), ExtResource("3_r1ftu")])
+random_pitch_variations = false
+min_random_pitch = 1.0
+max_random_pitch = 1.0
+metadata/_custom_type_script = "uid://2ukr515a7cwy"

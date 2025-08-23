@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://b7df0bhpgid85"
-path="res://.godot/imported/sliding-object-in-draw-95689.mp3-2fd53b97c2df11970e3b64afa51074e1.mp3str"
+path="res://.godot/imported/sliding-object-in-draw-95689.mp3-139abb5631e83928fc859b2fb3e04bf4.mp3str"
 
 [deps]
 
-source_file="res://SFX/Objects/sliding-object-in-draw-95689.mp3"
-dest_files=["res://.godot/imported/sliding-object-in-draw-95689.mp3-2fd53b97c2df11970e3b64afa51074e1.mp3str"]
+source_file="res://sfx/Objects/sliding-object-in-draw-95689.mp3"
+dest_files=["res://.godot/imported/sliding-object-in-draw-95689.mp3-139abb5631e83928fc859b2fb3e04bf4.mp3str"]
 
 [params]
 

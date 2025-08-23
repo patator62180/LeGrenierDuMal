@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://jecafmdjylkg"]
 
 [ext_resource type="PackedScene" uid="uid://ctkfmfs4xq0cu" path="res://models/Painted Wooden Stool/painted_wooden_stool_1k.gltf" id="1_njji6"]
-[ext_resource type="Script" uid="uid://dl0af51pnqbi8" path="res://rigidbodies/lib/rigid_bodish.gd" id="1_x7h7m"]
+[ext_resource type="Script" uid="uid://dl0af51pnqbi8" path="res://controllers/rigid_bodish.gd" id="1_x7h7m"]
 [ext_resource type="PackedScene" uid="uid://clhmyj3qhfdtf" path="res://controllers/impact/impact_watcher.tscn" id="2_mjcc1"]
-[ext_resource type="Resource" uid="uid://b3vgygds3ug7o" path="res://SFX/Objects/Curves/ball.tres" id="4_x6ii3"]
+[ext_resource type="Resource" uid="uid://b3vgygds3ug7o" path="res://sfx/Objects/Curves/ball.tres" id="4_x6ii3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_njji6"]
 size = Vector3(0.0566711, 0.651245, 0.0588684)

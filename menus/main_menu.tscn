@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bk2jpt65cfaxg" path="res://controllers/main_menu.gd" id="1_8gy84"]
 [ext_resource type="Texture2D" uid="uid://b0u62377kjr5h" path="res://menus/splash_screen.jpg" id="2_ij7vn"]
 [ext_resource type="Texture2D" uid="uid://bd0rg2ndl50i1" path="res://menus/button.jpg" id="3_yjgyn"]
-[ext_resource type="AudioStream" uid="uid://b56jgibm77hqf" path="res://SFX/criminal-shadows-219112.mp3" id="4_rqbgu"]
+[ext_resource type="AudioStream" uid="uid://b56jgibm77hqf" path="res://sfx/criminal-shadows-219112.mp3" id="4_rqbgu"]
 [ext_resource type="FontFile" uid="uid://v1quocn4gx46" path="res://menus/Halloween Spooky.otf" id="5_oblsv"]
 
 [sub_resource type="Animation" id="Animation_oblsv"]

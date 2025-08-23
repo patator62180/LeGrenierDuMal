@@ -1,7 +1,8 @@
 [gd_resource type="Resource" script_class="AudioCurve" load_steps=4 format=3 uid="uid://dh1b1d5ao610g"]
 
 [ext_resource type="Script" uid="uid://bq27csxv6igh4" path="res://audio_curve.gd" id="1_vg0xj"]
-[ext_resource type="AudioStream" uid="uid://bsk7g0kp2ndlv" path="res://SFX/Objects/scratching-83601.mp3" id="2_xmsdr"]
+[ext_resource type="AudioStream" uid="uid://bsk7g0kp2ndlv" path="res://sfx/Objects/scratching-83601.mp3" id="2_xmsdr"]
+
 
 [sub_resource type="Curve" id="Curve_3b7ab"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.325, 0.966292), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]

@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://bsk7g0kp2ndlv"
-path="res://.godot/imported/scratching-83601.mp3-d0028d8ae4195a16c8f272c696f6660f.mp3str"
+path="res://.godot/imported/scratching-83601.mp3-9f963d981376d783008965f49c4075da.mp3str"
 
 [deps]
 
-source_file="res://SFX/Objects/scratching-83601.mp3"
-dest_files=["res://.godot/imported/scratching-83601.mp3-d0028d8ae4195a16c8f272c696f6660f.mp3str"]
+source_file="res://sfx/Objects/scratching-83601.mp3"
+dest_files=["res://.godot/imported/scratching-83601.mp3-9f963d981376d783008965f49c4075da.mp3str"]
 
 [params]
 

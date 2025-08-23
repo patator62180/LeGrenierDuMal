@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://h2o054scwlle"
-path="res://.godot/imported/hard-object-drop-98768.mp3-b9548a4db4e2e2c88dcae5e2af1ecf38.mp3str"
+path="res://.godot/imported/hard-object-drop-98768.mp3-585b936caa3b34efae886b00fa4ac9ac.mp3str"
 
 [deps]
 
-source_file="res://SFX/Objects/hard-object-drop-98768.mp3"
-dest_files=["res://.godot/imported/hard-object-drop-98768.mp3-b9548a4db4e2e2c88dcae5e2af1ecf38.mp3str"]
+source_file="res://sfx/Objects/hard-object-drop-98768.mp3"
+dest_files=["res://.godot/imported/hard-object-drop-98768.mp3-585b936caa3b34efae886b00fa4ac9ac.mp3str"]
 
 [params]
 

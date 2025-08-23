@@ -1,25 +1,16 @@
-[gd_scene load_steps=11 format=3 uid="uid://dkvya8kjd454f"]
+[gd_scene load_steps=9 format=3 uid="uid://dkvya8kjd454f"]
 
 [ext_resource type="PackedScene" uid="uid://c10qq43r6ar16" path="res://models/Wooden table/wooden_table_02_1k.gltf" id="1_hv3se"]
-[ext_resource type="Script" uid="uid://dl0af51pnqbi8" path="res://rigidbodies/lib/rigid_bodish.gd" id="1_ollb4"]
+[ext_resource type="Script" uid="uid://dl0af51pnqbi8" path="res://controllers/rigid_bodish.gd" id="1_ollb4"]
 [ext_resource type="PackedScene" uid="uid://clhmyj3qhfdtf" path="res://controllers/impact/impact_watcher.tscn" id="2_16tcq"]
 [ext_resource type="PackedScene" uid="uid://50qv1gpv8o" path="res://controllers/impact/impact_region.tscn" id="4_07312"]
-[ext_resource type="AudioStream" uid="uid://b2a34l3u8swa5" path="res://rigidbodies/wooden_table/impact.mp3" id="4_dmda1"]
-[ext_resource type="Script" uid="uid://2ukr515a7cwy" path="res://controllers/impact/impact_material.gd" id="5_y3i4t"]
+[ext_resource type="Resource" uid="uid://chf4fu2tbjsj6" path="res://sfx/materials/strong_wood/strong_wood.tres" id="5_07312"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hv3se"]
 size = Vector3(1.47974, 0.0951538, 0.922729)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_16tcq"]
 size = Vector3(0.0778809, 1, 0.0726624)
-
-[sub_resource type="Resource" id="Resource_h6q1d"]
-script = ExtResource("5_y3i4t")
-impact_sounds = Array[AudioStream]([ExtResource("4_dmda1")])
-random_pitch_variations = true
-min_random_pitch = 0.9
-max_random_pitch = 1.1
-metadata/_custom_type_script = "uid://2ukr515a7cwy"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y3i4t"]
 size = Vector3(2.615, 1.74, 1.675)
@@ -57,9 +48,9 @@ shape = SubResource("BoxShape3D_16tcq")
 
 [node name="ImpactWatcher" parent="." instance=ExtResource("2_16tcq")]
 
-[node name="ImpactRegion" parent="ImpactWatcher" instance=ExtResource("4_07312")]
-_material = SubResource("Resource_h6q1d")
+[node name="Wood" parent="ImpactWatcher" instance=ExtResource("4_07312")]
+_material = ExtResource("5_07312")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ImpactWatcher/ImpactRegion"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ImpactWatcher/Wood"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.402936, 0)
 shape = SubResource("BoxShape3D_y3i4t")

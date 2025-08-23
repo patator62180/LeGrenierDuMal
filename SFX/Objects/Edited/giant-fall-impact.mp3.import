@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://dx1hglcwbnb7s"
-path="res://.godot/imported/giant-fall-impact.mp3-146b3fd85a75cafa11923ab8ef541d18.mp3str"
+path="res://.godot/imported/giant-fall-impact.mp3-cfa4ead3b2426ba16d8a0a6aa69355e4.mp3str"
 
 [deps]
 
-source_file="res://SFX/Objects/Edited/giant-fall-impact.mp3"
-dest_files=["res://.godot/imported/giant-fall-impact.mp3-146b3fd85a75cafa11923ab8ef541d18.mp3str"]
+source_file="res://sfx/Objects/Edited/giant-fall-impact.mp3"
+dest_files=["res://.godot/imported/giant-fall-impact.mp3-cfa4ead3b2426ba16d8a0a6aa69355e4.mp3str"]
 
 [params]
 

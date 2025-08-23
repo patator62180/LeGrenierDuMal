@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://b56jgibm77hqf"
-path="res://.godot/imported/criminal-shadows-219112.mp3-55964609282b9c73709515b03b300c27.mp3str"
+path="res://.godot/imported/criminal-shadows-219112.mp3-06847327662c669b73d0c3b48fcef07c.mp3str"
 
 [deps]
 
-source_file="res://SFX/criminal-shadows-219112.mp3"
-dest_files=["res://.godot/imported/criminal-shadows-219112.mp3-55964609282b9c73709515b03b300c27.mp3str"]
+source_file="res://sfx/criminal-shadows-219112.mp3"
+dest_files=["res://.godot/imported/criminal-shadows-219112.mp3-06847327662c669b73d0c3b48fcef07c.mp3str"]
 
 [params]
 

@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://pqmf1essro0j"]
 
-[ext_resource type="Script" uid="uid://dl0af51pnqbi8" path="res://rigidbodies/lib/rigid_bodish.gd" id="1_ji6j4"]
+[ext_resource type="Script" uid="uid://dl0af51pnqbi8" path="res://controllers/rigid_bodish.gd" id="1_ji6j4"]
 [ext_resource type="PackedScene" uid="uid://clhmyj3qhfdtf" path="res://controllers/impact/impact_watcher.tscn" id="1_xq8e6"]
-[ext_resource type="Resource" uid="uid://b3vgygds3ug7o" path="res://SFX/Objects/Curves/ball.tres" id="2_6532g"]
+[ext_resource type="Resource" uid="uid://b3vgygds3ug7o" path="res://sfx/Objects/Curves/ball.tres" id="2_6532g"]
 [ext_resource type="PackedScene" uid="uid://cdqwlvwgypbh8" path="res://models/Wood Pallet/wood_pallet.glb" id="2_xq8e6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2vij7"]

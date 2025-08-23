@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://xicwkxkx5mxm"]
 
-[ext_resource type="Script" uid="uid://dl0af51pnqbi8" path="res://rigidbodies/lib/rigid_bodish.gd" id="1_ekju6"]
+[ext_resource type="Script" uid="uid://dl0af51pnqbi8" path="res://controllers/rigid_bodish.gd" id="1_ekju6"]
 [ext_resource type="PackedScene" uid="uid://clhmyj3qhfdtf" path="res://controllers/impact/impact_watcher.tscn" id="2_galkg"]
-[ext_resource type="Resource" uid="uid://ct60s2vwxs4rk" path="res://SFX/Objects/Curves/small_object.tres" id="3_3w6k1"]
+[ext_resource type="Resource" uid="uid://ct60s2vwxs4rk" path="res://sfx/Objects/Curves/small_object.tres" id="3_3w6k1"]
 [ext_resource type="ArrayMesh" uid="uid://duvwqotlm3im3" path="res://meshes/Dices/dice_cup.res" id="4_2uus6"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ekju6"]

@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://cpxjgrkja82oi"]
 
-[ext_resource type="Script" uid="uid://dl0af51pnqbi8" path="res://rigidbodies/lib/rigid_bodish.gd" id="1_5p7kh"]
+[ext_resource type="Script" uid="uid://dl0af51pnqbi8" path="res://controllers/rigid_bodish.gd" id="1_5p7kh"]
 [ext_resource type="PackedScene" uid="uid://jvrrljim8rqw" path="res://models/Baseball ball/baseball_01_1k.gltf" id="1_oe2s3"]
 [ext_resource type="PackedScene" uid="uid://clhmyj3qhfdtf" path="res://controllers/impact/impact_watcher.tscn" id="2_k54ye"]
-[ext_resource type="Resource" uid="uid://b3vgygds3ug7o" path="res://SFX/Objects/Curves/ball.tres" id="4_kymno"]
+[ext_resource type="Resource" uid="uid://b3vgygds3ug7o" path="res://sfx/Objects/Curves/ball.tres" id="4_kymno"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_k54ye"]
 radius = 0.0579594

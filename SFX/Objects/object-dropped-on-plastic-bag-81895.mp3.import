@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://b1pm6xm8qspib"
-path="res://.godot/imported/object-dropped-on-plastic-bag-81895.mp3-33a2cdd928cd08e531b9789dbd488fb7.mp3str"
+path="res://.godot/imported/object-dropped-on-plastic-bag-81895.mp3-2c443d5bddc590a4d6978622752a356e.mp3str"
 
 [deps]
 
-source_file="res://SFX/Objects/object-dropped-on-plastic-bag-81895.mp3"
-dest_files=["res://.godot/imported/object-dropped-on-plastic-bag-81895.mp3-33a2cdd928cd08e531b9789dbd488fb7.mp3str"]
+source_file="res://sfx/Objects/object-dropped-on-plastic-bag-81895.mp3"
+dest_files=["res://.godot/imported/object-dropped-on-plastic-bag-81895.mp3-2c443d5bddc590a4d6978622752a356e.mp3str"]
 
 [params]
 

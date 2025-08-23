@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://cs3ea26udisbv"
-path="res://.godot/imported/jumpscare-203379.mp3-8c965ac641dd95335a7c0ee899b248cc.mp3str"
+path="res://.godot/imported/jumpscare-203379.mp3-c972a067ba745c58c86120db7b711c05.mp3str"
 
 [deps]
 
-source_file="res://SFX/jumpscare-203379.mp3"
-dest_files=["res://.godot/imported/jumpscare-203379.mp3-8c965ac641dd95335a7c0ee899b248cc.mp3str"]
+source_file="res://sfx/jumpscare-203379.mp3"
+dest_files=["res://.godot/imported/jumpscare-203379.mp3-c972a067ba745c58c86120db7b711c05.mp3str"]
 
 [params]
 

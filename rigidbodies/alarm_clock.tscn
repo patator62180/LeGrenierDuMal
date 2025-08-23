@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://dmdqxmr6cg45c"]
 
 [ext_resource type="PackedScene" uid="uid://dlo5cn7upa7wb" path="res://models/Alarm Clock/alarm_clock_01_1k.gltf" id="1_l8hlv"]
-[ext_resource type="Script" uid="uid://dl0af51pnqbi8" path="res://rigidbodies/lib/rigid_bodish.gd" id="1_ocptr"]
+[ext_resource type="Script" uid="uid://dl0af51pnqbi8" path="res://controllers/rigid_bodish.gd" id="1_ocptr"]
 [ext_resource type="PackedScene" uid="uid://clhmyj3qhfdtf" path="res://controllers/impact/impact_watcher.tscn" id="2_2vij7"]
-[ext_resource type="Resource" uid="uid://ct60s2vwxs4rk" path="res://SFX/Objects/Curves/small_object.tres" id="4_xdp6a"]
+[ext_resource type="Resource" uid="uid://ct60s2vwxs4rk" path="res://sfx/Objects/Curves/small_object.tres" id="4_xdp6a"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2vij7"]
 size = Vector3(0.202244, 0.232788, 0.104965)

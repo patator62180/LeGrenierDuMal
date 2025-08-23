@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjoqbbwk80x1f"]
+
+[ext_resource type="PackedScene" uid="uid://b0gqnf86m2s7g" path="res://test_base.tscn" id="1_7mws4"]
+[ext_resource type="PackedScene" uid="uid://dt0ucid6bd5ea" path="res://rigidbodies/plasticContainers/01/plasticContainer_01.tscn" id="2_j012q"]
+
+[node name="TestPlasticContainer01" type="Node3D"]
+
+[node name="TestBase" parent="." instance=ExtResource("1_7mws4")]
+
+[node name="PlasticeContainer01" parent="." instance=ExtResource("2_j012q")]

@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://cqt7a5hm1djee"]
 
-[ext_resource type="Script" uid="uid://dl0af51pnqbi8" path="res://rigidbodies/lib/rigid_bodish.gd" id="1_2pych"]
+[ext_resource type="Script" uid="uid://dl0af51pnqbi8" path="res://controllers/rigid_bodish.gd" id="1_2pych"]
 [ext_resource type="PackedScene" uid="uid://ca3qfg4i2m503" path="res://models/Old Tire/old_tyre_1k.gltf" id="1_iaagp"]
 [ext_resource type="PackedScene" uid="uid://clhmyj3qhfdtf" path="res://controllers/impact/impact_watcher.tscn" id="2_aaild"]
-[ext_resource type="Resource" uid="uid://25jcntjnpi84" path="res://SFX/Objects/Curves/object-fall-soft.tres" id="4_3nccj"]
+[ext_resource type="Resource" uid="uid://25jcntjnpi84" path="res://sfx/Objects/Curves/object-fall-soft.tres" id="4_3nccj"]
 
 [node name="OldTire" type="RigidBody3D"]
 collision_layer = 2

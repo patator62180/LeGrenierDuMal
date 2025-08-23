@@ -1,25 +1,14 @@
-[gd_scene load_steps=13 format=3 uid="uid://crfio4vjtosxa"]
+[gd_scene load_steps=9 format=3 uid="uid://crfio4vjtosxa"]
 
-[ext_resource type="Script" uid="uid://dl0af51pnqbi8" path="res://rigidbodies/lib/rigid_bodish.gd" id="1_ol7m1"]
-[ext_resource type="AudioStream" uid="uid://b1ppi8gaqfcu0" path="res://rigidbodies/dice/dice1.mp3" id="3_hu3o4"]
+[ext_resource type="Script" uid="uid://dl0af51pnqbi8" path="res://controllers/rigid_bodish.gd" id="1_ol7m1"]
 [ext_resource type="PackedScene" uid="uid://clhmyj3qhfdtf" path="res://controllers/impact/impact_watcher.tscn" id="3_lor4d"]
 [ext_resource type="ArrayMesh" uid="uid://bejpwi8hfhghr" path="res://meshes/Dices/dice1.res" id="4_3naf6"]
+[ext_resource type="Resource" uid="uid://rebmuvy8jvq" path="res://sfx/materials/thick_plastic/thick_plastic.tres" id="4_4py52"]
 [ext_resource type="PackedScene" uid="uid://50qv1gpv8o" path="res://controllers/impact/impact_region.tscn" id="6_2ihj2"]
-[ext_resource type="Script" uid="uid://2ukr515a7cwy" path="res://controllers/impact/impact_material.gd" id="7_3qe10"]
-[ext_resource type="AudioStream" uid="uid://c8hvcmknkd3nf" path="res://rigidbodies/dice/dice9.mp3" id="11_w2b2e"]
-[ext_resource type="AudioStream" uid="uid://du83a0rcq51x4" path="res://rigidbodies/dice/dice10.mp3" id="12_siegc"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gnu0s"]
 rough = true
 bounce = 0.38
-
-[sub_resource type="Resource" id="Resource_6dlnd"]
-script = ExtResource("7_3qe10")
-impact_sounds = Array[AudioStream]([ExtResource("3_hu3o4"), ExtResource("11_w2b2e"), ExtResource("12_siegc")])
-random_pitch_variations = false
-min_random_pitch = 1.0
-max_random_pitch = 1.0
-metadata/_custom_type_script = "uid://2ukr515a7cwy"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3qe10"]
 size = Vector3(0.1, 0.1, 0.1)
@@ -39,10 +28,10 @@ script = ExtResource("1_ol7m1")
 
 [node name="ImpactWatcher" parent="." instance=ExtResource("3_lor4d")]
 
-[node name="ImpactRegion" parent="ImpactWatcher" instance=ExtResource("6_2ihj2")]
-_material = SubResource("Resource_6dlnd")
+[node name="ThickPlastic" parent="ImpactWatcher" instance=ExtResource("6_2ihj2")]
+_material = ExtResource("4_4py52")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ImpactWatcher/ImpactRegion"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ImpactWatcher/ThickPlastic"]
 shape = SubResource("BoxShape3D_3qe10")
 
 [node name="Dice1" type="MeshInstance3D" parent="."]
