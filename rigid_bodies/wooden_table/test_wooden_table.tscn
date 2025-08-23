@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://bapou07gbco8e"]
 
-[ext_resource type="PackedScene" uid="uid://dkvya8kjd454f" path="res://rigidbodies/wooden_table/wooden_table.tscn" id="1_xywnw"]
+[ext_resource type="PackedScene" uid="uid://dkvya8kjd454f" path="res://rigid_bodies/wooden_table/wooden_table.tscn" id="1_xywnw"]
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="2_u81wn"]
 [ext_resource type="PackedScene" uid="uid://c6efs7uxfi5sv" path="res://controllers/game/game.tscn" id="3_l1m2t"]
 [ext_resource type="PackedScene" uid="uid://b3njdfw5ehyqs" path="res://controllers/picker/picker.tscn" id="4_8xwp6"]

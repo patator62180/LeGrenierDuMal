@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://8eldkemx5mhf"]
 
-[ext_resource type="PackedScene" uid="uid://1po73ciuhrln" path="res://rigidbodies/concrete_bag.tscn" id="1_efar8"]
-[ext_resource type="PackedScene" uid="uid://dviiocvw78ku0" path="res://rigidbodies/wood_pallet.tscn" id="2_p11rx"]
+[ext_resource type="PackedScene" uid="uid://1po73ciuhrln" path="res://rigid_bodies/concrete_bag.tscn" id="1_efar8"]
+[ext_resource type="PackedScene" uid="uid://dviiocvw78ku0" path="res://rigid_bodies/wood_pallet.tscn" id="2_p11rx"]
 [ext_resource type="PackedScene" uid="uid://byj4aw5glp7yj" path="res://models/Decorative items/Concrete Bags and Pallet/concrete_bags_and_pallet.glb" id="3_nvwve"]
 
 [node name="ConcreteBagAndPalette" type="Node3D"]
