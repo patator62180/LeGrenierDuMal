@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dli7q5adjarxe"]
+
+[ext_resource type="PackedScene" uid="uid://b0gqnf86m2s7g" path="res://test_base.tscn" id="1_mnjkp"]
+[ext_resource type="PackedScene" uid="uid://cpxjgrkja82oi" path="res://rigid_bodies/baseball_ball/baseball_ball.tscn" id="2_gue2r"]
+
+[node name="TestBaseballBall" type="Node3D"]
+
+[node name="TestBase" parent="." instance=ExtResource("1_mnjkp")]
+
+[node name="BaseballBall" parent="." instance=ExtResource("2_gue2r")]

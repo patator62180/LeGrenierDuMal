@@ -3,7 +3,8 @@
 [ext_resource type="Script" uid="uid://b60ph0bimjkmo" path="res://controllers/impact/impact_point.gd" id="1_ussbc"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_u0fx8"]
-radius = 0.1
+margin = 0.0
+radius = 0.001
 
 [node name="ImpactPoint" type="Area3D"]
 collision_layer = 16

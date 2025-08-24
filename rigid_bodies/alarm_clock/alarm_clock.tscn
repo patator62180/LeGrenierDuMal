@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dmdqxmr6cg45c"]
+[gd_scene load_steps=11 format=3 uid="uid://dmdqxmr6cg45c"]
 
 [ext_resource type="PackedScene" uid="uid://dlo5cn7upa7wb" path="res://models/Alarm Clock/alarm_clock_01_1k.gltf" id="1_l8hlv"]
 [ext_resource type="Script" uid="uid://dl0af51pnqbi8" path="res://controllers/rigid_bodish.gd" id="1_ocptr"]
@@ -7,15 +7,18 @@
 [ext_resource type="Resource" uid="uid://rebmuvy8jvq" path="res://sfx/materials/thick_plastic/thick_plastic.tres" id="5_trstt"]
 [ext_resource type="PackedScene" uid="uid://50qv1gpv8o" path="res://controllers/impact/impact_region.tscn" id="6_gx4ix"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_2vij7"]
-margin = 0.0
-size = Vector3(0.202244, 0.232788, 0.104965)
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_trstt"]
+points = PackedVector3Array(-0.000708696, -0.0174365, 0.109682, -0.0255817, 0.0654591, -0.0201959, 0.0407396, -0.036762, -0.0533491, 0.0361859, -0.0578105, 0.0264161, 0.0213917, 0.0405798, -0.0671817, -0.0255817, -0.0119092, -0.0671817, 0.0131006, 0.0212411, 0.106912, -0.0232685, 0.0172814, 0.062505, -0.00280714, 0.056774, 0.0631155, -0.0233891, -0.0577078, 0.0289838, 0.0407396, 0.0488774, -0.0423038, 0.0269235, -0.0450595, -0.0644118, 0.040586, 0.011906, 0.0313618, 0.0282933, -0.0445728, 0.0676222, 0.0363845, 0.0619022, 0.0134116, -0.000220735, -0.0585171, 0.0606046, 0.0341055, -0.0643216, -0.0025604, -0.0255817, -0.0561272, -0.0395338, -0.0255817, 0.0350658, -0.0588718, -0.0255817, 0.0654591, 0.0185146, -0.000708696, 0.0212411, 0.106912, 0.0302045, 0.0417517, 0.0637151, -0.0255817, -0.0671817, -0.0118859, 0.0407396, 0.0184708, -0.0616418, 0.0131006, -0.0174365, 0.109682, -0.0156345, -0.0447909, 0.0678465, 0.0103415, 0.0488774, 0.0820338, 0.0340212, 0.0625075, -0.0156679, 0.0407396, -0.0533437, -0.0367639, -0.0157412, 0.0408327, 0.0706394, -0.023081, -0.0186937, 0.0622649, 0.0350696, -0.0119559, 0.0552866)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_trstt"]
-size = Vector3(0.21167, 0.126709, 0.178162)
+size = Vector3(0.160095, 0.0703125, 0.107544)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gx4ix"]
-size = Vector3(0.21167, 0.214355, 0.193604)
+size = Vector3(0.15625, 0.0783691, 0.0930176)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_trstt"]
+height = 0.122314
+radius = 0.113281
 
 [node name="AlarmClock" type="RigidBody3D"]
 collision_layer = 2
@@ -27,23 +30,27 @@ script = ExtResource("1_ocptr")
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000635147, 0.114319, 0.0113754)
-shape = SubResource("BoxShape3D_2vij7")
+transform = Transform3D(-0.225277, 1.48272, -0.028209, 0.0623464, 0.0379767, 1.49822, 1.48168, 0.223837, -0.0673316, 0, 0.0998261, 0.00915655)
+shape = SubResource("ConvexPolygonShape3D_trstt")
 
 [node name="ImpactWatcher" parent="." instance=ExtResource("2_2vij7")]
 
 [node name="Bells" parent="ImpactWatcher" instance=ExtResource("6_gx4ix")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.239382, 0)
+transform = Transform3D(0.869133, -0.494579, 0, 0.494579, 0.869133, 0, 0, 0, 1, 0, 0.239382, 0)
 _material = ExtResource("5_gx4ix")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ImpactWatcher/Bells"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00598145, -0.0142822, 0.0194397)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0475159, 0.006836, 0.00482178)
 shape = SubResource("BoxShape3D_trstt")
 
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="ImpactWatcher/Bells"]
+transform = Transform3D(0.691664, 0.722219, 0, -0.722219, 0.691664, 0, 0, 0, 1, 0.0504245, -0.0517694, 0.00964355)
+shape = SubResource("BoxShape3D_gx4ix")
+
 [node name="Plastic" parent="ImpactWatcher" instance=ExtResource("6_gx4ix")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.102782, 0)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.0844749, 0)
 _material = ExtResource("5_trstt")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ImpactWatcher/Plastic"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00598145, -0.036377, 0.0211182)
-shape = SubResource("BoxShape3D_gx4ix")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00769043, 0)
+shape = SubResource("CylinderShape3D_trstt")

@@ -3,12 +3,14 @@ extends RigidBody3D
 
 const PRECISION = 0.1
 const MAX_CONTACTS_REPORTED = 20
+const IMPACT_POINTS_COUNT = MAX_CONTACTS_REPORTED * 4
 
 static var _impact_point_factory: PackedScene = load("res://controllers/impact/impact_point.tscn")
 
 var _contacts: Array[Vector3] = []
 var _stop_requested: bool = false
 var _impact_points: Array[ImpactPoint] = []
+var _impact_point_cursor: int
 
 signal contact_occured    
 
@@ -17,7 +19,7 @@ func _ready():
     max_contacts_reported = MAX_CONTACTS_REPORTED
     contact_monitor = true
     
-    for idx in range(MAX_CONTACTS_REPORTED):
+    for idx in range(IMPACT_POINTS_COUNT):
         var impact_point = _impact_point_factory.instantiate()
         add_child(impact_point)
         _impact_points.push_back(impact_point)
@@ -33,7 +35,7 @@ func _contact_exists(other: Vector3):
     return false
 
 func _integrate_forces(state):
-    var impact_point_idx = 0
+    _impact_point_cursor = 0
     var new_contacts: Array[Vector3] = []
 
     for index in range(state.get_contact_count()):
@@ -47,9 +49,12 @@ func _integrate_forces(state):
         
         if not _contact_exists(pos) and not is_instance_of(collider, CharacterBody3D):
             var other: RigidBodish = collider as RigidBodish
-            var impact_point = _impact_points[impact_point_idx]
+            var impact_point = _impact_points[_impact_point_cursor]
             
-            impact_point_idx += 1
+            _impact_point_cursor += 1
+            
+            if _impact_point_cursor == IMPACT_POINTS_COUNT:
+                _impact_point_cursor = 0
             
             impact_point.global_position = pos
             contact_occured.emit(impact_point, impact_strengh)

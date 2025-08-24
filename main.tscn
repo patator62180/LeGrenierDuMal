@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cr0jvvlcvjj2v" path="res://rigid_bodies/plastic_containers/06/plastic_container_06.tscn" id="8_kek77"]
 [ext_resource type="PackedScene" uid="uid://0ttmjxxhkwlw" path="res://rigid_bodies/plastic_containers/07/plastic_container_07.tscn" id="9_4c57u"]
 [ext_resource type="PackedScene" uid="uid://7mx4qdxcg77v" path="res://rigid_bodies/watermelon.tscn" id="10_4c57u"]
-[ext_resource type="PackedScene" uid="uid://cpxjgrkja82oi" path="res://rigid_bodies/baseball_ball.tscn" id="12_dg77c"]
+[ext_resource type="PackedScene" uid="uid://cpxjgrkja82oi" path="res://rigid_bodies/baseball_ball/baseball_ball.tscn" id="12_dg77c"]
 [ext_resource type="PackedScene" uid="uid://jecafmdjylkg" path="res://rigid_bodies/painted_wooden_stool.tscn" id="13_w48qg"]
 [ext_resource type="PackedScene" uid="uid://1jbqmnqwdcl6" path="res://rigid_bodies/ceiling_fan.tscn" id="13_ycdy4"]
 [ext_resource type="PackedScene" uid="uid://5610qe10odiw" path="res://rigid_bodies/plastic_containers/08/plastic_container_08.tscn" id="14_vivmo"]
