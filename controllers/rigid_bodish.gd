@@ -35,7 +35,7 @@ func _contact_exists(other: Vector3):
 func _integrate_forces(state):
     var impact_point_idx = 0
     var new_contacts: Array[Vector3] = []
-    
+
     for index in range(state.get_contact_count()):
         var pos = state.get_contact_local_position(index)
         var collider = state.get_contact_collider_object(index)
@@ -48,6 +48,8 @@ func _integrate_forces(state):
         if not _contact_exists(pos) and not is_instance_of(collider, CharacterBody3D):
             var other: RigidBodish = collider as RigidBodish
             var impact_point = _impact_points[impact_point_idx]
+            
+            impact_point_idx += 1
             
             impact_point.global_position = pos
             contact_occured.emit(impact_point, impact_strengh)

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://b60ph0bimjkmo" path="res://controllers/impact/impact_point.gd" id="1_ussbc"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_u0fx8"]
-radius = 0.001
+radius = 0.1
 
 [node name="ImpactPoint" type="Area3D"]
 collision_layer = 16
@@ -13,3 +13,4 @@ script = ExtResource("1_ussbc")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_u0fx8")
+debug_color = Color(0.964706, 0, 0.486275, 1)

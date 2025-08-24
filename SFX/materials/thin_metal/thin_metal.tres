@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ImpactMaterial" load_steps=5 format=3 uid="uid://bdgq0tpqclesq"]
+
+[ext_resource type="AudioStream" uid="uid://4u4i5dct2alk" path="res://sfx/materials/thin_metal/thin_metal_01.mp3" id="1_vfsjf"]
+[ext_resource type="AudioStream" uid="uid://dnlx2g8dprm33" path="res://sfx/materials/thin_metal/thin_metal_02.mp3" id="2_hdkh4"]
+[ext_resource type="AudioStream" uid="uid://bhypyjf52jrsr" path="res://sfx/materials/thin_metal/thin_metal_03.mp3" id="3_60b1b"]
+[ext_resource type="Script" uid="uid://2ukr515a7cwy" path="res://controllers/impact/impact_material.gd" id="4_ps3qx"]
+
+[resource]
+script = ExtResource("4_ps3qx")
+impact_sounds = Array[AudioStream]([ExtResource("1_vfsjf"), ExtResource("2_hdkh4"), ExtResource("3_60b1b")])
+random_pitch_variations = false
+min_random_pitch = 1.0
+max_random_pitch = 1.0
+metadata/_custom_type_script = "uid://2ukr515a7cwy"

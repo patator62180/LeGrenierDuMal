@@ -1,0 +1,49 @@
+[gd_scene load_steps=10 format=3 uid="uid://dmdqxmr6cg45c"]
+
+[ext_resource type="PackedScene" uid="uid://dlo5cn7upa7wb" path="res://models/Alarm Clock/alarm_clock_01_1k.gltf" id="1_l8hlv"]
+[ext_resource type="Script" uid="uid://dl0af51pnqbi8" path="res://controllers/rigid_bodish.gd" id="1_ocptr"]
+[ext_resource type="PackedScene" uid="uid://clhmyj3qhfdtf" path="res://controllers/impact/impact_watcher.tscn" id="2_2vij7"]
+[ext_resource type="Resource" uid="uid://bdgq0tpqclesq" path="res://sfx/materials/thin_metal/thin_metal.tres" id="5_gx4ix"]
+[ext_resource type="Resource" uid="uid://rebmuvy8jvq" path="res://sfx/materials/thick_plastic/thick_plastic.tres" id="5_trstt"]
+[ext_resource type="PackedScene" uid="uid://50qv1gpv8o" path="res://controllers/impact/impact_region.tscn" id="6_gx4ix"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2vij7"]
+margin = 0.0
+size = Vector3(0.202244, 0.232788, 0.104965)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_trstt"]
+size = Vector3(0.21167, 0.126709, 0.178162)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gx4ix"]
+size = Vector3(0.21167, 0.214355, 0.193604)
+
+[node name="AlarmClock" type="RigidBody3D"]
+collision_layer = 2
+collision_mask = 7
+mass = 0.2
+script = ExtResource("1_ocptr")
+
+[node name="alarm_clock_01_1k" parent="." instance=ExtResource("1_l8hlv")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000635147, 0.114319, 0.0113754)
+shape = SubResource("BoxShape3D_2vij7")
+
+[node name="ImpactWatcher" parent="." instance=ExtResource("2_2vij7")]
+
+[node name="Bells" parent="ImpactWatcher" instance=ExtResource("6_gx4ix")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.239382, 0)
+_material = ExtResource("5_gx4ix")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ImpactWatcher/Bells"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00598145, -0.0142822, 0.0194397)
+shape = SubResource("BoxShape3D_trstt")
+
+[node name="Plastic" parent="ImpactWatcher" instance=ExtResource("6_gx4ix")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.102782, 0)
+_material = ExtResource("5_trstt")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ImpactWatcher/Plastic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00598145, -0.036377, 0.0211182)
+shape = SubResource("BoxShape3D_gx4ix")

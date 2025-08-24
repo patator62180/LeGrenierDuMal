@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjb1m7q13n6jv"]
+
+[ext_resource type="PackedScene" uid="uid://b0gqnf86m2s7g" path="res://test_base.tscn" id="1_qk6dd"]
+[ext_resource type="PackedScene" uid="uid://dmdqxmr6cg45c" path="res://rigid_bodies/alarm_clock/alarm_clock.tscn" id="2_jwl7g"]
+
+[node name="TestAlarmClock" type="Node3D"]
+
+[node name="TestBase" parent="." instance=ExtResource("1_qk6dd")]
+
+[node name="AlarmClock" parent="." instance=ExtResource("2_jwl7g")]

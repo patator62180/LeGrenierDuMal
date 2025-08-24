@@ -105,7 +105,7 @@ func _get_regions() -> Array[ImpactRegion]:
             regions.push_back(child)
     
     return regions
-    
+
 func _get_configuration_warnings():
     var warnings = []
     var regions = _get_regions()
