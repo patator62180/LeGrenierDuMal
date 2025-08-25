@@ -1,0 +1,95 @@
+[gd_scene load_steps=14 format=3 uid="uid://1jbqmnqwdcl6"]
+
+[ext_resource type="PackedScene" uid="uid://dpncfr1fiaoiq" path="res://models/Ceiling Fan/ceiling_fan_1k.gltf" id="1_4jehv"]
+[ext_resource type="Script" uid="uid://dl0af51pnqbi8" path="res://controllers/rigid_bodish.gd" id="1_yo3jg"]
+[ext_resource type="PackedScene" uid="uid://clhmyj3qhfdtf" path="res://controllers/impact/impact_watcher.tscn" id="2_hs3aa"]
+[ext_resource type="PackedScene" uid="uid://50qv1gpv8o" path="res://controllers/impact/impact_region.tscn" id="4_71gqs"]
+[ext_resource type="Resource" uid="uid://rebmuvy8jvq" path="res://sfx/materials/thick_plastic/thick_plastic.tres" id="5_tfk3x"]
+[ext_resource type="Resource" uid="uid://5i7gc0uwr5od" path="res://sfx/materials/thick_metal/thick_metal.tres" id="6_tedqt"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_yo3jg"]
+height = 0.626518
+radius = 0.15332
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1fkts"]
+size = Vector3(0.38446, 0.50415, 0.388184)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bmhw8"]
+size = Vector3(0.419312, 0.126709, 0.408691)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xw01j"]
+size = Vector3(0.391602, 0.12793, 0.740356)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jwwdu"]
+size = Vector3(0.426392, 0.0986328, 0.685425)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_71gqs"]
+size = Vector3(0.739014, 0.110352, 0.388306)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tfk3x"]
+size = Vector3(0.744263, 0.117188, 0.401855)
+
+[node name="CeilingFan" type="RigidBody3D"]
+collision_layer = 2
+collision_mask = 7
+mass = 20.0
+script = ExtResource("1_yo3jg")
+
+[node name="ceiling_fan_1k" parent="." instance=ExtResource("1_4jehv")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.307522, 0)
+shape = SubResource("CylinderShape3D_yo3jg")
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -0.46833, 0)
+depth = 0.07
+polygon = PackedVector2Array(-0.0850306, -0.163708, -0.0904044, -0.462674, -0.00576954, -0.741969, 0.123299, -0.868921, 0.184659, -0.82872, 0.104256, -0.612901, 0.0746031, -0.16915)
+
+[node name="CollisionPolygon3D2" type="CollisionPolygon3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0, -0.46833, 0)
+depth = 0.07
+polygon = PackedVector2Array(-0.0850306, -0.163708, -0.0904044, -0.462674, -0.00576954, -0.741969, 0.123299, -0.868921, 0.184659, -0.82872, 0.104256, -0.612901, 0.0746031, -0.16915)
+
+[node name="CollisionPolygon3D3" type="CollisionPolygon3D" parent="."]
+transform = Transform3D(-1, -8.74228e-08, 3.82137e-15, 0, -4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, 0, -0.46833, 0)
+depth = 0.07
+polygon = PackedVector2Array(-0.0850306, -0.163708, -0.0904044, -0.462674, -0.00576954, -0.741969, 0.123299, -0.868921, 0.184659, -0.82872, 0.104256, -0.612901, 0.0746031, -0.16915)
+
+[node name="CollisionPolygon3D4" type="CollisionPolygon3D" parent="."]
+transform = Transform3D(1.31134e-07, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, 1.31134e-07, -5.73206e-15, 0, -0.46833, 0)
+depth = 0.07
+polygon = PackedVector2Array(-0.0850306, -0.163708, -0.0904044, -0.462674, -0.00576954, -0.741969, 0.123299, -0.868921, 0.184659, -0.82872, 0.104256, -0.612901, 0.0746031, -0.16915)
+
+[node name="ImpactWatcher" parent="." instance=ExtResource("2_hs3aa")]
+
+[node name="Plastic" parent="ImpactWatcher" instance=ExtResource("4_71gqs")]
+_material = ExtResource("5_tfk3x")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ImpactWatcher/Plastic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00192261, -0.176147, -0.00366211)
+shape = SubResource("BoxShape3D_1fkts")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="ImpactWatcher/Plastic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00177002, -0.56604, -0.00708008)
+shape = SubResource("BoxShape3D_bmhw8")
+
+[node name="Blades" parent="ImpactWatcher" instance=ExtResource("4_71gqs")]
+_material = ExtResource("6_tedqt")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ImpactWatcher/Blades"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0405273, -0.447754, -0.573181)
+shape = SubResource("BoxShape3D_xw01j")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="ImpactWatcher/Blades"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00518799, -0.450684, 0.539612)
+shape = SubResource("BoxShape3D_jwwdu")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="ImpactWatcher/Blades"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.556763, -0.444824, 0.00518799)
+shape = SubResource("BoxShape3D_71gqs")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="ImpactWatcher/Blades"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.530701, -0.441406, -0.00170898)
+shape = SubResource("BoxShape3D_tfk3x")

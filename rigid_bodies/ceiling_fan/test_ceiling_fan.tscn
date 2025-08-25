@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dynng16y4r85u"]
+
+[ext_resource type="PackedScene" uid="uid://b0gqnf86m2s7g" path="res://test_base.tscn" id="1_liwts"]
+[ext_resource type="PackedScene" uid="uid://1jbqmnqwdcl6" path="res://rigid_bodies/ceiling_fan/ceiling_fan.tscn" id="2_a61q2"]
+
+[node name="TestCeilingFan" type="Node3D"]
+
+[node name="TestBase" parent="." instance=ExtResource("1_liwts")]
+
+[node name="CeilingFan" parent="." instance=ExtResource("2_a61q2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.447758, 0)
