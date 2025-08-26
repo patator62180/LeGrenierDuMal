@@ -20,7 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://cukmbgx13cobk" path="res://rigid_bodies/metal_trash_can.tscn" id="18_cegan"]
 [ext_resource type="PackedScene" uid="uid://b8gt741xv2cl2" path="res://rigid_bodies/plastic_containers/02/plastic_container_02.tscn" id="19_cegan"]
 [ext_resource type="PackedScene" uid="uid://dkvya8kjd454f" path="res://rigid_bodies/wooden_table/wooden_table.tscn" id="20_82xsv"]
-[ext_resource type="PackedScene" uid="uid://d3i5fdb6hnw51" path="res://rigid_bodies/desk_lamp_arm.tscn" id="21_d13ii"]
+[ext_resource type="PackedScene" uid="uid://d3i5fdb6hnw51" path="res://rigid_bodies/desk_lamp_arm/desk_lamp_arm.tscn" id="21_d13ii"]
 [ext_resource type="PackedScene" uid="uid://blu06mtvvbyax" path="res://rigid_bodies/rusted_spade/rusted_spade.tscn" id="21_getpj"]
 [ext_resource type="PackedScene" uid="uid://b042mnyaycqxq" path="res://rigid_bodies/plastic_containers/03/plastic_container_03.tscn" id="22_1u8w0"]
 [ext_resource type="PackedScene" uid="uid://bpp4ec7df6aqv" path="res://rigid_bodies/television.tscn" id="23_0odxb"]

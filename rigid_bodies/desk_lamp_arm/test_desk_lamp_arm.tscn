@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://iyi10pmaeknp"]
+
+[ext_resource type="PackedScene" uid="uid://b0gqnf86m2s7g" path="res://test_base.tscn" id="1_0eyip"]
+[ext_resource type="PackedScene" uid="uid://d3i5fdb6hnw51" path="res://rigid_bodies/desk_lamp_arm/desk_lamp_arm.tscn" id="2_0qyf5"]
+
+[node name="TestDeskLampArm" type="Node3D"]
+
+[node name="TestBase" parent="." instance=ExtResource("1_0eyip")]
+
+[node name="DeskLampArm" parent="." instance=ExtResource("2_0qyf5")]
