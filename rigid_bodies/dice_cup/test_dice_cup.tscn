@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://cr1xt736cym1n"]
+
+[ext_resource type="PackedScene" uid="uid://b0gqnf86m2s7g" path="res://test_base.tscn" id="1_m6sjy"]
+[ext_resource type="PackedScene" uid="uid://xicwkxkx5mxm" path="res://rigid_bodies/dice_cup/dice_cup.tscn" id="2_hk2ay"]
+[ext_resource type="PackedScene" uid="uid://crfio4vjtosxa" path="res://rigid_bodies/dice/dice.tscn" id="3_6uu2p"]
+
+[node name="TestDiceCup" type="Node3D"]
+
+[node name="TestBase" parent="." instance=ExtResource("1_m6sjy")]
+
+[node name="DiceCup" parent="." instance=ExtResource("2_hk2ay")]
+
+[node name="Dice1" parent="." instance=ExtResource("3_6uu2p")]
