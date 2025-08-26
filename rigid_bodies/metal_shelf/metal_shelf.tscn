@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://djvlyv6my30ck"]
+[gd_scene load_steps=9 format=3 uid="uid://djvlyv6my30ck"]
 
 [ext_resource type="Script" uid="uid://dl0af51pnqbi8" path="res://controllers/rigid_bodish.gd" id="1_woh8g"]
 [ext_resource type="PackedScene" uid="uid://cg6lg2il6cyty" path="res://models/Decorative items/Metal Shelf 14/metal_shelf_-_14mb.glb" id="2_c8abq"]
 [ext_resource type="PackedScene" uid="uid://clhmyj3qhfdtf" path="res://controllers/impact/impact_watcher.tscn" id="2_woh8g"]
-[ext_resource type="Resource" uid="uid://4puo0xo7qvlh" path="res://sfx/Objects/Curves/metallic-heavy-object.tres" id="3_nawvs"]
+[ext_resource type="PackedScene" uid="uid://50qv1gpv8o" path="res://controllers/impact/impact_region.tscn" id="4_bqbvn"]
+[ext_resource type="Resource" uid="uid://5i7gc0uwr5od" path="res://sfx/materials/thick_metal/thick_metal.tres" id="5_2skx1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_woh8g"]
 size = Vector3(0.0541992, 3.00052, 0.0623779)
@@ -11,14 +12,14 @@ size = Vector3(0.0541992, 3.00052, 0.0623779)
 [sub_resource type="BoxShape3D" id="BoxShape3D_c8abq"]
 size = Vector3(0.70105, 0.0355835, 2.01981)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_xcqpx"]
+size = Vector3(1.79688, 3.6994, 2.87622)
+
 [node name="MetalShelf" type="RigidBody3D"]
 collision_layer = 2
 collision_mask = 7
 mass = 25.0
 script = ExtResource("1_woh8g")
-
-[node name="ImpactWatcher" parent="." instance=ExtResource("2_woh8g")]
-_audio_curve = ExtResource("3_nawvs")
 
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("2_c8abq")]
 
@@ -61,3 +62,12 @@ shape = SubResource("BoxShape3D_c8abq")
 [node name="CollisionShape3D8" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00213623, 2.75021, 0.00168562)
 shape = SubResource("BoxShape3D_c8abq")
+
+[node name="ImpactWatcher" parent="." instance=ExtResource("2_woh8g")]
+
+[node name="ImpactRegion" parent="ImpactWatcher" instance=ExtResource("4_bqbvn")]
+_material = ExtResource("5_2skx1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ImpactWatcher/ImpactRegion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0146484, 1.3497, 0.0255127)
+shape = SubResource("BoxShape3D_xcqpx")

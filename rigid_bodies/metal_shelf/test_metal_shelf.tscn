@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://doak726egujg"]
+
+[ext_resource type="PackedScene" uid="uid://b0gqnf86m2s7g" path="res://test_base.tscn" id="1_usuff"]
+[ext_resource type="PackedScene" uid="uid://djvlyv6my30ck" path="res://rigid_bodies/metal_shelf/metal_shelf.tscn" id="2_g752l"]
+
+[node name="TestMetalShelf" type="Node3D"]
+
+[node name="TestBase" parent="." instance=ExtResource("1_usuff")]
+
+[node name="MetalShelf" parent="." instance=ExtResource("2_g752l")]
