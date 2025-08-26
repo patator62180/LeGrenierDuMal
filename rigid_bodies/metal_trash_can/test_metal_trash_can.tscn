@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxlsb0ox3bihd"]
+
+[ext_resource type="PackedScene" uid="uid://b0gqnf86m2s7g" path="res://test_base.tscn" id="1_vbrjw"]
+[ext_resource type="PackedScene" uid="uid://cukmbgx13cobk" path="res://rigid_bodies/metal_trash_can/metal_trash_can.tscn" id="2_ax1l2"]
+[ext_resource type="PackedScene" uid="uid://b7gabdogh778y" path="res://rigid_bodies/metal_trash_can/metal_trash_can_lid.tscn" id="3_ax1l2"]
+
+[node name="TestMetalTrashCan" type="Node3D"]
+
+[node name="TestBase" parent="." instance=ExtResource("1_vbrjw")]
+
+[node name="MetalTrashCan" parent="." instance=ExtResource("2_ax1l2")]
+
+[node name="MetalTrashCan2" parent="." instance=ExtResource("3_ax1l2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.04197, 0)

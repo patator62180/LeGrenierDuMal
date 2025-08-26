@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://b7gabdogh778y"]
+[gd_scene load_steps=9 format=3 uid="uid://b7gabdogh778y"]
 
 [ext_resource type="ArrayMesh" uid="uid://b8yw2qeafkrbk" path="res://meshes/metal_trash_can_lid.res" id="1_i7bb2"]
 [ext_resource type="Script" uid="uid://dl0af51pnqbi8" path="res://controllers/rigid_bodish.gd" id="1_kwbql"]
 [ext_resource type="PackedScene" uid="uid://clhmyj3qhfdtf" path="res://controllers/impact/impact_watcher.tscn" id="2_4b01u"]
-[ext_resource type="Resource" uid="uid://4puo0xo7qvlh" path="res://sfx/Objects/Curves/metallic-heavy-object.tres" id="4_hxunu"]
+[ext_resource type="PackedScene" uid="uid://50qv1gpv8o" path="res://controllers/impact/impact_region.tscn" id="4_hdebo"]
+[ext_resource type="Resource" uid="uid://5i7gc0uwr5od" path="res://sfx/materials/thick_metal/thick_metal.tres" id="5_mdmtg"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_4b01u"]
 height = 0.07341
@@ -11,6 +12,8 @@ radius = 0.272949
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kwbql"]
 size = Vector3(0.103455, 0.053772, 0.0332642)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1on2g"]
 
 [node name="MetalTrashCan" type="RigidBody3D"]
 collision_layer = 2
@@ -30,4 +33,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00088501, 0.0550842, -0.000
 shape = SubResource("BoxShape3D_kwbql")
 
 [node name="ImpactWatcher" parent="." instance=ExtResource("2_4b01u")]
-_audio_curve = ExtResource("4_hxunu")
+
+[node name="Metal" parent="ImpactWatcher" instance=ExtResource("4_hdebo")]
+_material = ExtResource("5_mdmtg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ImpactWatcher/Metal"]
+shape = SubResource("BoxShape3D_1on2g")
