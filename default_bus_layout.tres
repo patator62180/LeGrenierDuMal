@@ -1,4 +1,4 @@
-[gd_resource type="AudioBusLayout" load_steps=122 format=3 uid="uid://dvsrhdgc2r68w"]
+[gd_resource type="AudioBusLayout" load_steps=142 format=3 uid="uid://dvsrhdgc2r68w"]
 
 [sub_resource type="AudioEffectSpectrumAnalyzer" id="AudioEffectSpectrumAnalyzer_j3pel"]
 resource_name = "SpectrumAnalyzer"
@@ -53,9 +53,49 @@ resource_name = "SpectrumAnalyzer"
 
 [sub_resource type="AudioEffectPitchShift" id="AudioEffectPitchShift_rjb1k"]
 
+[sub_resource type="AudioEffectPitchShift" id="AudioEffectPitchShift_086ef"]
+
+[sub_resource type="AudioEffectPitchShift" id="AudioEffectPitchShift_oyepw"]
+
+[sub_resource type="AudioEffectPitchShift" id="AudioEffectPitchShift_2bcrf"]
+
+[sub_resource type="AudioEffectPitchShift" id="AudioEffectPitchShift_0qigc"]
+
+[sub_resource type="AudioEffectPitchShift" id="AudioEffectPitchShift_tw8ym"]
+
+[sub_resource type="AudioEffectPitchShift" id="AudioEffectPitchShift_uufcs"]
+
+[sub_resource type="AudioEffectPitchShift" id="AudioEffectPitchShift_lmqf6"]
+
+[sub_resource type="AudioEffectPitchShift" id="AudioEffectPitchShift_1j5s1"]
+
 [sub_resource type="AudioEffectPitchShift" id="AudioEffectPitchShift_5t1r3"]
 
+[sub_resource type="AudioEffectPitchShift" id="AudioEffectPitchShift_pg6jb"]
+
+[sub_resource type="AudioEffectPitchShift" id="AudioEffectPitchShift_w8xoe"]
+
+[sub_resource type="AudioEffectPitchShift" id="AudioEffectPitchShift_bcvj6"]
+
+[sub_resource type="AudioEffectPitchShift" id="AudioEffectPitchShift_mixx5"]
+
+[sub_resource type="AudioEffectPitchShift" id="AudioEffectPitchShift_i4obj"]
+
+[sub_resource type="AudioEffectPitchShift" id="AudioEffectPitchShift_6uw08"]
+
+[sub_resource type="AudioEffectPitchShift" id="AudioEffectPitchShift_1roei"]
+
+[sub_resource type="AudioEffectPitchShift" id="AudioEffectPitchShift_iylgu"]
+
+[sub_resource type="AudioEffectPitchShift" id="AudioEffectPitchShift_tksak"]
+
+[sub_resource type="AudioEffectPitchShift" id="AudioEffectPitchShift_3ddio"]
+
 [sub_resource type="AudioEffectPitchShift" id="AudioEffectPitchShift_cenje"]
+
+[sub_resource type="AudioEffectPitchShift" id="AudioEffectPitchShift_qafiy"]
+
+[sub_resource type="AudioEffectPitchShift" id="AudioEffectPitchShift_u3ccg"]
 
 [sub_resource type="AudioEffectPitchShift" id="AudioEffectPitchShift_dqt2m"]
 
@@ -1212,3 +1252,163 @@ bus/121/volume_db = 0.0
 bus/121/send = &"Impacts"
 bus/121/effect/0/effect = SubResource("AudioEffectPitchShift_rjb1k")
 bus/121/effect/0/enabled = true
+bus/122/name = &"Impact 122"
+bus/122/solo = false
+bus/122/mute = false
+bus/122/bypass_fx = false
+bus/122/volume_db = 0.0
+bus/122/send = &"Impacts"
+bus/122/effect/0/effect = SubResource("AudioEffectPitchShift_086ef")
+bus/122/effect/0/enabled = true
+bus/123/name = &"Impact 123"
+bus/123/solo = false
+bus/123/mute = false
+bus/123/bypass_fx = false
+bus/123/volume_db = 0.0
+bus/123/send = &"Impacts"
+bus/123/effect/0/effect = SubResource("AudioEffectPitchShift_oyepw")
+bus/123/effect/0/enabled = true
+bus/124/name = &"Impact 124"
+bus/124/solo = false
+bus/124/mute = false
+bus/124/bypass_fx = false
+bus/124/volume_db = 0.0
+bus/124/send = &"Impacts"
+bus/124/effect/0/effect = SubResource("AudioEffectPitchShift_2bcrf")
+bus/124/effect/0/enabled = true
+bus/125/name = &"Impact 125"
+bus/125/solo = false
+bus/125/mute = false
+bus/125/bypass_fx = false
+bus/125/volume_db = 0.0
+bus/125/send = &"Impacts"
+bus/125/effect/0/effect = SubResource("AudioEffectPitchShift_0qigc")
+bus/125/effect/0/enabled = true
+bus/126/name = &"Impact 126"
+bus/126/solo = false
+bus/126/mute = false
+bus/126/bypass_fx = false
+bus/126/volume_db = 0.0
+bus/126/send = &"Impacts"
+bus/126/effect/0/effect = SubResource("AudioEffectPitchShift_tw8ym")
+bus/126/effect/0/enabled = true
+bus/127/name = &"Impact 127"
+bus/127/solo = false
+bus/127/mute = false
+bus/127/bypass_fx = false
+bus/127/volume_db = 0.0
+bus/127/send = &"Impacts"
+bus/127/effect/0/effect = SubResource("AudioEffectPitchShift_uufcs")
+bus/127/effect/0/enabled = true
+bus/128/name = &"Impact 128"
+bus/128/solo = false
+bus/128/mute = false
+bus/128/bypass_fx = false
+bus/128/volume_db = 0.0
+bus/128/send = &"Impacts"
+bus/128/effect/0/effect = SubResource("AudioEffectPitchShift_lmqf6")
+bus/128/effect/0/enabled = true
+bus/129/name = &"Impact 129"
+bus/129/solo = false
+bus/129/mute = false
+bus/129/bypass_fx = false
+bus/129/volume_db = 0.0
+bus/129/send = &"Impacts"
+bus/129/effect/0/effect = SubResource("AudioEffectPitchShift_1j5s1")
+bus/129/effect/0/enabled = true
+bus/130/name = &"Impact 130"
+bus/130/solo = false
+bus/130/mute = false
+bus/130/bypass_fx = false
+bus/130/volume_db = 0.0
+bus/130/send = &"Impacts"
+bus/130/effect/0/effect = SubResource("AudioEffectPitchShift_pg6jb")
+bus/130/effect/0/enabled = true
+bus/131/name = &"Impact 131"
+bus/131/solo = false
+bus/131/mute = false
+bus/131/bypass_fx = false
+bus/131/volume_db = 0.0
+bus/131/send = &"Impacts"
+bus/131/effect/0/effect = SubResource("AudioEffectPitchShift_w8xoe")
+bus/131/effect/0/enabled = true
+bus/132/name = &"Impact 132"
+bus/132/solo = false
+bus/132/mute = false
+bus/132/bypass_fx = false
+bus/132/volume_db = 0.0
+bus/132/send = &"Impacts"
+bus/132/effect/0/effect = SubResource("AudioEffectPitchShift_bcvj6")
+bus/132/effect/0/enabled = true
+bus/133/name = &"Impact 133"
+bus/133/solo = false
+bus/133/mute = false
+bus/133/bypass_fx = false
+bus/133/volume_db = 0.0
+bus/133/send = &"Impacts"
+bus/133/effect/0/effect = SubResource("AudioEffectPitchShift_mixx5")
+bus/133/effect/0/enabled = true
+bus/134/name = &"Impact 134"
+bus/134/solo = false
+bus/134/mute = false
+bus/134/bypass_fx = false
+bus/134/volume_db = 0.0
+bus/134/send = &"Impacts"
+bus/134/effect/0/effect = SubResource("AudioEffectPitchShift_i4obj")
+bus/134/effect/0/enabled = true
+bus/135/name = &"Impact 135"
+bus/135/solo = false
+bus/135/mute = false
+bus/135/bypass_fx = false
+bus/135/volume_db = 0.0
+bus/135/send = &"Impacts"
+bus/135/effect/0/effect = SubResource("AudioEffectPitchShift_6uw08")
+bus/135/effect/0/enabled = true
+bus/136/name = &"Impact 136"
+bus/136/solo = false
+bus/136/mute = false
+bus/136/bypass_fx = false
+bus/136/volume_db = 0.0
+bus/136/send = &"Impacts"
+bus/136/effect/0/effect = SubResource("AudioEffectPitchShift_1roei")
+bus/136/effect/0/enabled = true
+bus/137/name = &"Impact 137"
+bus/137/solo = false
+bus/137/mute = false
+bus/137/bypass_fx = false
+bus/137/volume_db = 0.0
+bus/137/send = &"Impacts"
+bus/137/effect/0/effect = SubResource("AudioEffectPitchShift_iylgu")
+bus/137/effect/0/enabled = true
+bus/138/name = &"Impact 138"
+bus/138/solo = false
+bus/138/mute = false
+bus/138/bypass_fx = false
+bus/138/volume_db = 0.0
+bus/138/send = &"Impacts"
+bus/138/effect/0/effect = SubResource("AudioEffectPitchShift_tksak")
+bus/138/effect/0/enabled = true
+bus/139/name = &"Impact 139"
+bus/139/solo = false
+bus/139/mute = false
+bus/139/bypass_fx = false
+bus/139/volume_db = 0.0
+bus/139/send = &"Impacts"
+bus/139/effect/0/effect = SubResource("AudioEffectPitchShift_3ddio")
+bus/139/effect/0/enabled = true
+bus/140/name = &"Impact 140"
+bus/140/solo = false
+bus/140/mute = false
+bus/140/bypass_fx = false
+bus/140/volume_db = 0.0
+bus/140/send = &"Impacts"
+bus/140/effect/0/effect = SubResource("AudioEffectPitchShift_qafiy")
+bus/140/effect/0/enabled = true
+bus/141/name = &"Impact 141"
+bus/141/solo = false
+bus/141/mute = false
+bus/141/bypass_fx = false
+bus/141/volume_db = 0.0
+bus/141/send = &"Impacts"
+bus/141/effect/0/effect = SubResource("AudioEffectPitchShift_u3ccg")
+bus/141/effect/0/enabled = true

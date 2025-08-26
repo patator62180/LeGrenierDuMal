@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1e7md12to67m"]
+
+[ext_resource type="PackedScene" uid="uid://b0gqnf86m2s7g" path="res://test_base.tscn" id="1_g5i53"]
+[ext_resource type="PackedScene" uid="uid://1po73ciuhrln" path="res://rigid_bodies/concrete_bag/concrete_bag.tscn" id="2_6uo6e"]
+
+[node name="TestConcreteBag" type="Node3D"]
+
+[node name="TestBase" parent="." instance=ExtResource("1_g5i53")]
+
+[node name="ConcreteBag" parent="." instance=ExtResource("2_6uo6e")]

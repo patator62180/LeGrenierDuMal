@@ -37,7 +37,7 @@
 [ext_resource type="PackedScene" uid="uid://crfio4vjtosxa" path="res://rigid_bodies/dice/dice.tscn" id="38_wnkbs"]
 [ext_resource type="Script" uid="uid://kipogrhylpgc" path="res://controllers/escape_area.gd" id="39_0n3wm"]
 [ext_resource type="PackedScene" uid="uid://xicwkxkx5mxm" path="res://rigid_bodies/dice_cup.tscn" id="39_f6a44"]
-[ext_resource type="PackedScene" uid="uid://1po73ciuhrln" path="res://rigid_bodies/concrete_bag.tscn" id="40_0cbny"]
+[ext_resource type="PackedScene" uid="uid://1po73ciuhrln" path="res://rigid_bodies/concrete_bag/concrete_bag.tscn" id="40_0cbny"]
 [ext_resource type="Texture2D" uid="uid://dlnltvurvj2lh" path="res://2D assets/circle_05.png" id="40_qnost"]
 [ext_resource type="PackedScene" uid="uid://bwexvfcocg0ru" path="res://static_bodies/case_boxes.tscn" id="42_gngh3"]
 [ext_resource type="PackedScene" uid="uid://cqbmplfb2ihv6" path="res://rigid_bodies/plastic_storage_container.tscn" id="43_0n3wm"]
